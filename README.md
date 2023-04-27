@@ -1,6 +1,6 @@
 About Me 
 - 👋 Hi, I’m @RANJITHROSAN17
-- 👀 I’m interested in web development and data analysis
+- 👀 I’m interested in data analytics / software developer roles
 - 🌱 I’m currently learning ...
 - <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
