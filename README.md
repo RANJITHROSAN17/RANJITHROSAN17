@@ -1,5 +1,5 @@
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink.svg)](https://github.com/sponsors/RANJITHROSAN17/)
-[![Sponsor](https://user-images.githubusercontent.com/91519971/235460389-9a8f6112-dd71-43f3-8a86-9a44a0ea4b00.jpg){height="225" width="600" style="border: 0;"}](https://github.com/sponsors/RANJITHROSAN17)
+[![Sponsor](https://user-images.githubusercontent.com/91519971/235460389-9a8f6112-dd71-43f3-8a86-9a44a0ea4b00.jpg)](https://github.com/sponsors/RANJITHROSAN17)
 
 
 <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="ranjith-rosan-m" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/ranjith-rosan-m?trk=profile-badge">RANJITH ROSAN M</a></div>
