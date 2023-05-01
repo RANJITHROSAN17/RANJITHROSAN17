@@ -1,5 +1,7 @@
 [![Sponsor](https://user-images.githubusercontent.com/91519971/235460389-9a8f6112-dd71-43f3-8a86-9a44a0ea4b00.jpg)](https://github.com/sponsors/RANJITHROSAN17)
 
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/ranjithrosan17/)
+
 <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="ranjith-rosan-m" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/ranjithrosan17?trk=profile-badge">RANJITH ROSAN M</a></div>
 
 # 💻 Tech Stack:
