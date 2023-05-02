@@ -1,4 +1,4 @@
-[![Sponsor](https://user-images.githubusercontent.com/91519971/235460389-9a8f6112-dd71-43f3-8a86-9a44a0ea4b00.jpg)](https://github.com/sponsors/RANJITHROSAN17)
+[![Sponsor](https://user-images.githubusercontent.com/91519971/235735784-8be579e0-dcc9-4cb5-8f0e-c1399ae8a3fe.jpg)](https://github.com/sponsors/RANJITHROSAN17)
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/ranjithrosan17/)
 # 💻 Tech Stack:
