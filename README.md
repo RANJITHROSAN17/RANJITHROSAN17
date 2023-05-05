@@ -9,8 +9,6 @@
 # 📊 GitHub Stats:
 ![ranjithrosan17's Streak](https://github-readme-streak-stats.herokuapp.com/?user=ranjithrosan17&theme=highcontrast&hide_border=false)
 
-![ranjithrosan17's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ranjithrosan17&theme=highcontrast&show_icons=true&hide_border=false&layout=compact)
-
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
