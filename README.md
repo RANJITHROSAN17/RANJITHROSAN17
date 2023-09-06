@@ -6,11 +6,6 @@
 # 📊 GitHub Stats:
 ![ranjithrosan17's Streak](https://github-readme-streak-stats.herokuapp.com/?user=ranjithrosan17&theme=default&hide_border=false)
 
-### ✍️ Random Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
-
 ### 🔝 Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=ranjithrosan17&limit=5&theme=dark&combine_all_yearly_contributions=true)
-
-![ranjithrosan17's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ranjithrosan17&theme=default&show_icons=true&hide_border=false&layout=compact)
 
