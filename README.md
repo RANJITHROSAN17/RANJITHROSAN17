@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Ranjith%20Rosan&fontSize=60&fontAlignY=35&animation=twinkling&fontColor=ffffff&desc=ML%20Engineer%20%7C%20AI%20Researcher%20%7C%20Computer%20Vision&descAlignY=55&descSize=20" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Ranjith%20Rosan&fontSize=60&fontAlignY=35&animation=twinkling&fontColor=ffffff&desc=Associate%20Software%20Engineer%20%7C%20AI%20%26%20ML%20Enthusiast&descAlignY=55&descSize=20" width="100%" />
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=800&color=FF6F00&center=true&vCenter=true&multiline=false&width=650&lines=👋+Welcome+to+my+GitHub+Profile!;🤖+Building+Intelligent+Systems+with+AI;🔭+Computer+Vision+%7C+Deep+Learning+%7C+ML;🏢+ASE+%40+Accenture+%7C+Ex-Intern+%40+SeeWise.AI;🌱+Always+Learning%2C+Always+Growing!" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=800&color=FF6F00&center=true&vCenter=true&multiline=false&width=650&lines=👋+Welcome+to+my+GitHub+Profile!;💼+Associate+Software+Engineer+%40+Accenture;🤖+Passionate+about+AI+%26+Machine+Learning;🔭+Exploring+Computer+Vision+%26+Deep+Learning;🌱+Always+Learning%2C+Always+Growing!" alt="Typing SVG" />
 </div>
 
 <br/>
@@ -28,11 +28,11 @@
 ║           RANJITH ROSAN              ║
 ╠══════════════════════════════════════╣
 ║  Role     : ASE @ Accenture          ║
-║  Domain   : ML · AI · Computer Vision║
 ║  Past     : Intern @ SeeWise.AI      ║
+║  Passion  : AI · ML · Computer Vision ║
 ║  Location : Tamil Nadu, India 🇮🇳    ║
 ║  Status   : Open to Work 🚀          ║
-║  Fun Fact : I turn data into magic ✨ ║
+║  Fun Fact : I turn curiosity into code║
 ╚══════════════════════════════════════╝
 ```
 
@@ -40,7 +40,7 @@
 
 ---
 
-## 🤖 What I Do
+## 🔥 My Interests & Exploration
 
 <table>
   <tr>
@@ -172,9 +172,6 @@
   </a>
   <a href="https://ranjithrosan17.github.io/rock-paper-scissors/">
     <img src="https://img.shields.io/badge/🌐+Portfolio-FF6F00?style=for-the-badge&logoColor=white" />
-  </a>
-  <a href="mailto:">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
   <a href="https://www.linkedin.com/in/ranjithrosan17">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
