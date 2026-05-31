@@ -1,37 +1,26 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Ranjith%20Rosan&fontSize=55&fontAlignY=35&animation=twinkling&fontColor=ffffff&desc=Associate%20Software%20Engineer%20%7C%20AI%20%26%20ML%20Enthusiast&descAlignY=55&descSize=18" width="100%" />
-</div>
+# Hi there, I'm Ranjith Rosan! 👋
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=2500&pause=800&color=FF6F00&center=true&vCenter=true&width=620&lines=Welcome+to+my+GitHub+Profile!;Associate+Software+Engineer+%40+Accenture;Passionate+about+AI+%26+Machine+Learning;Exploring+Computer+Vision+%26+Deep+Learning;Always+Learning%2C+Always+Growing!" alt="Typing SVG" />
-</div>
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=2500&pause=800&color=FF6F00&width=620&lines=Associate+Software+Engineer+%40+Accenture;Passionate+about+AI+%26+Machine+Learning;Exploring+Computer+Vision+%26+Deep+Learning;Always+Learning%2C+Always+Growing!)
 
-<br/>
+---
 
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=ranjithrosan17&label=Profile+Views&color=FF6F00&style=for-the-badge" />
-  <img src="https://img.shields.io/github/followers/ranjithrosan17?label=Followers&style=for-the-badge&color=0969da" />
-  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-brightgreen?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Location-Tamil%20Nadu%2C%20India-FF6F00?style=for-the-badge" />
-</div>
-
-<br/>
+![Profile Views](https://komarev.com/ghpvc/?username=ranjithrosan17&label=Profile+Views&color=FF6F00&style=flat-square)
+![Followers](https://img.shields.io/github/followers/ranjithrosan17?label=Followers&style=flat-square&color=0969da)
+![Open to Work](https://img.shields.io/badge/Status-Open%20to%20Work-brightgreen?style=flat-square)
+![Location](https://img.shields.io/badge/Location-Tamil%20Nadu%2C%20India-FF6F00?style=flat-square)
 
 ---
 
 ## About Me
 
 ```yaml
-╔══════════════════════════════════════╗
-║           RANJITH ROSAN              ║
-╠══════════════════════════════════════╣
-║  Role     : ASE @ Accenture          ║
-║  Past     : Intern @ SeeWise.AI      ║
-║  Passion  : AI · ML · Computer Vision║
-║  Location : Tamil Nadu, India        ║
-║  Status   : Open to Work             ║
-║  Fun Fact : I turn curiosity into code║
-╚══════════════════════════════════════╝
+Name      : Ranjith Rosan
+Role      : Associate Software Engineer @ Accenture
+Past      : Intern @ SeeWise.AI (Computer Vision)
+Passion   : AI · ML · Computer Vision · Deep Learning
+Location  : Tamil Nadu, India
+Status    : Open to Work
+Fun Fact  : I turn curiosity into code
 ```
 
 ---
@@ -95,7 +84,7 @@
 
 ---
 
-## GitHub Stats
+## GitHub Activity
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ranjithrosan17&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
 
@@ -109,8 +98,6 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF6F00?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ranjithrosan17.github.io/rock-paper-scissors/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ranjithrosan17)
 
-<br/>
+---
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%" />
-</div>
+*"First, solve the problem. Then, write the code."*
