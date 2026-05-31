@@ -21,8 +21,6 @@
 
 ## About Me
 
-<img align="right" alt="Coding" width="340" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
-
 ```yaml
 ╔══════════════════════════════════════╗
 ║           RANJITH ROSAN              ║
@@ -36,32 +34,16 @@
 ╚══════════════════════════════════════╝
 ```
 
-<br clear="right"/>
-
 ---
 
 ## My Interests & Exploration
 
-<table>
-  <tr>
-    <td align="center" width="200">
-      <img src="https://img.shields.io/badge/-Machine%20Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" /><br/>
-      <sub>Model training, evaluation & deployment</sub>
-    </td>
-    <td align="center" width="200">
-      <img src="https://img.shields.io/badge/-Computer%20Vision-0969da?style=for-the-badge&logo=opencv&logoColor=white" /><br/>
-      <sub>Object detection, image classification</sub>
-    </td>
-    <td align="center" width="200">
-      <img src="https://img.shields.io/badge/-Deep%20Learning-D00000?style=for-the-badge&logo=keras&logoColor=white" /><br/>
-      <sub>Neural networks, CNNs, transfer learning</sub>
-    </td>
-    <td align="center" width="200">
-      <img src="https://img.shields.io/badge/-Data%20Science-150458?style=for-the-badge&logo=pandas&logoColor=white" /><br/>
-      <sub>EDA, feature engineering, visualization</sub>
-    </td>
-  </tr>
-</table>
+| Area | Focus |
+|------|-------|
+| Machine Learning | Model training, evaluation & deployment |
+| Computer Vision | Object detection, image classification |
+| Deep Learning | CNNs, transfer learning, neural networks |
+| Data Science | EDA, feature engineering, visualization |
 
 ---
 
