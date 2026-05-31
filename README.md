@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=800&color=FF6F00&center=true&vCenter=true&multiline=false&width=650&lines=👋+Welcome+to+my+GitHub+Profile!;💼+Associate+Software+Engineer+%40+Accenture;🤖+Passionate+about+AI+%26+Machine+Learning;🔭+Exploring+Computer+Vision+%26+Deep+Learning;🌱+Always+Learning%2C+Always+Growing!" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=800&color=FF6F00&center=true&vCenter=true&width=650&lines=Welcome+to+my+GitHub+Profile!;Associate+Software+Engineer+%40+Accenture;Passionate+about+AI+%26+Machine+Learning;Exploring+Computer+Vision+%26+Deep+Learning;Always+Learning%2C+Always+Growing!" alt="Typing SVG" />
 </div>
 
 <br/>
@@ -19,9 +19,9 @@
 
 ---
 
-## 🧑‍💻 About Me
+## About Me
 
-<img align="right" alt="Coding" width="360" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" />
+<img align="right" alt="Coding" width="360" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
 
 ```yaml
 ╔══════════════════════════════════════╗
@@ -30,8 +30,8 @@
 ║  Role     : ASE @ Accenture          ║
 ║  Past     : Intern @ SeeWise.AI      ║
 ║  Passion  : AI · ML · Computer Vision║
-║  Location : Tamil Nadu, India 🇮🇳    ║
-║  Status   : Open to Work 🚀          ║
+║  Location : Tamil Nadu, India        ║
+║  Status   : Open to Work             ║
 ║  Fun Fact : I turn curiosity into code║
 ╚══════════════════════════════════════╝
 ```
@@ -40,7 +40,7 @@
 
 ---
 
-## 🔥 My Interests & Exploration
+## My Interests & Exploration
 
 <table>
   <tr>
@@ -65,9 +65,9 @@
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-### 💻 Languages
+### Languages
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
@@ -77,17 +77,16 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
 </p>
 
-### 🤖 AI / ML Frameworks
+### AI / ML Frameworks
 <p>
   <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
   <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white" />
   <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
   <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
-  <img src="https://img.shields.io/badge/YOLO-00FFFF?style=for-the-badge&logo=yolo&logoColor=black" />
 </p>
 
-### 📊 Data & Tools
+### Data & Tools
 <p>
   <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
   <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
@@ -98,7 +97,7 @@
   <img src="https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=black" />
 </p>
 
-### 🎨 Design
+### Design
 <p>
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
   <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" />
@@ -106,26 +105,26 @@
 
 ---
 
-## 🚀 Featured Projects
+## Featured Projects
 
 <div align="center">
 
-| 🏆 Project | 📝 Description | 🔧 Stack | ⭐ Stars |
-|-----------|---------------|----------|--------|
-| [🎯 YOLOv3 Object Detection](https://github.com/RANJITHROSAN17/yolov3) | Custom YOLOv3 training with full guide & tools | Python · YOLO · Colab | ⭐ 4 |
-| [🎵 Music Genre Classifier](https://github.com/RANJITHROSAN17/musicgenre) | ML model to classify music genres from audio | Python · Keras · TensorFlow | ⭐ 2 |
-| [📈 Salary Prediction](https://github.com/RANJITHROSAN17/linear-regression-machine-learning) | Salary prediction using linear regression | Python · scikit-learn | ⭐ 3 |
-| [🦖 Grounding DINO](https://github.com/RANJITHROSAN17/GroundingDino) | Zero-shot object detection with Grounding DINO | Python · CV | ⭐ 2 |
-| [✂️ Rock Paper Scissors](https://github.com/RANJITHROSAN17/rock-paper-scissors) | Interactive game with AI logic | HTML · CSS · JS | ⭐ 3 |
+| Project | Description | Stack | Stars |
+|---------|-------------|-------|-------|
+| [YOLOv3 Object Detection](https://github.com/RANJITHROSAN17/yolov3) | Custom YOLOv3 training with full guide & tools | Python · YOLO · Colab | 4 |
+| [Music Genre Classifier](https://github.com/RANJITHROSAN17/musicgenre) | ML model to classify music genres from audio | Python · Keras · TensorFlow | 2 |
+| [Salary Prediction](https://github.com/RANJITHROSAN17/linear-regression-machine-learning) | Salary prediction using linear regression | Python · scikit-learn | 3 |
+| [Grounding DINO](https://github.com/RANJITHROSAN17/GroundingDino) | Zero-shot object detection with Grounding DINO | Python · CV | 2 |
+| [Rock Paper Scissors](https://github.com/RANJITHROSAN17/rock-paper-scissors) | Interactive browser game | HTML · CSS · JS | 3 |
 
 </div>
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ranjithrosan17&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github" width="49%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=ranjithrosan17&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" width="49%" />
   <img src="https://github-readme-streak-stats.demolab.com/?user=ranjithrosan17&theme=tokyonight&hide_border=true" width="49%" />
 </div>
 
@@ -135,7 +134,7 @@
 
 ---
 
-## 🏆 GitHub Trophies
+## GitHub Trophies
 
 <div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=ranjithrosan17&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=10" />
@@ -143,15 +142,15 @@
 
 ---
 
-## 📈 Contribution Graph
+## Contribution Graph
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ranjithrosan17&theme=tokyo-night&hide_border=true&area=true&custom_title=Ranjith's+Contribution+Graph" width="95%" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ranjithrosan17&theme=tokyo-night&hide_border=true&area=true&custom_title=Ranjith+Contribution+Graph" width="95%" />
 </div>
 
 ---
 
-## 🌐 Connect With Me
+## Connect With Me
 
 <div align="center">
   <a href="https://github.com/RANJITHROSAN17">
