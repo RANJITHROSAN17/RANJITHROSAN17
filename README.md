@@ -90,7 +90,7 @@
 <p>
   <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
   <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
-  <img src="https://img.shields.io/badge/MySQL-00f?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" />
@@ -124,12 +124,21 @@
 ## GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ranjithrosan17&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" width="49%" />
-  <img src="https://github-readme-streak-stats.demolab.com/?user=ranjithrosan17&theme=tokyonight&hide_border=true" width="49%" />
+
+![Ranjith's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ranjithrosan17&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
+
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ranjithrosan17&layout=donut&theme=tokyonight&hide_border=true&langs_count=8" width="40%" />
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ranjithrosan17&layout=compact&theme=tokyonight&hide_border=true&langs_count=8)
+
+</div>
+
+<div align="center">
+
+![GitHub Streak](https://streak-stats.demolab.com?user=ranjithrosan17&theme=tokyonight&hide_border=true)
+
 </div>
 
 ---
@@ -137,7 +146,9 @@
 ## GitHub Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=ranjithrosan17&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=10" />
+
+![Trophies](https://github-profile-trophy.vercel.app/?username=ranjithrosan17&theme=tokyonight&no-frame=true&margin-w=10)
+
 </div>
 
 ---
@@ -145,7 +156,7 @@
 ## Contribution Graph
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ranjithrosan17&theme=tokyo-night&hide_border=true&area=true&custom_title=Ranjith+Contribution+Graph" width="95%" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ranjithrosan17&theme=tokyo-night&hide_border=true&area=true" width="95%" />
 </div>
 
 ---
