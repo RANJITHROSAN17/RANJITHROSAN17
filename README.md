@@ -9,10 +9,10 @@
 <br/>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=ranjithrosan17&label=👁️+Profile+Views&color=FF6F00&style=for-the-badge" />
-  <img src="https://img.shields.io/github/followers/ranjithrosan17?label=👥+Followers&style=for-the-badge&color=0969da" />
-  <img src="https://img.shields.io/badge/🔥+Status-Open%20to%20Work-brightgreen?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/📍+Location-Tamil%20Nadu%2C%20India-FF6F00?style=for-the-badge" />
+  <img src="https://komarev.com/ghpvc/?username=ranjithrosan17&label=Profile+Views&color=FF6F00&style=for-the-badge" />
+  <img src="https://img.shields.io/github/followers/ranjithrosan17?label=Followers&style=for-the-badge&color=0969da" />
+  <img src="https://img.shields.io/badge/Status-Open%20to%20Work-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Location-Tamil%20Nadu%2C%20India-FF6F00?style=for-the-badge" />
 </div>
 
 <br/>
@@ -21,7 +21,7 @@
 
 ## 🧑‍💻 About Me
 
-<img align="right" alt="Coding" width="380" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" />
+<img align="right" alt="Coding" width="360" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" />
 
 ```yaml
 ╔══════════════════════════════════════╗
@@ -29,7 +29,7 @@
 ╠══════════════════════════════════════╣
 ║  Role     : ASE @ Accenture          ║
 ║  Past     : Intern @ SeeWise.AI      ║
-║  Passion  : AI · ML · Computer Vision ║
+║  Passion  : AI · ML · Computer Vision║
 ║  Location : Tamil Nadu, India 🇮🇳    ║
 ║  Status   : Open to Work 🚀          ║
 ║  Fun Fact : I turn curiosity into code║
@@ -126,12 +126,11 @@
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=ranjithrosan17&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github" width="49%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ranjithrosan17&theme=tokyonight&hide_border=true" width="49%" />
+  <img src="https://github-readme-streak-stats.demolab.com/?user=ranjithrosan17&theme=tokyonight&hide_border=true" width="49%" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ranjithrosan17&layout=donut&theme=tokyonight&hide_border=true&langs_count=8" width="38%" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ranjithrosan17&theme=tokyonight&utcOffset=5.5" width="38%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ranjithrosan17&layout=donut&theme=tokyonight&hide_border=true&langs_count=8" width="40%" />
 </div>
 
 ---
@@ -152,18 +151,6 @@
 
 ---
 
-## 🐍 Contribution Snake
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RANJITHROSAN17/RANJITHROSAN17/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RANJITHROSAN17/RANJITHROSAN17/output/github-contribution-grid-snake.svg" />
-    <img alt="github-snake" src="https://raw.githubusercontent.com/RANJITHROSAN17/RANJITHROSAN17/output/github-contribution-grid-snake.svg" />
-  </picture>
-</div>
-
----
-
 ## 🌐 Connect With Me
 
 <div align="center">
@@ -171,7 +158,7 @@
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
   <a href="https://ranjithrosan17.github.io/rock-paper-scissors/">
-    <img src="https://img.shields.io/badge/🌐+Portfolio-FF6F00?style=for-the-badge&logoColor=white" />
+    <img src="https://img.shields.io/badge/Portfolio-FF6F00?style=for-the-badge&logo=google-chrome&logoColor=white" />
   </a>
   <a href="https://www.linkedin.com/in/ranjithrosan17">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
