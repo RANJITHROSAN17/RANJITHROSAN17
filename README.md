@@ -1,11 +1,11 @@
 <h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=800&color=FF6F00&center=true&vCenter=true&width=700&lines=Hi+%F0%9F%91%8B%2C+I'm+Ranjith+Rosan;ASE+%40+Accenture+%F0%9F%9A%80;ML+%7C+AI+%7C+Computer+Vision+Engineer+%F0%9F%A4%96;Cybersecurity+Researcher+%F0%9F%94%90;Bug+Bounty+Hunter+%F0%9F%90%9B;Always+Learning+%F0%9F%8C%9F" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=800&color=FF6F00&center=true&vCenter=true&width=700&lines=Hi+%F0%9F%91%8B%2C+I'm+Ranjith+Rosan;ASE+%40+Accenture+%F0%9F%9A%80;ML+%7C+AI+%7C+Computer+Vision+Engineer+%F0%9F%A4%96;Always+Learning+%F0%9F%8C%9F" alt="Typing SVG" />
 </h1>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=ranjithrosan17&label=Profile+Views&color=FF6F00&style=flat-square" alt="profile views" />
   <img src="https://img.shields.io/github/followers/ranjithrosan17?label=Followers&style=flat-square&color=0969da" alt="followers" />
-  <img src="https://img.shields.io/badge/Focus-ML%20%7C%20AI%20%7C%20Cybersecurity-10b981?style=flat-square" />
+  <img src="https://img.shields.io/badge/Focus-ML%20%7C%20AI%20%7C%20Computer%20Vision-10b981?style=flat-square" />
   <img src="https://img.shields.io/badge/Status-Open%20to%20Work-brightgreen?style=flat-square" />
 </p>
 
@@ -15,12 +15,11 @@
 
 ```yaml
 Name      : Ranjith Rosan
-Role      : ASE @ Accenture | ML & AI Engineer | Cybersecurity Researcher
+Role      : ASE @ Accenture | ML & AI Engineer
 Location  : Tamil Nadu, India 🇮🇳
 Experience: Ex-Intern @ SeeWise.AI (Computer Vision)
-Focus     : Machine Learning · Computer Vision · Vulnerability Research
-Platforms : HackerOne · GitHub · LinkedIn
-Fun Fact  : I build AI models by day and hunt bugs by night 🔐
+Focus     : Machine Learning · Computer Vision · Deep Learning
+Fun Fact  : I turn data into intelligence 🤖
 ```
 
 ---
@@ -32,15 +31,6 @@ Fun Fact  : I build AI models by day and hunt bugs by night 🔐
 - 🔬 Ex-Intern @ **SeeWise.AI** — built and deployed CV pipelines
 - 📦 Worked with **TensorFlow, Keras, scikit-learn, OpenCV, Pandas, NumPy**
 - 🎯 Interests: Object Detection, Image Classification, NLP
-
----
-
-## 🔐 Cybersecurity & Bug Bounty
-
-- 🐛 **Bug Bounty Hunter** on [HackerOne](https://hackerone.com) — actively reporting vulnerabilities
-- 🔍 **Source Code Analysis** — cryptographic flaws & information disclosure
-- 🎯 **SSRF, XSS, Auth Bypass** — web application security testing
-- 🧪 **PoC Development** — building reproducible exploit demos
 
 ---
 
@@ -63,11 +53,11 @@ Fun Fact  : I build AI models by day and hunt bugs by night 🔐
 </p>
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
+  <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
 </p>
 
 ---
@@ -104,9 +94,6 @@ Fun Fact  : I build AI models by day and hunt bugs by night 🔐
 ## 🌐 Connect With Me
 
 <p align="left">
-  <a href="https://hackerone.com" target="_blank">
-    <img src="https://img.shields.io/badge/HackerOne-494649?style=for-the-badge&logo=hackerone&logoColor=white" />
-  </a>
   <a href="https://github.com/RANJITHROSAN17" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
