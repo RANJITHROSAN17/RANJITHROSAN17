@@ -1,6 +1,6 @@
 # Hi there, I'm Ranjith Rosan! 👋
 
-![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=2500&pause=800&color=FF6F00&width=620&lines=Associate+Software+Engineer+%40+Accenture;Passionate+about+AI+%26+Machine+Learning;Exploring+Computer+Vision+%26+Deep+Learning;Always+Learning%2C+Always+Growing!)
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=2500&pause=800&color=FF6F00&width=620&lines=Analyst+%40+Accenture;Passionate+about+AI+%26+Machine+Learning;Exploring+Computer+Vision+%26+Deep+Learning;Always+Learning%2C+Always+Growing!)
 
 ---
 
