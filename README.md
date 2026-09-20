@@ -15,7 +15,7 @@
 
 ```yaml
 Name      : Ranjith Rosan
-Role      : Associate Software Engineer @ Accenture
+Role      : Analyst @ Accenture
 Past      : Intern @ SeeWise.AI (Computer Vision)
 Passion   : AI · ML · Computer Vision · Deep Learning
 Location  : Tamil Nadu, India
