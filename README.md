@@ -22,7 +22,33 @@ Location  : Tamil Nadu, India
 Status    : Open to Work
 Fun Fact  : I turn curiosity into code
 ```
+## 🚀 Featured Projects
 
+<table>
+<tr>
+<td width="50%">
+
+### 🫀 CardioLens 3D
+Research-only 3D coronary visualization prototype — interactive three.js schematic + a fixed logistic-regression baseline, with honest, documented limits.
+
+[▶ Live demo](https://ranjithrosan17.github.io/cardiolens-3d-risk/) ·
+[Code](https://github.com/RANJITHROSAN17/cardiolens-3d-risk)
+
+`React` `three.js` `FastAPI` `scikit-learn`
+
+</td>
+<td width="50%">
+
+### 🔥 Career Forge
+AI resume & job match studio — transparent ATS scoring, keyword radar, XYZ bullet rewrites, cover letters, and STAR interview prep. Runs fully local.
+
+[Code](https://github.com/RANJITHROSAN17/career-forge)
+
+`Python` `Anova App` `ATS` `Local-first`
+
+</td>
+</tr>
+</table>
 ---
 
 ## My Interests & Exploration
