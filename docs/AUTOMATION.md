@@ -9,7 +9,7 @@ This repository is my GitHub profile (`github.com/RANJITHROSAN17`). The README y
 | `README.md` | Profile content. Anything between `<!-- DYNAMIC:name:START/END -->` markers is machine-generated; everything else is hand-written. |
 | `.github/scripts/update_profile.py` | Standard-library-only Python updater (no `pip install`, so nothing can break from a dependency release). |
 | `.github/scripts/test_update_profile.py` | Unit tests for the updater's helpers. CI runs them *before* regenerating, so a broken change can't publish a broken profile. |
-| `.github/workflows/update-profile.yml` | Daily 03:17 UTC + manual dispatch. Uses only the built-in `GITHUB_TOKEN` — no personal access token exists anywhere in this repo. Commits only when the data actually changed. |
+| `.github/workflows/update-profile.yml` | Every 2 hours (`17 */2 * * *`) + manual dispatch. Uses only the built-in `GITHUB_TOKEN` — no personal access token exists anywhere in this repo. Commits only when the data actually changed. |
 | `assets/banner.svg` | Self-hosted hero banner (hand-authored SVG — a computer-vision bounding box over a neural network). No external image service involved. |
 | `.github/dependabot.yml` | Keeps the GitHub Actions themselves patched. |
 

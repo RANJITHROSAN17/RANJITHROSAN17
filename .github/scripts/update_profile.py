@@ -92,7 +92,8 @@ CURATED = [
     {
         "repo": "NousResearch/hermes-agent",
         "org": "Nous Research",
-        "focus": "Hermes Agent desktop - V8 heap ceiling for desktop typecheck",
+        "focus": "Hermes Agent - plugin Settings config_source, managed-worker "
+                 "job scoping, desktop typecheck heap",
     },
     {
         "repo": "ultralytics/yolov3",
@@ -222,7 +223,9 @@ def api_get_all(url: str, max_pages: int = 10):
 
 def search_prs(extra: str = "") -> list[dict]:
     q = urllib.parse.quote(f"type:pr author:{USER} {extra}".strip())
-    return api_get_all(f"https://api.github.com/search/issues?q={q}&sort=updated&order=desc")
+    items = api_get_all(f"https://api.github.com/search/issues?q={q}&sort=updated&order=desc")
+    # Deduplicate across page boundaries if a PR updates mid-pagination.
+    return list({p["id"]: p for p in items}.values())
 
 
 def repo_of(pr: dict) -> str:
@@ -448,7 +451,7 @@ def build_blocks() -> dict[str, str]:
             continue
         rn = meta["name"]
         base = (f"https://github-readme-stats.vercel.app/api/pin/?username={USER}"
-                f"&repo={rn}&hide_border=true&cache_seconds=86400")
+                f"&repo={rn}&hide_border=true&cache_seconds=1800")
         cards.append(
             f'<a href="{meta["html_url"]}"><picture>'
             f'<source media="(prefers-color-scheme: dark)" srcset="{base}&theme=github_dark" />'
@@ -463,12 +466,12 @@ def build_blocks() -> dict[str, str]:
     u = USER
     stats_cards = f"""<p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=github_dark&cache_seconds=86400" />
-    <img height="170" alt="GitHub stats for {u}" src="https://github-readme-stats.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=default&cache_seconds=86400" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=github_dark&cache_seconds=1800" />
+    <img height="170" alt="GitHub stats for {u}" src="https://github-readme-stats.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=default&cache_seconds=1800" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo={exclude}&cache_seconds=86400" />
-    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-readme-stats.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo={exclude}&cache_seconds=86400" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo={exclude}&cache_seconds=1800" />
+    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-readme-stats.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo={exclude}&cache_seconds=1800" />
   </picture>
 </p>
 <p align="center">

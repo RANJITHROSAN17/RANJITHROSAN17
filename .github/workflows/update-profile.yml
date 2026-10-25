@@ -6,8 +6,9 @@ name: Update profile README
 
 on:
   schedule:
-    # Daily at 03:17 UTC (08:47 IST). Odd minute avoids the busy top-of-hour.
-    - cron: "17 3 * * *"
+    # Every 2 hours at :17 past the hour so new/merged PRs appear promptly
+    # (no-op when nothing changed). Odd minute avoids top-of-hour runner queues.
+    - cron: "17 */2 * * *"
   workflow_dispatch: {}   # run manually any time from the Actions tab
   push:
     branches: [main]
