@@ -1,0 +1,53 @@
+name: Update profile README
+
+# Refreshes the auto-generated sections of README.md (open-source stats by
+# organisation, latest PRs, featured projects, language card) from the live
+# GitHub API. Uses the built-in GITHUB_TOKEN only - no personal token needed.
+
+on:
+  schedule:
+    # Daily at 03:17 UTC (08:47 IST). Odd minute avoids the busy top-of-hour.
+    - cron: "17 3 * * *"
+  workflow_dispatch: {}   # run manually any time from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - ".github/scripts/update_profile.py"
+      - ".github/workflows/update-profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout profile repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate dynamic sections
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USERNAME: ${{ github.repository_owner }}
+        run: python .github/scripts/update_profile.py
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet; then
+            echo "Profile already up to date - nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore(profile): auto-update open-source stats [skip ci]"
+          git push
