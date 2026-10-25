@@ -1,15 +1,26 @@
-<h1 align="center">Ranjith Rosan</h1>
+<img src="./assets/banner.svg" width="100%" alt="Ranjith Rosan — Analyst at Accenture, Machine Learning and Computer Vision, open-source contributor, Chennai, India" />
 
+<!-- DYNAMIC:IMPACT_BADGES:START -->
 <p align="center">
-  <strong>Analyst @ Accenture · Machine Learning &amp; Computer Vision · Open-Source Contributor</strong><br/>
-  Chennai, Tamil Nadu, India · Open to ML / CV engineering roles
+  <a href="https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20%20-user%3ARANJITHROSAN17&type=pullrequests"><img alt="91 external pull requests" src="https://img.shields.io/badge/External_PRs-91-1f6feb?style=flat" /></a>
+  <a href="https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests"><img alt="13 PRs merged upstream" src="https://img.shields.io/badge/Merged_upstream-13-8250df?style=flat" /></a>
+  <a href="https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests"><img alt="39 PRs in review" src="https://img.shields.io/badge/In_review-39-1f883d?style=flat" /></a>
+  <img alt="52 external projects" src="https://img.shields.io/badge/External_projects-52-555555?style=flat" />
 </p>
+<!-- DYNAMIC:IMPACT_BADGES:END -->
 
 <p align="center">
   <a href="https://www.linkedin.com/in/ranjithrosan17"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-ranjithrosan17-0A66C2?style=flat&logo=linkedin&logoColor=white" /></a>
   <a href="https://github.com/RANJITHROSAN17"><img alt="GitHub followers" src="https://img.shields.io/github/followers/RANJITHROSAN17?label=GitHub&style=flat&logo=github" /></a>
   <img alt="Location Chennai, India" src="https://img.shields.io/badge/Chennai-India-green?style=flat" />
-  <img alt="Open to ML and CV roles" src="https://img.shields.io/badge/Open_to-ML_%2F_CV_roles-blue?style=flat" />
+</p>
+
+<p align="center">
+  <a href="#open-source">🌍 Open Source</a> &nbsp;·&nbsp;
+  <a href="#projects">🚀 Projects</a> &nbsp;·&nbsp;
+  <a href="#experience">💼 Experience</a> &nbsp;·&nbsp;
+  <a href="#stats">📊 Stats</a> &nbsp;·&nbsp;
+  <a href="#contact">📫 Contact</a>
 </p>
 
 ---
@@ -25,41 +36,138 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 
 ---
 
+<a id="open-source"></a>
+
 ## 🌍 Open-source contributions — by company / organisation
 
 <!-- DYNAMIC:OSS_SUMMARY:START -->
-> **90 pull requests to 52 external projects** · [**13 merged upstream**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests) · [**38 in review right now**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests) · auto-updated 25 Oct 2026 - every number below links to a live search you can verify.
+> **91 pull requests to 52 external projects** · [**13 merged upstream**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests) · [**39 in review right now**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests) · auto-updated 25 Oct 2026 - every number below links to a live search you can verify.
 >
 > Status key: 🟣 **Merged** = merged upstream &nbsp;·&nbsp; 🟢 **In review** = open PR, not yet merged - I don't claim orgs I haven't landed in (yet).
 <!-- DYNAMIC:OSS_SUMMARY:END -->
 
+<!-- DYNAMIC:OSS_SNAPSHOT:START -->
+**🟣 Merged upstream in:** [CrossGL](https://github.com/CrossGL/crosstl) · [Ultralytics](https://github.com/ultralytics/yolov3) · [Amazon Web Services](https://github.com/aws-samples/step-functions-workflows-collection) · [Opencollab MCP](https://github.com/prakhar1605/Opencollab-mcp) · [Golang Cafe](https://github.com/golang-cafe/job-board) · +6 earlier in smaller projects
+
+**🟢 Currently in review at:** [Google Research](https://github.com/google-research/google-research) · [Microsoft](https://github.com/microsoft/vscode) · [OpenAI](https://github.com/openai/openai-cookbook) · [NSA - Ghidra](https://github.com/NationalSecurityAgency/ghidra) · [CrossGL](https://github.com/CrossGL/crosstl) · [Kubeflow](https://github.com/kubeflow/mcp-server) · [Nous Research](https://github.com/NousResearch/hermes-agent) · [Costura AI](https://github.com/CosturaAI/costura)
+<!-- DYNAMIC:OSS_SNAPSHOT:END -->
+
 <!-- DYNAMIC:OSS_TABLE:START -->
 | Organisation | Project | What my PRs touch | 🟣 Merged | 🟢 In review | Latest PR |
 |---|---|---|---:|---:|---|
-| **Google Research** | [google-research/google-research](https://github.com/google-research/google-research) (★39k) | ML research maintenance - snerg Flax->Optax migration, uflow multi-dataset training, summae & distributed_shampoo fixes | · | 15 | 🟢 [#3465](https://github.com/google-research/google-research/pull/3465) |
-| **Microsoft** | [microsoft/vscode](https://github.com/microsoft/vscode) (★194k) | VS Code Git extension safety - literal-pathspec discard, scp-like clone folder names | · | 2 | 🟢 [#344032](https://github.com/microsoft/vscode/pull/344032) |
-| **OpenAI** | [openai/openai-cookbook](https://github.com/openai/openai-cookbook) (★77k) | Data-analyst cookbook - schema-scoped table-context lookups | · | 1 | 🟢 [#3239](https://github.com/openai/openai-cookbook/pull/3239) |
-| **NSA - Ghidra** | [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) (★94k) | Reverse-engineering framework - AVR8 12-bit PC variant, PackedDatabase unpack hardening, .eh_frame analysis | · | 3 | 🟢 [#10021](https://github.com/NationalSecurityAgency/ghidra/pull/10021) |
-| **CrossGL** | [CrossGL/crosstl](https://github.com/CrossGL/crosstl) (★1.5k) | Shader transpiler (GLSL/HLSL/Metal/SPIR-V/Slang/WGSL) - backend lowering, resource binding & provenance, conformance harness | 1 | 8 | 🟢 [#3056](https://github.com/CrossGL/crosstl/pull/3056) |
-| **Kubeflow** | [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server) (★55) | MCP server for Kubeflow Trainer - rate-limit/circuit-breaker & RED metrics, schedulable-GPU counting, training lifecycle fixes | · | 7 | 🟢 [#472](https://github.com/kubeflow/mcp-server/pull/472) |
-| **Nous Research** | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) (★257k) | Hermes Agent desktop - V8 heap ceiling for desktop typecheck | · | 1 | 🟢 [#144479](https://github.com/NousResearch/hermes-agent/pull/144479) |
-| **Ultralytics** | [ultralytics/yolov3](https://github.com/ultralytics/yolov3) (★11k) | YOLOv3 object detection - requirements fix | 1 | · | 🟣 [#2333](https://github.com/ultralytics/yolov3/pull/2333) |
-| **Amazon Web Services** | [aws-samples/step-functions-workflows-collection](https://github.com/aws-samples/step-functions-workflows-collection) (★281) | AWS Step Functions workflow collection - template update | 1 | · | 🟣 [#283](https://github.com/aws-samples/step-functions-workflows-collection/pull/283) |
-| **Opencollab MCP** | [prakhar1605/Opencollab-mcp](https://github.com/prakhar1605/Opencollab-mcp) (★34) | Contribution-matchmaking MCP - shared GitHub paginator, closing-PR vs. plain-mention detection | 2 | · | 🟣 [#216](https://github.com/prakhar1605/Opencollab-mcp/pull/216) |
-| **Costura AI** | [CosturaAI/costura](https://github.com/CosturaAI/costura) (★4) | AI spend attribution - invalid snooze-input test coverage | · | 1 | 🟢 [#20](https://github.com/CosturaAI/costura/pull/20) |
-| **Golang Cafe** | [golang-cafe/job-board](https://github.com/golang-cafe/job-board) (★227) | Go job board - golangci-lint workflow updates | 2 | · | 🟣 [#121](https://github.com/golang-cafe/job-board/pull/121) |
+| <img src="https://github.com/google-research.png?size=40" width="18" height="18" alt="google-research logo" /> **Google Research** | [google-research/google-research](https://github.com/google-research/google-research) (★39k) | ML research maintenance - snerg Flax->Optax migration, uflow multi-dataset training, summae & distributed_shampoo fixes | · | 15 | 🟢 [#3465](https://github.com/google-research/google-research/pull/3465) |
+| <img src="https://github.com/microsoft.png?size=40" width="18" height="18" alt="microsoft logo" /> **Microsoft** | [microsoft/vscode](https://github.com/microsoft/vscode) (★194k) | VS Code Git extension safety - literal-pathspec discard, scp-like clone folder names | · | 2 | 🟢 [#344032](https://github.com/microsoft/vscode/pull/344032) |
+| <img src="https://github.com/openai.png?size=40" width="18" height="18" alt="openai logo" /> **OpenAI** | [openai/openai-cookbook](https://github.com/openai/openai-cookbook) (★77k) | Data-analyst cookbook - schema-scoped table-context lookups | · | 1 | 🟢 [#3239](https://github.com/openai/openai-cookbook/pull/3239) |
+| <img src="https://github.com/NationalSecurityAgency.png?size=40" width="18" height="18" alt="NationalSecurityAgency logo" /> **NSA - Ghidra** | [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) (★94k) | Reverse-engineering framework - AVR8 12-bit PC variant, PackedDatabase unpack hardening, .eh_frame analysis | · | 3 | 🟢 [#10021](https://github.com/NationalSecurityAgency/ghidra/pull/10021) |
+| <img src="https://github.com/CrossGL.png?size=40" width="18" height="18" alt="CrossGL logo" /> **CrossGL** | [CrossGL/crosstl](https://github.com/CrossGL/crosstl) (★1.5k) | Shader transpiler (GLSL/HLSL/Metal/SPIR-V/Slang/WGSL) - backend lowering, resource binding & provenance, conformance harness | 1 | 9 | 🟢 [#3067](https://github.com/CrossGL/crosstl/pull/3067) |
+| <img src="https://github.com/kubeflow.png?size=40" width="18" height="18" alt="kubeflow logo" /> **Kubeflow** | [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server) (★55) | MCP server for Kubeflow Trainer - rate-limit/circuit-breaker & RED metrics, schedulable-GPU counting, training lifecycle fixes | · | 7 | 🟢 [#472](https://github.com/kubeflow/mcp-server/pull/472) |
+| <img src="https://github.com/NousResearch.png?size=40" width="18" height="18" alt="NousResearch logo" /> **Nous Research** | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) (★257k) | Hermes Agent desktop - V8 heap ceiling for desktop typecheck | · | 1 | 🟢 [#144479](https://github.com/NousResearch/hermes-agent/pull/144479) |
+| <img src="https://github.com/ultralytics.png?size=40" width="18" height="18" alt="ultralytics logo" /> **Ultralytics** | [ultralytics/yolov3](https://github.com/ultralytics/yolov3) (★11k) | YOLOv3 object detection - requirements fix | 1 | · | 🟣 [#2333](https://github.com/ultralytics/yolov3/pull/2333) |
+| <img src="https://github.com/aws-samples.png?size=40" width="18" height="18" alt="aws-samples logo" /> **Amazon Web Services** | [aws-samples/step-functions-workflows-collection](https://github.com/aws-samples/step-functions-workflows-collection) (★281) | AWS Step Functions workflow collection - template update | 1 | · | 🟣 [#283](https://github.com/aws-samples/step-functions-workflows-collection/pull/283) |
+| <img src="https://github.com/prakhar1605.png?size=40" width="18" height="18" alt="prakhar1605 logo" /> **Opencollab MCP** | [prakhar1605/Opencollab-mcp](https://github.com/prakhar1605/Opencollab-mcp) (★34) | Contribution-matchmaking MCP - shared GitHub paginator, closing-PR vs. plain-mention detection | 2 | · | 🟣 [#216](https://github.com/prakhar1605/Opencollab-mcp/pull/216) |
+| <img src="https://github.com/CosturaAI.png?size=40" width="18" height="18" alt="CosturaAI logo" /> **Costura AI** | [CosturaAI/costura](https://github.com/CosturaAI/costura) (★4) | AI spend attribution - invalid snooze-input test coverage | · | 1 | 🟢 [#20](https://github.com/CosturaAI/costura/pull/20) |
+| <img src="https://github.com/golang-cafe.png?size=40" width="18" height="18" alt="golang-cafe logo" /> **Golang Cafe** | [golang-cafe/job-board](https://github.com/golang-cafe/job-board) (★227) | Go job board - golangci-lint workflow updates | 2 | · | 🟣 [#121](https://github.com/golang-cafe/job-board/pull/121) |
 
 <sub>Plus 6 earlier merged PRs in smaller projects - [see every upstream-merged PR](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests).</sub>
 <!-- DYNAMIC:OSS_TABLE:END -->
 
+<!-- DYNAMIC:OSS_DETAILS:START -->
+<details>
+<summary><strong>📂 Expand — every featured PR, grouped by organisation (auto-updated)</strong></summary>
+
+#### <img src="https://github.com/google-research.png?size=40" width="18" height="18" alt="google-research logo" /> Google Research — [google-research/google-research](https://github.com/google-research/google-research) · 0 merged · 15 in review
+
+- 🟢 In review · 2026-10-24 · [snerg: replace the removed flax.optim API with Optax](https://github.com/google-research/google-research/pull/3465)
+- 🟢 In review · 2026-10-24 · [uflow: train on every dataset listed in train_on, not just the first](https://github.com/google-research/google-research/pull/3464)
+- 🟢 In review · 2026-10-24 · [summae: stop doubling the residual stream in the decoder FFN block](https://github.com/google-research/google-research/pull/3463)
+- 🟢 In review · 2026-10-24 · [distributed_shampoo: drop the overwritten inverse-pth-root computation](https://github.com/google-research/google-research/pull/3462)
+- 🟢 In review · 2026-10-24 · [misinfo_provenance: remove duplicated flag definition and fix misspelling](https://github.com/google-research/google-research/pull/3461)
+- 🟢 In review · 2026-10-24 · [fvlm: give the package directories a real __init__.py](https://github.com/google-research/google-research/pull/3460)
+- 🟢 In review · 2026-10-24 · [vrdu: report -1 for entity names with no groundtruth instead of a free recall](https://github.com/google-research/google-research/pull/3459)
+- 🟢 In review · 2026-10-24 · [instruction_following_eval: pass the prompt to checkers that require it](https://github.com/google-research/google-research/pull/3458)
+- 🟢 In review · 2026-10-24 · [Shampoo: stop mutating gradients and momentum buffers during step](https://github.com/google-research/google-research/pull/3457)
+- 🟢 In review · 2026-10-24 · [sifer: remove call to non-existent misc.download_files](https://github.com/google-research/google-research/pull/3456)
+- 🟢 In review · 2026-10-24 · [task_set: validate sample_log_float bounds and fix reversed call sites](https://github.com/google-research/google-research/pull/3455)
+- 🟢 In review · 2026-10-24 · [instruction_following_eval: make letter-frequency and language checks reproducible](https://github.com/google-research/google-research/pull/3454)
+- 🟢 In review · 2026-10-24 · [trimap: run input rescaling when PCA is skipped, not when verbose is off](https://github.com/google-research/google-research/pull/3453)
+- 🟢 In review · 2026-10-24 · [rouge: pair target and prediction files by example id, not by sort position](https://github.com/google-research/google-research/pull/3452)
+- 🟢 In review · 2026-10-24 · [scalable_shampoo: use Tensor.device for state allocation so CPU parameters work](https://github.com/google-research/google-research/pull/3451)
+
+#### <img src="https://github.com/microsoft.png?size=40" width="18" height="18" alt="microsoft logo" /> Microsoft — [microsoft/vscode](https://github.com/microsoft/vscode) · 0 merged · 2 in review
+
+- 🟢 In review · 2026-10-24 · [git: discard files by literal pathspec so a file named `*` cannot wipe the rest](https://github.com/microsoft/vscode/pull/344032)
+- 🟢 In review · 2026-10-24 · [git: derive the clone folder name from scp-like URLs](https://github.com/microsoft/vscode/pull/344033)
+
+#### <img src="https://github.com/openai.png?size=40" width="18" height="18" alt="openai logo" /> OpenAI — [openai/openai-cookbook](https://github.com/openai/openai-cookbook) · 0 merged · 1 in review
+
+- 🟢 In review · 2026-10-25 · [Scope data analyst table context lookups by schema](https://github.com/openai/openai-cookbook/pull/3239)
+
+#### <img src="https://github.com/NationalSecurityAgency.png?size=40" width="18" height="18" alt="NationalSecurityAgency logo" /> NSA - Ghidra — [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) · 0 merged · 3 in review
+
+- 🟢 In review · 2026-10-25 · [AVR8: add a language variant for devices with a 12-bit wrapping PC](https://github.com/NationalSecurityAgency/ghidra/pull/10021)
+- 🟢 In review · 2026-10-24 · [PackedDatabase: bound unpacking and clean up after a failed unpack](https://github.com/NationalSecurityAgency/ghidra/pull/10022)
+- 🟢 In review · 2026-10-24 · [Create functions at .eh_frame FDE starts that are not .cold pieces](https://github.com/NationalSecurityAgency/ghidra/pull/10019)
+
+#### <img src="https://github.com/CrossGL.png?size=40" width="18" height="18" alt="CrossGL logo" /> CrossGL — [CrossGL/crosstl](https://github.com/CrossGL/crosstl) · 1 merged · 9 in review
+
+- 🟣 Merged · 2026-10-21 · [Fix parser hang on unterminated shader declarations](https://github.com/CrossGL/crosstl/pull/2443)
+- 🟢 In review · 2026-10-25 · [Keep integer min and max integer in CUDA and HIP output](https://github.com/CrossGL/crosstl/pull/3067)
+- 🟢 In review · 2026-10-25 · [Keep generated include order when formatting with clang-format](https://github.com/CrossGL/crosstl/pull/3056)
+- 🟢 In review · 2026-10-25 · [Refuse HLSL shader execution reordering for targets without it](https://github.com/CrossGL/crosstl/pull/3050)
+- 🟢 In review · 2026-10-25 · [Preserve resource provenance for pointer-bearing aggregate members (#1544)](https://github.com/CrossGL/crosstl/pull/3046)
+- 🟢 In review · 2026-10-25 · [Lower bit-manipulation and fine/coarse fwidth built-ins in Slang](https://github.com/CrossGL/crosstl/pull/3047)
+- 🟢 In review · 2026-10-25 · [Bind multiple input buffers in the conformance harness](https://github.com/CrossGL/crosstl/pull/2937)
+- 🟢 In review · 2026-10-25 · [Declare CrossGL storage buffers as structured buffers in Slang](https://github.com/CrossGL/crosstl/pull/2943)
+- 🟢 In review · 2026-10-25 · [Assign implicit WGSL resources to the lowest free bindings](https://github.com/CrossGL/crosstl/pull/3037)
+- 🟢 In review · 2026-10-25 · [Wrap narrow scalar integer binary operations in GLSL](https://github.com/CrossGL/crosstl/pull/3041)
+
+#### <img src="https://github.com/kubeflow.png?size=40" width="18" height="18" alt="kubeflow logo" /> Kubeflow — [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server) · 0 merged · 7 in review
+
+- 🟢 In review · 2026-10-25 · [feat(core): add rate-limit and circuit-breaker metrics](https://github.com/kubeflow/mcp-server/pull/472)
+- 🟢 In review · 2026-10-24 · [fix(trainer): stop wait_for_training early when the job is already Complete](https://github.com/kubeflow/mcp-server/pull/479)
+- 🟢 In review · 2026-10-24 · [feat(core): add HTTP RED metrics and a readiness gauge](https://github.com/kubeflow/mcp-server/pull/473)
+- 🟢 In review · 2026-10-24 · [fix(trainer): report a missing step instead of an empty log in get_training_logs](https://github.com/kubeflow/mcp-server/pull/471)
+- 🟢 In review · 2026-10-24 · [fix(trainer): count only schedulable GPUs, from any vendor, in get_cluster_resources](https://github.com/kubeflow/mcp-server/pull/477)
+- 🟢 In review · 2026-10-24 · [fix(trainer): round GPU memory estimates up before picking a tier](https://github.com/kubeflow/mcp-server/pull/476)
+- 🟢 In review · 2026-10-23 · [fix(ci): harden E2E dependency cache isolation](https://github.com/kubeflow/mcp-server/pull/440)
+
+#### <img src="https://github.com/NousResearch.png?size=40" width="18" height="18" alt="NousResearch logo" /> Nous Research — [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) · 0 merged · 1 in review
+
+- 🟢 In review · 2026-10-25 · [fix(desktop): raise V8 heap ceiling for desktop typecheck (#144459)](https://github.com/NousResearch/hermes-agent/pull/144479)
+
+#### <img src="https://github.com/ultralytics.png?size=40" width="18" height="18" alt="ultralytics logo" /> Ultralytics — [ultralytics/yolov3](https://github.com/ultralytics/yolov3) · 1 merged · 0 in review
+
+- 🟣 Merged · 2025-06-11 · [Update requirements.txt](https://github.com/ultralytics/yolov3/pull/2333)
+
+#### <img src="https://github.com/aws-samples.png?size=40" width="18" height="18" alt="aws-samples logo" /> Amazon Web Services — [aws-samples/step-functions-workflows-collection](https://github.com/aws-samples/step-functions-workflows-collection) · 1 merged · 0 in review
+
+- 🟣 Merged · 2023-09-04 · [Update template.yaml](https://github.com/aws-samples/step-functions-workflows-collection/pull/283)
+
+#### <img src="https://github.com/prakhar1605.png?size=40" width="18" height="18" alt="prakhar1605 logo" /> Opencollab MCP — [prakhar1605/Opencollab-mcp](https://github.com/prakhar1605/Opencollab-mcp) · 2 merged · 0 in review
+
+- 🟣 Merged · 2026-10-21 · [fix(client): add shared github_get_all paginator and paginate issue timelines](https://github.com/prakhar1605/Opencollab-mcp/pull/216)
+- 🟣 Merged · 2026-10-20 · [fix(issues): distinguish closing PRs from plain mentions in check_issue_availability](https://github.com/prakhar1605/Opencollab-mcp/pull/215)
+
+#### <img src="https://github.com/CosturaAI.png?size=40" width="18" height="18" alt="CosturaAI logo" /> Costura AI — [CosturaAI/costura](https://github.com/CosturaAI/costura) · 0 merged · 1 in review
+
+- 🟢 In review · 2026-10-23 · [test: cover invalid snooze inputs](https://github.com/CosturaAI/costura/pull/20)
+
+#### <img src="https://github.com/golang-cafe.png?size=40" width="18" height="18" alt="golang-cafe logo" /> Golang Cafe — [golang-cafe/job-board](https://github.com/golang-cafe/job-board) · 2 merged · 0 in review
+
+- 🟣 Merged · 2023-05-03 · [Update golangci-lint.yml](https://github.com/golang-cafe/job-board/pull/121)
+- 🟣 Merged · 2023-05-02 · [Update golangci-lint.yml](https://github.com/golang-cafe/job-board/pull/119)
+
+</details>
+<!-- DYNAMIC:OSS_DETAILS:END -->
+
 ### ⚡ Latest merged & in-review pull requests
 
 <!-- DYNAMIC:RECENT_PRS:START -->
+- 🟢 In review · 2026-10-25 · [Keep integer min and max integer in CUDA and HIP output](https://github.com/CrossGL/crosstl/pull/3067) in [CrossGL/crosstl](https://github.com/CrossGL/crosstl)
 - 🟢 In review · 2026-10-25 · [fix(desktop): raise V8 heap ceiling for desktop typecheck (#144459)](https://github.com/NousResearch/hermes-agent/pull/144479) in [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 - 🟢 In review · 2026-10-25 · [Scope data analyst table context lookups by schema](https://github.com/openai/openai-cookbook/pull/3239) in [openai/openai-cookbook](https://github.com/openai/openai-cookbook)
 - 🟢 In review · 2026-10-25 · [Keep generated include order when formatting with clang-format](https://github.com/CrossGL/crosstl/pull/3056) in [CrossGL/crosstl](https://github.com/CrossGL/crosstl)
 - 🟢 In review · 2026-10-25 · [Refuse HLSL shader execution reordering for targets without it](https://github.com/CrossGL/crosstl/pull/3050) in [CrossGL/crosstl](https://github.com/CrossGL/crosstl)
-- 🟢 In review · 2026-10-25 · [Preserve resource provenance for pointer-bearing aggregate members (#1544)](https://github.com/CrossGL/crosstl/pull/3046) in [CrossGL/crosstl](https://github.com/CrossGL/crosstl)
 - 🟢 In review · 2026-10-25 · [AVR8: add a language variant for devices with a 12-bit wrapping PC](https://github.com/NationalSecurityAgency/ghidra/pull/10021) in [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra)
 - 🟢 In review · 2026-10-25 · [feat(core): add rate-limit and circuit-breaker metrics](https://github.com/kubeflow/mcp-server/pull/472) in [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server)
 - 🟢 In review · 2026-10-24 · [PackedDatabase: bound unpacking and clean up after a failed unpack](https://github.com/NationalSecurityAgency/ghidra/pull/10022) in [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra)
@@ -71,7 +179,20 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 
 ---
 
+<a id="projects"></a>
+
 ## 🚀 Featured projects
+
+<!-- DYNAMIC:PROJECT_CARDS:START -->
+<p align="center">
+<a href="https://github.com/RANJITHROSAN17/cardiolens-3d-risk"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=cardiolens-3d-risk&hide_border=true&cache_seconds=86400&theme=github_dark" /><img width="49%" alt="CardioLens 3D repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=cardiolens-3d-risk&hide_border=true&cache_seconds=86400&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/career-forge"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=career-forge&hide_border=true&cache_seconds=86400&theme=github_dark" /><img width="49%" alt="Career Forge repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=career-forge&hide_border=true&cache_seconds=86400&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/GroundingDino"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=GroundingDino&hide_border=true&cache_seconds=86400&theme=github_dark" /><img width="49%" alt="Grounding DINO Auto-Labelling repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=GroundingDino&hide_border=true&cache_seconds=86400&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/yolov3"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=yolov3&hide_border=true&cache_seconds=86400&theme=github_dark" /><img width="49%" alt="YOLOv3 Custom Training repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=yolov3&hide_border=true&cache_seconds=86400&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/musicgenre"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=musicgenre&hide_border=true&cache_seconds=86400&theme=github_dark" /><img width="49%" alt="Music Genre Classification repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=musicgenre&hide_border=true&cache_seconds=86400&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/dsa-mastery-plan-2026"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=dsa-mastery-plan-2026&hide_border=true&cache_seconds=86400&theme=github_dark" /><img width="49%" alt="DSA Mastery Plan 2026 repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=dsa-mastery-plan-2026&hide_border=true&cache_seconds=86400&theme=default" /></picture></a>
+</p>
+<!-- DYNAMIC:PROJECT_CARDS:END -->
 
 <!-- DYNAMIC:PROJECTS:START -->
 | Project | What it is | Stack | ★ | Language | Updated |
@@ -86,6 +207,8 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 
 ---
 
+<a id="experience"></a>
+
 ## 💼 Experience
 
 | Role | Organisation | Focus |
@@ -93,6 +216,14 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 | **Analyst** | **Accenture** | Machine learning & computer vision |
 | **Computer Vision Intern** | **SeeWise.AI** | Industrial-safety detection — PPE, people and machinery detection for workplace safety |
 | **Open-Source Contributor** | Merged: CrossGL, Ultralytics, AWS Samples, Opencollab MCP · In review: Google Research, Microsoft, OpenAI, Kubeflow, NSA Ghidra (live counts above) | Bug fixes, metrics/observability, backend lowering, tests, CI hardening |
+
+---
+
+### 🤝 How I contribute
+
+- **Reproduce first, patch second** — every fix starts from the failing case, not a guess
+- **Smallest defensible change** — focused PRs a maintainer can actually review, with tests/conformance runs where the project has a harness
+- **Review-friendly** — I stay on the PR thread until it's merged or closed; the fastest way to reach me is right there
 
 ---
 
@@ -104,20 +235,13 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 
 **Via open source** I also read and patch code in Go, Java, Rust and shader languages (GLSL / HLSL / Slang / WGSL) when the project calls for it.
 
-<p>
-  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
-  <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white" />
-  <img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white" />
-  <img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white" />
-  <img alt="OpenCV" src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white" />
-  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white" />
-  <img alt="React" src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" />
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" />
-  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" />
-  <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white" />
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,fastapi,react,ts,js,threejs,vite,cpp,docker,linux,git,github&perline=8" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, FastAPI, React, TypeScript, JavaScript, three.js, Vite, C++, Docker, Linux, Git, GitHub" />
 </p>
 
 ---
+
+<a id="stats"></a>
 
 ## 📊 GitHub stats
 
@@ -144,9 +268,13 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 
 ---
 
+<a id="contact"></a>
+
 ## 📫 Contact
 
 **[LinkedIn](https://www.linkedin.com/in/ranjithrosan17)** · open an issue on any repository above — I reply. If you're a maintainer reviewing one of my PRs: thank you, and the fastest way to reach me is right there on the PR thread.
+
+<sub>Curious how this page maintains itself? <a href="./docs/AUTOMATION.md">docs/AUTOMATION.md</a> explains the daily updater, its honesty rules, and how to reuse it.</sub>
 
 <!-- DYNAMIC:UPDATED:START -->
 <sub>🤖 This profile is **auto-updated daily** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **25 Oct 2026**. On GitHub since 2021 · 23 public repos · 10 followers.</sub>

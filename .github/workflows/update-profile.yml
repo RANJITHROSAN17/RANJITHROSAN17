@@ -34,6 +34,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Unit tests (fail fast - a broken updater must not publish)
+        run: python -m unittest discover -s .github/scripts -p "test_*.py" -v
+
       - name: Regenerate dynamic sections
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

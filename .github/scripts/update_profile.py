@@ -302,12 +302,25 @@ def build_blocks() -> dict[str, str]:
         f"🟢 **In review** = open PR, not yet merged - I don't claim orgs I haven't landed in (yet)."
     )
 
+    # --- hero impact badges (numbers regenerate daily) ---
+    impact_badges = (
+        '<p align="center">\n'
+        f'  <a href="{search_url("", external_only=True)}"><img alt="{len(external)} external pull requests" src="https://img.shields.io/badge/External_PRs-{len(external)}-1f6feb?style=flat" /></a>\n'
+        f'  <a href="{search_url("is:merged", external_only=True)}"><img alt="{len(ext_merged)} PRs merged upstream" src="https://img.shields.io/badge/Merged_upstream-{len(ext_merged)}-8250df?style=flat" /></a>\n'
+        f'  <a href="{search_url("is:open", external_only=True)}"><img alt="{len(ext_open)} PRs in review" src="https://img.shields.io/badge/In_review-{len(ext_open)}-1f883d?style=flat" /></a>\n'
+        f'  <img alt="{len(external_repos)} external projects" src="https://img.shields.io/badge/External_projects-{len(external_repos)}-555555?style=flat" />\n'
+        '</p>'
+    )
+
     # --- OSS table ---
     rows = [
         "| Organisation | Project | What my PRs touch | 🟣 Merged | 🟢 In review | Latest PR |",
         "|---|---|---|---:|---:|---|",
     ]
     featured_keys = set()
+    snapshot_merged: list[str] = []
+    snapshot_review: list[str] = []
+    detail_sections: list[str] = []
     def add_row(repo: str, org: str, focus: str):
         stats = by_repo.get(repo) or next(
             (v for k, v in by_repo.items() if k.lower() == repo.lower()), None
@@ -319,8 +332,26 @@ def build_blocks() -> dict[str, str]:
         latest = sorted(stats["prs"], key=lambda p: p["updated_at"], reverse=True)[0]
         latest_no = latest["html_url"].rstrip("/").split("/")[-1]
         state_icon = "🟣" if is_merged(latest) else "🟢"
+        owner = repo.split("/")[0]
+        avatar = (f'<img src="https://github.com/{owner}.png?size=40" '
+                  f'width="18" height="18" alt="{owner} logo" /> ')
+        if stats["merged"]:
+            snapshot_merged.append(f"[{esc(org)}](https://github.com/{repo})")
+        if stats["open"]:
+            snapshot_review.append(f"[{esc(org)}](https://github.com/{repo})")
+        prs_sorted = sorted(stats["prs"], key=lambda p: p["updated_at"], reverse=True)
+        prs_sorted = sorted(prs_sorted, key=is_merged, reverse=True)  # merged first
+        bullets = [
+            f"- {'🟣 Merged' if is_merged(pr) else '🟢 In review'} · {pr['updated_at'][:10]} · "
+            f"[{esc(pr['title'])}]({pr['html_url']})"
+            for pr in prs_sorted
+        ]
+        detail_sections.append(
+            f"#### {avatar}{esc(org)} — [{repo}](https://github.com/{repo}) · "
+            f"{stats['merged']} merged · {stats['open']} in review\n\n" + "\n".join(bullets)
+        )
         rows.append(
-            f"| **{esc(org)}** | [{repo}](https://github.com/{repo}){star_txt} "
+            f"| {avatar}**{esc(org)}** | [{repo}](https://github.com/{repo}){star_txt} "
             f"| {esc(focus)} | {stats['merged'] or '·'} | {stats['open'] or '·'} "
             f"| {state_icon} [#{latest_no}]({latest['html_url']}) |"
         )
@@ -347,6 +378,20 @@ def build_blocks() -> dict[str, str]:
             f"\n\n<sub>Plus {other_merged} earlier merged PRs in smaller projects - "
             f"[see every upstream-merged PR]({search_url('is:merged', external_only=True)}).</sub>"
         )
+
+    merged_line = " · ".join(snapshot_merged)
+    if other_merged > 0:
+        merged_line += f" · +{other_merged} earlier in smaller projects"
+    oss_snapshot = (
+        f"**🟣 Merged upstream in:** {merged_line}\n\n"
+        f"**🟢 Currently in review at:** {' · '.join(snapshot_review)}"
+    )
+    oss_details = (
+        "<details>\n<summary><strong>📂 Expand — every featured PR, "
+        "grouped by organisation (auto-updated)</strong></summary>\n\n"
+        + "\n\n".join(detail_sections)
+        + "\n\n</details>"
+    )
 
     # --- recent PRs ---
     recent_src = [
@@ -395,6 +440,23 @@ def build_blocks() -> dict[str, str]:
         )
     projects = "\n".join(proj_rows)
 
+    # --- visual project cards ---
+    cards = []
+    for fp in FEATURED_PROJECTS:
+        meta = own_by_name.get(fp["repo"].lower())
+        if not meta:
+            continue
+        rn = meta["name"]
+        base = (f"https://github-readme-stats.vercel.app/api/pin/?username={USER}"
+                f"&repo={rn}&hide_border=true&cache_seconds=86400")
+        cards.append(
+            f'<a href="{meta["html_url"]}"><picture>'
+            f'<source media="(prefers-color-scheme: dark)" srcset="{base}&theme=github_dark" />'
+            f'<img width="49%" alt="{esc(fp["name"])} repository card" src="{base}&theme=default" />'
+            f'</picture></a>'
+        )
+    project_cards = '<p align="center">\n' + "\n".join(cards) + "\n</p>"
+
     # --- stats cards (exclude forks so top-languages reflects *my* code) ---
     fork_names = [r["name"] for r in own_repos if r.get("fork")]
     exclude = urllib.parse.quote(",".join(fork_names))
@@ -425,6 +487,10 @@ def build_blocks() -> dict[str, str]:
     )
 
     return {
+        "IMPACT_BADGES": impact_badges,
+        "OSS_SNAPSHOT": oss_snapshot,
+        "OSS_DETAILS": oss_details,
+        "PROJECT_CARDS": project_cards,
         "OSS_SUMMARY": summary,
         "OSS_TABLE": oss_table,
         "RECENT_PRS": recent,

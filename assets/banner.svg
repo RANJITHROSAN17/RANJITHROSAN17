@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Ranjith Rosan — Analyst at Accenture</title>
+  <desc id="desc">Machine Learning and Computer Vision engineer and open-source contributor based in Chennai, India. A computer-vision bounding box frames a small neural network diagram.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0d2137"/>
+      <stop offset="1" stop-color="#123f67"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="0.55" stop-color="#f778ba"/>
+      <stop offset="1" stop-color="#ffa657"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.35" r="0.55">
+      <stop offset="0" stop-color="#58a6ff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#58a6ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="300" rx="16" fill="url(#glow)"/>
+
+  <!-- faint blueprint grid -->
+  <g stroke="#58a6ff" stroke-opacity="0.07" stroke-width="1">
+    <path d="M60 0v300M140 0v300M220 0v300M300 0v300M380 0v300M460 0v300M540 0v300M620 0v300M700 0v300M780 0v300M860 0v300M940 0v300M1020 0v300M1100 0v300"/>
+    <path d="M0 60h1200M0 120h1200M0 180h1200M0 240h1200"/>
+  </g>
+
+  <!-- computer-vision bounding box + neural network (right) -->
+  <g>
+    <rect x="845" y="58" width="270" height="184" fill="#58a6ff" fill-opacity="0.05"/>
+    <!-- corner brackets -->
+    <path d="M845 88V58h30M1085 58h30v30M1115 212v30h-30M875 242H845v-30" fill="none" stroke="#7ee0ff" stroke-width="4" stroke-linecap="square"/>
+    <!-- label tag -->
+    <rect x="845" y="30" width="196" height="28" fill="#7ee0ff"/>
+    <text x="857" y="49" font-family="Consolas, Menlo, monospace" font-size="15" font-weight="bold" fill="#07111f">vision_model · 0.99</text>
+    <!-- connections -->
+    <g stroke="#58a6ff" stroke-opacity="0.55" stroke-width="1.6">
+      <path d="M895 95 955 80M895 95 960 118M895 95 955 150M895 140 955 80M895 140 960 118M895 140 955 150M895 140 950 185M895 188 960 118M895 188 955 150M895 188 950 185"/>
+      <path d="M955 80 1028 105M960 118 1028 105M960 118 1032 148M955 150 1032 148M950 185 1032 148M955 150 1025 195M950 185 1025 195"/>
+      <path d="M1028 105 1078 132M1032 148 1078 132M1032 148 1078 172M1025 195 1078 172"/>
+    </g>
+    <!-- nodes -->
+    <g fill="#0d2137" stroke-width="2.5">
+      <circle cx="895" cy="95" r="10" stroke="#7ee0ff"/><circle cx="895" cy="140" r="10" stroke="#7ee0ff"/><circle cx="895" cy="188" r="10" stroke="#7ee0ff"/>
+      <circle cx="955" cy="80" r="10" stroke="#58a6ff"/><circle cx="960" cy="118" r="10" stroke="#58a6ff"/><circle cx="955" cy="150" r="10" stroke="#58a6ff"/><circle cx="950" cy="185" r="10" stroke="#58a6ff"/>
+      <circle cx="1028" cy="105" r="10" stroke="#f778ba"/><circle cx="1032" cy="148" r="10" stroke="#f778ba"/><circle cx="1025" cy="195" r="10" stroke="#f778ba"/>
+      <circle cx="1078" cy="132" r="11" stroke="#ffa657"/><circle cx="1078" cy="172" r="11" stroke="#ffa657"/>
+    </g>
+    <!-- small tag bottom -->
+    <rect x="890" y="212" width="158" height="24" fill="#f778ba"/>
+    <text x="900" y="229" font-family="Consolas, Menlo, monospace" font-size="13.5" font-weight="bold" fill="#07111f">served · fastapi</text>
+  </g>
+
+  <!-- text (left) -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="56" y="38" width="232" height="28" rx="14" fill="#1f883d"/>
+    <circle cx="74" cy="52" r="5" fill="#ffffff"/>
+    <text x="86" y="58" font-size="13.5" font-weight="700" letter-spacing="1.2" fill="#ffffff">OPEN TO ML / CV ROLES</text>
+
+    <text x="54" y="122" font-size="57" font-weight="800" fill="#ffffff">Ranjith Rosan</text>
+    <text x="56" y="158" font-size="23.5" font-weight="600" fill="#c9d1d9">Analyst @ Accenture — Machine Learning &amp; Computer Vision</text>
+    <text x="56" y="192" font-size="18.5" fill="#9fb3c8">Open-source contributor · ex-CV Intern @ SeeWise.AI · Chennai, Tamil Nadu, India</text>
+
+    <text x="56" y="232" font-family="Consolas, Menlo, monospace" font-size="16.5" fill="#58a6ff">data → model → API → UI → deployment</text>
+    <text x="56" y="260" font-family="Consolas, Menlo, monospace" font-size="14.5" fill="#6e85a3">small, well-documented ML systems — limits stated honestly</text>
+  </g>
+
+  <rect x="0" y="292" width="1200" height="8" fill="url(#accent)"/>
+</svg>
