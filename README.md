@@ -4,7 +4,7 @@
 <p align="center">
   <a href="https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20%20-user%3ARANJITHROSAN17&type=pullrequests"><img alt="95 external pull requests" src="https://img.shields.io/badge/External_PRs-95-1f6feb?style=flat" /></a>
   <a href="https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests"><img alt="22 PRs merged upstream" src="https://img.shields.io/badge/Merged_upstream-22-8250df?style=flat" /></a>
-  <a href="https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests"><img alt="33 PRs in review" src="https://img.shields.io/badge/In_review-33-1f883d?style=flat" /></a>
+  <a href="https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests"><img alt="32 PRs in review" src="https://img.shields.io/badge/In_review-32-1f883d?style=flat" /></a>
   <img alt="53 external projects" src="https://img.shields.io/badge/External_projects-53-555555?style=flat" />
 </p>
 <!-- DYNAMIC:IMPACT_BADGES:END -->
@@ -41,7 +41,7 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 ## 🌍 Open-source contributions — by company / organisation
 
 <!-- DYNAMIC:OSS_SUMMARY:START -->
-> **95 pull requests to 53 external projects** · [**22 merged upstream**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests) · [**33 in review right now**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests) · auto-updated 27 Oct 2026 - every number below links to a live search you can verify.
+> **95 pull requests to 53 external projects** · [**22 merged upstream**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests) · [**32 in review right now**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests) · auto-updated 28 Oct 2026 - every number below links to a live search you can verify.
 >
 > Status key: 🟣 **Merged** = merged upstream &nbsp;·&nbsp; 🟢 **In review** = open PR, not yet merged - I don't claim orgs I haven't landed in (yet).
 <!-- DYNAMIC:OSS_SUMMARY:END -->
@@ -165,7 +165,6 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 ### ⚡ Latest merged & in-review pull requests
 
 <!-- DYNAMIC:RECENT_PRS:START -->
-- 🟢 In review · 2026-10-26 · [fix(converter,core,periphery): allow 2-arg ERC-223 transfer to Dex223Pool and SwapRouter (Bounty #38)](https://github.com/EthereumCommonwealth/Dex223-contracts/pull/122) in [EthereumCommonwealth/Dex223-contracts](https://github.com/EthereumCommonwealth/Dex223-contracts)
 - 🟢 In review · 2026-10-26 · [AVR8: add a language variant for devices with a 12-bit wrapping PC](https://github.com/NationalSecurityAgency/ghidra/pull/10021) in [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra)
 - 🟢 In review · 2026-10-26 · [Create functions at .eh_frame FDE starts that are not .cold pieces](https://github.com/NationalSecurityAgency/ghidra/pull/10019) in [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra)
 - 🟣 Merged · 2026-10-26 · [Refuse HLSL dx::MaybeReorderThread for targets other than Direct3D](https://github.com/CrossGL/crosstl/pull/3050) in [CrossGL/crosstl](https://github.com/CrossGL/crosstl)
@@ -177,6 +176,7 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 - 🟢 In review · 2026-10-25 · [fix(desktop): raise V8 heap ceiling for desktop typecheck (#144459)](https://github.com/NousResearch/hermes-agent/pull/144479) in [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 - 🟢 In review · 2026-10-25 · [Scope data analyst table context lookups by schema](https://github.com/openai/openai-cookbook/pull/3239) in [openai/openai-cookbook](https://github.com/openai/openai-cookbook)
 - 🟢 In review · 2026-10-25 · [feat(core): add rate-limit and circuit-breaker metrics](https://github.com/kubeflow/mcp-server/pull/472) in [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server)
+- 🟢 In review · 2026-10-24 · [git: discard files by literal pathspec so a file named `*` cannot wipe the rest](https://github.com/microsoft/vscode/pull/344032) in [microsoft/vscode](https://github.com/microsoft/vscode)
 <!-- DYNAMIC:RECENT_PRS:END -->
 
 ---
@@ -254,8 +254,8 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
     <img height="170" alt="GitHub stats for RANJITHROSAN17" src="https://github-readme-stats.vercel.app/api?username=RANJITHROSAN17&show_icons=true&include_all_commits=true&hide_border=true&theme=default&cache_seconds=1800" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=RANJITHROSAN17&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo=Dex223-contracts%2Chermes-agent%2Copenai-cookbook%2Ccrosstl%2Cghidra%2Cclaude-code-action%2Cclaude-code%2Carc-node%2Carc-remote-signer%2Cmalachite%2Cvscode%2Cgoogle-research%2Cmcp-server%2Ccostura&cache_seconds=1800" />
-    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RANJITHROSAN17&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo=Dex223-contracts%2Chermes-agent%2Copenai-cookbook%2Ccrosstl%2Cghidra%2Cclaude-code-action%2Cclaude-code%2Carc-node%2Carc-remote-signer%2Cmalachite%2Cvscode%2Cgoogle-research%2Cmcp-server%2Ccostura&cache_seconds=1800" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=RANJITHROSAN17&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo=hermes-agent%2Copenai-cookbook%2Ccrosstl%2Cghidra%2Cclaude-code-action%2Cclaude-code%2Carc-node%2Carc-remote-signer%2Cmalachite%2Cvscode%2Cgoogle-research%2Cmcp-server%2Ccostura&cache_seconds=1800" />
+    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RANJITHROSAN17&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo=hermes-agent%2Copenai-cookbook%2Ccrosstl%2Cghidra%2Cclaude-code-action%2Cclaude-code%2Carc-node%2Carc-remote-signer%2Cmalachite%2Cvscode%2Cgoogle-research%2Cmcp-server%2Ccostura&cache_seconds=1800" />
   </picture>
 </p>
 <p align="center">
@@ -279,5 +279,5 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 <sub>Curious how this page maintains itself? <a href="./docs/AUTOMATION.md">docs/AUTOMATION.md</a> explains the daily updater, its honesty rules, and how to reuse it.</sub>
 
 <!-- DYNAMIC:UPDATED:START -->
-<sub>🤖 This profile is **auto-updated daily** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **27 Oct 2026**. On GitHub since 2021 · 25 public repos · 11 followers.</sub>
+<sub>🤖 This profile is **auto-updated daily** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **28 Oct 2026**. On GitHub since 2021 · 25 public repos · 11 followers.</sub>
 <!-- DYNAMIC:UPDATED:END -->
