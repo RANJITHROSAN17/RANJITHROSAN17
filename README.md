@@ -59,7 +59,7 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 | <img src="https://github.com/microsoft.png?size=40" width="18" height="18" alt="microsoft logo" /> **Microsoft** | [microsoft/vscode](https://github.com/microsoft/vscode) (★194k) | VS Code Git extension safety - literal-pathspec discard, scp-like clone folder names | · | 2 | 🟢 [#344032](https://github.com/microsoft/vscode/pull/344032) |
 | <img src="https://github.com/openai.png?size=40" width="18" height="18" alt="openai logo" /> **OpenAI** | [openai/openai-cookbook](https://github.com/openai/openai-cookbook) (★77k) | Data-analyst cookbook - schema-scoped table-context lookups | · | 1 | 🟢 [#3239](https://github.com/openai/openai-cookbook/pull/3239) |
 | <img src="https://github.com/NationalSecurityAgency.png?size=40" width="18" height="18" alt="NationalSecurityAgency logo" /> **NSA - Ghidra** | [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) (★95k) | Reverse-engineering framework - AVR8 12-bit PC variant, PackedDatabase unpack hardening, .eh_frame analysis | · | 2 | 🟢 [#10021](https://github.com/NationalSecurityAgency/ghidra/pull/10021) |
-| <img src="https://github.com/CrossGL.png?size=40" width="18" height="18" alt="CrossGL logo" /> **CrossGL** | [CrossGL/crosstl](https://github.com/CrossGL/crosstl) (★1.6k) | Shader transpiler (GLSL/HLSL/Metal/SPIR-V/Slang/WGSL) - backend lowering, resource binding & provenance, conformance harness | 10 | · | 🟣 [#3050](https://github.com/CrossGL/crosstl/pull/3050) |
+| <img src="https://github.com/CrossGL.png?size=40" width="18" height="18" alt="CrossGL logo" /> **CrossGL** | [CrossGL/crosstl](https://github.com/CrossGL/crosstl) (★1.7k) | Shader transpiler (GLSL/HLSL/Metal/SPIR-V/Slang/WGSL) - backend lowering, resource binding & provenance, conformance harness | 10 | · | 🟣 [#3050](https://github.com/CrossGL/crosstl/pull/3050) |
 | <img src="https://github.com/kubeflow.png?size=40" width="18" height="18" alt="kubeflow logo" /> **Kubeflow** | [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server) (★56) | MCP server for Kubeflow Trainer - rate-limit/circuit-breaker & RED metrics, schedulable-GPU counting, training lifecycle fixes | · | 8 | 🟢 [#487](https://github.com/kubeflow/mcp-server/pull/487) |
 | <img src="https://github.com/NousResearch.png?size=40" width="18" height="18" alt="NousResearch logo" /> **Nous Research** | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) (★258k) | Hermes Agent - plugin Settings config_source, managed-worker job scoping, desktop typecheck heap | · | 3 | 🟢 [#144554](https://github.com/NousResearch/hermes-agent/pull/144554) |
 | <img src="https://github.com/ultralytics.png?size=40" width="18" height="18" alt="ultralytics logo" /> **Ultralytics** | [ultralytics/yolov3](https://github.com/ultralytics/yolov3) (★11k) | YOLOv3 object detection - requirements fix | 1 | · | 🟣 [#2333](https://github.com/ultralytics/yolov3/pull/2333) |
@@ -122,7 +122,7 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 
 #### <img src="https://github.com/kubeflow.png?size=40" width="18" height="18" alt="kubeflow logo" /> Kubeflow — [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server) · 0 merged · 8 in review
 
-- 🟢 In review · 2026-10-25 · [fix(core): validate logging format values across configuration sources](https://github.com/kubeflow/mcp-server/pull/487)
+- 🟢 In review · 2026-10-28 · [fix(core): validate logging format values across configuration sources](https://github.com/kubeflow/mcp-server/pull/487)
 - 🟢 In review · 2026-10-25 · [feat(core): add rate-limit and circuit-breaker metrics](https://github.com/kubeflow/mcp-server/pull/472)
 - 🟢 In review · 2026-10-24 · [fix(trainer): stop wait_for_training early when the job is already Complete](https://github.com/kubeflow/mcp-server/pull/479)
 - 🟢 In review · 2026-10-24 · [feat(core): add HTTP RED metrics and a readiness gauge](https://github.com/kubeflow/mcp-server/pull/473)
@@ -165,12 +165,12 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 ### ⚡ Latest merged & in-review pull requests
 
 <!-- DYNAMIC:RECENT_PRS:START -->
+- 🟢 In review · 2026-10-28 · [fix(core): validate logging format values across configuration sources](https://github.com/kubeflow/mcp-server/pull/487) in [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server)
 - 🟢 In review · 2026-10-26 · [AVR8: add a language variant for devices with a 12-bit wrapping PC](https://github.com/NationalSecurityAgency/ghidra/pull/10021) in [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra)
 - 🟢 In review · 2026-10-26 · [Create functions at .eh_frame FDE starts that are not .cold pieces](https://github.com/NationalSecurityAgency/ghidra/pull/10019) in [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra)
 - 🟣 Merged · 2026-10-26 · [Refuse HLSL dx::MaybeReorderThread for targets other than Direct3D](https://github.com/CrossGL/crosstl/pull/3050) in [CrossGL/crosstl](https://github.com/CrossGL/crosstl)
 - 🟣 Merged · 2026-10-25 · [Keep integer min and max integer in CUDA and HIP output](https://github.com/CrossGL/crosstl/pull/3067) in [CrossGL/crosstl](https://github.com/CrossGL/crosstl)
 - 🟣 Merged · 2026-10-25 · [Preserve resource provenance for pointer-bearing aggregate members](https://github.com/CrossGL/crosstl/pull/3046) in [CrossGL/crosstl](https://github.com/CrossGL/crosstl)
-- 🟢 In review · 2026-10-25 · [fix(core): validate logging format values across configuration sources](https://github.com/kubeflow/mcp-server/pull/487) in [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server)
 - 🟢 In review · 2026-10-25 · [fix(tools): scope background jobs started by the managed worker](https://github.com/NousResearch/hermes-agent/pull/144554) in [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 - 🟢 In review · 2026-10-25 · [feat(plugins): list every installed plugin in Settings and bind config_source (#144485)](https://github.com/NousResearch/hermes-agent/pull/144504) in [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 - 🟢 In review · 2026-10-25 · [fix(desktop): raise V8 heap ceiling for desktop typecheck (#144459)](https://github.com/NousResearch/hermes-agent/pull/144479) in [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
@@ -254,8 +254,8 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
     <img height="170" alt="GitHub stats for RANJITHROSAN17" src="https://github-readme-stats.vercel.app/api?username=RANJITHROSAN17&show_icons=true&include_all_commits=true&hide_border=true&theme=default&cache_seconds=1800" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=RANJITHROSAN17&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo=hermes-agent%2Copenai-cookbook%2Ccrosstl%2Cghidra%2Cclaude-code-action%2Cclaude-code%2Carc-node%2Carc-remote-signer%2Cmalachite%2Cvscode%2Cgoogle-research%2Cmcp-server%2Ccostura&cache_seconds=1800" />
-    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RANJITHROSAN17&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo=hermes-agent%2Copenai-cookbook%2Ccrosstl%2Cghidra%2Cclaude-code-action%2Cclaude-code%2Carc-node%2Carc-remote-signer%2Cmalachite%2Cvscode%2Cgoogle-research%2Cmcp-server%2Ccostura&cache_seconds=1800" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=RANJITHROSAN17&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo=hermes-agent%2Copenai-cookbook%2Ccrosstl%2Cghidra%2Cclaude-code-action%2Cclaude-code%2Cvscode%2Cgoogle-research%2Cmcp-server%2Ccostura&cache_seconds=1800" />
+    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RANJITHROSAN17&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo=hermes-agent%2Copenai-cookbook%2Ccrosstl%2Cghidra%2Cclaude-code-action%2Cclaude-code%2Cvscode%2Cgoogle-research%2Cmcp-server%2Ccostura&cache_seconds=1800" />
   </picture>
 </p>
 <p align="center">
@@ -279,5 +279,5 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 <sub>Curious how this page maintains itself? <a href="./docs/AUTOMATION.md">docs/AUTOMATION.md</a> explains the daily updater, its honesty rules, and how to reuse it.</sub>
 
 <!-- DYNAMIC:UPDATED:START -->
-<sub>🤖 This profile is **auto-updated daily** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **28 Oct 2026**. On GitHub since 2021 · 24 public repos · 11 followers.</sub>
+<sub>🤖 This profile is **auto-updated daily** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **28 Oct 2026**. On GitHub since 2021 · 22 public repos · 11 followers.</sub>
 <!-- DYNAMIC:UPDATED:END -->
