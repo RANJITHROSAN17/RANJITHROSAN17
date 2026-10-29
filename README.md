@@ -25,12 +25,13 @@
 
 ---
 
-I build small, well-documented ML systems end to end — data, model, API, UI, deployment — and contribute fixes to the open-source tools I use. Previously a **computer-vision intern at SeeWise.AI**, where I worked on industrial-safety detection (PPE, people, machinery). Lately my open-source work has widened from CV into **AI infrastructure (MCP servers), ML research code, and shader/compiler tooling**.
+I build small, well-documented systems end to end — data, model, API, UI, deployment — and contribute fixes to the open-source tools I use. **Analyst at Accenture**; previously a **computer-vision intern at SeeWise.AI**, working on industrial-safety detection (PPE, people, machinery). My open-source work has widened from CV into **MCP infrastructure and security tooling, ML research code, and shader/compiler backends** — and lately into hackathon builds (*Kannada Saathi*, *Vexar*, *Grace*) that ship with tests and state their limits plainly.
 
 ### 🔭 What I'm focused on now
 
+- **MCP security & AI infrastructure** — [Vexar-MCP](https://github.com/RANJITHROSAN17/Vexar-MCP) (static analysis, SARIF, policy gates for CI) and [vexar-autofix](https://github.com/RANJITHROSAN17/vexar-autofix) (a security agent that must prove its own patches), plus MCP servers for Kubeflow
+- **Agentic payments** — [Grace](https://github.com/RANJITHROSAN17/warden): judging an agent's spend against the business's own PayPal payment history instead of a static ceiling
 - **Machine learning & computer vision** — object detection, auto-labelling, model cards and honest evaluation
-- **AI infrastructure** — Model Context Protocol (MCP) servers for Kubeflow and GitHub workflows
 - **Research & systems code** — maintenance fixes in large, unfamiliar codebases (ML research, shader transpilers, developer tools)
 - **Building in public** — every project below ships with docs, tests or a live demo, and states its limits clearly
 
@@ -41,7 +42,7 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 ## 🌍 Open-source contributions — by company / organisation
 
 <!-- DYNAMIC:OSS_SUMMARY:START -->
-> **95 pull requests to 53 external projects** · [**22 merged upstream**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests) · [**8 in review right now**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests) · auto-updated 29 Oct 2026 - every number below links to a live search you can verify.
+> **95 pull requests to 53 external projects** · [**22 merged upstream**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests) · [**8 in review right now**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests) · auto-updated 30 Oct 2026 - every number below links to a live search you can verify.
 >
 > Status key: 🟣 **Merged** = merged upstream &nbsp;·&nbsp; 🟢 **In review** = open PR, not yet merged - I don't claim orgs I haven't landed in (yet).
 <!-- DYNAMIC:OSS_SUMMARY:END -->
@@ -59,7 +60,7 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 | <img src="https://github.com/kubeflow.png?size=40" width="18" height="18" alt="kubeflow logo" /> **Kubeflow** | [kubeflow/mcp-server](https://github.com/kubeflow/mcp-server) (★56) | MCP server for Kubeflow Trainer - rate-limit/circuit-breaker & RED metrics, schedulable-GPU counting, training lifecycle fixes | · | 8 | 🟢 [#487](https://github.com/kubeflow/mcp-server/pull/487) |
 | <img src="https://github.com/ultralytics.png?size=40" width="18" height="18" alt="ultralytics logo" /> **Ultralytics** | [ultralytics/yolov3](https://github.com/ultralytics/yolov3) (★11k) | YOLOv3 object detection - requirements fix | 1 | · | 🟣 [#2333](https://github.com/ultralytics/yolov3/pull/2333) |
 | <img src="https://github.com/aws-samples.png?size=40" width="18" height="18" alt="aws-samples logo" /> **Amazon Web Services** | [aws-samples/step-functions-workflows-collection](https://github.com/aws-samples/step-functions-workflows-collection) (★281) | AWS Step Functions workflow collection - template update | 1 | · | 🟣 [#283](https://github.com/aws-samples/step-functions-workflows-collection/pull/283) |
-| <img src="https://github.com/prakhar1605.png?size=40" width="18" height="18" alt="prakhar1605 logo" /> **Opencollab MCP** | [prakhar1605/Opencollab-mcp](https://github.com/prakhar1605/Opencollab-mcp) (★41) | Contribution-matchmaking MCP - shared GitHub paginator, closing-PR vs. plain-mention detection | 2 | · | 🟣 [#216](https://github.com/prakhar1605/Opencollab-mcp/pull/216) |
+| <img src="https://github.com/prakhar1605.png?size=40" width="18" height="18" alt="prakhar1605 logo" /> **Opencollab MCP** | [prakhar1605/Opencollab-mcp](https://github.com/prakhar1605/Opencollab-mcp) (★42) | Contribution-matchmaking MCP - shared GitHub paginator, closing-PR vs. plain-mention detection | 2 | · | 🟣 [#216](https://github.com/prakhar1605/Opencollab-mcp/pull/216) |
 | <img src="https://github.com/golang-cafe.png?size=40" width="18" height="18" alt="golang-cafe logo" /> **Golang Cafe** | [golang-cafe/job-board](https://github.com/golang-cafe/job-board) (★228) | Go job board - golangci-lint workflow updates | 2 | · | 🟣 [#121](https://github.com/golang-cafe/job-board/pull/121) |
 
 <sub>Plus 6 earlier merged PRs in smaller projects - [see every upstream-merged PR](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests).</sub>
@@ -140,11 +141,13 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 <!-- DYNAMIC:PROJECT_CARDS:START -->
 <p align="center">
 <a href="https://github.com/RANJITHROSAN17/cardiolens-3d-risk"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=cardiolens-3d-risk&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="CardioLens 3D repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=cardiolens-3d-risk&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
-<a href="https://github.com/RANJITHROSAN17/career-forge"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=career-forge&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="Career Forge repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=career-forge&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/Vexar-MCP"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=Vexar-MCP&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="Vexar-MCP repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=Vexar-MCP&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/vexar-autofix"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=vexar-autofix&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="vexar-autofix repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=vexar-autofix&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/warden"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=warden&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="Grace repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=warden&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/Kannada-Digital"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=Kannada-Digital&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="Kannada Saathi repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=Kannada-Digital&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
+<a href="https://github.com/RANJITHROSAN17/dsa-mastery-plan-2026"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=dsa-mastery-plan-2026&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="DSA Mastery Plan 2026 repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=dsa-mastery-plan-2026&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
 <a href="https://github.com/RANJITHROSAN17/GroundingDino"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=GroundingDino&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="Grounding DINO Auto-Labelling repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=GroundingDino&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
 <a href="https://github.com/RANJITHROSAN17/yolov3"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=yolov3&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="YOLOv3 Custom Training repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=yolov3&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
-<a href="https://github.com/RANJITHROSAN17/musicgenre"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=musicgenre&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="Music Genre Classification repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=musicgenre&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
-<a href="https://github.com/RANJITHROSAN17/dsa-mastery-plan-2026"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=dsa-mastery-plan-2026&hide_border=true&cache_seconds=1800&theme=github_dark" /><img width="49%" alt="DSA Mastery Plan 2026 repository card" src="https://github-readme-stats.vercel.app/api/pin/?username=RANJITHROSAN17&repo=dsa-mastery-plan-2026&hide_border=true&cache_seconds=1800&theme=default" /></picture></a>
 </p>
 <!-- DYNAMIC:PROJECT_CARDS:END -->
 
@@ -152,12 +155,18 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 | Project | What it is | Stack | ★ | Language | Updated |
 |---|---|---|---:|---|---|
 | **[CardioLens 3D](https://github.com/RANJITHROSAN17/cardiolens-3d-risk)** · [live demo](https://ranjithrosan17.github.io/cardiolens-3d-risk/) | Research-only coronary-artery visualisation - interactive three.js schematic + scikit-learn baseline served from FastAPI, with a model card and documented limits (not for clinical use) | React - three.js - FastAPI - scikit-learn | 1 | JavaScript | 2026-10-28 |
-| **[Career Forge](https://github.com/RANJITHROSAN17/career-forge)** | Local-first resume vs. job-description studio - transparent ATS score, keyword-gap radar, XYZ bullet rewrites, cover letters, STAR interview prep | Python - PyInstaller - GitHub Actions | 0 | Python | 2026-10-18 |
+| **[Vexar-MCP](https://github.com/RANJITHROSAN17/Vexar-MCP)** · [live demo](https://ranjithrosan17.github.io/Vexar-MCP/) | Security, schema and token-cost scanner for MCP servers - static analysis that never runs your code, CI policy gates, SARIF output, and an explicit 'n/a' when a scan could not read a file | Python - MCP - SARIF - GitHub Actions | 1 | Python | 2026-10-28 |
+| **[vexar-autofix](https://github.com/RANJITHROSAN17/vexar-autofix)** · [live demo](https://ranjithrosan17.github.io/vexar-autofix/) | An MCP security agent that has to prove its own patches: the finding must drop, nothing else may break, the target's pytest suite must still pass (Nebius x NVIDIA hackathon build) | Python - NVIDIA Nemotron - Nebius Token Factory - MCP | 1 | Python | 2026-10-28 |
+| **[Grace](https://github.com/RANJITHROSAN17/warden)** | Agentic-payments judge - scores an agent's payment against the business's own PayPal payment history and cites the payments it reasoned from (PayPal AI Hackathon, sandbox only) | Python - PayPal Orders API - payment graph | 1 | Python | 2026-10-28 |
+| **[Kannada Saathi](https://github.com/RANJITHROSAN17/Kannada-Digital)** · [live demo](https://ranjithrosan17.github.io/Kannada-Digital/) | Offline-first, installable Kannada companion for everyday situations - 111 reviewed phrases with audio, strict TypeScript, 133 tests, 0 audit vulnerabilities (Kannada Digital Innovation Hackathon 2026) | React - TypeScript - Vite - PWA | 2 | TypeScript | 2026-10-29 |
+| **[DSA Mastery Plan 2026](https://github.com/RANJITHROSAN17/dsa-mastery-plan-2026)** · [live demo](https://ranjithrosan17.github.io/dsa-mastery-plan-2026/) | 150-day, pattern-first DSA roadmap - 466 verified free LeetCode problems, 33 pattern playbooks, browser-only progress tracker | vanilla JS - GitHub Pages | 3 | JavaScript | 2026-10-23 |
 | **[Grounding DINO Auto-Labelling](https://github.com/RANJITHROSAN17/GroundingDino)** | Zero-shot labelling for object-detection datasets - describe classes in English, review detections, export Pascal VOC | PyTorch - Grounding DINO - supervision | 2 | Python | 2026-10-23 |
 | **[YOLOv3 Custom Training](https://github.com/RANJITHROSAN17/yolov3)** | Step-by-step guide + notebook for training YOLOv3 on your own dataset with Darknet in Google Colab | Darknet - YOLOv3 - Colab | 4 | Jupyter Notebook | 2026-10-23 |
-| **[Music Genre Classification](https://github.com/RANJITHROSAN17/musicgenre)** | GTZAN genre classifier - librosa audio features + Keras MLP, 88.7% test accuracy on 3-second clips | librosa - TensorFlow/Keras - scikit-learn | 2 | Jupyter Notebook | 2026-10-23 |
-| **[DSA Mastery Plan 2026](https://github.com/RANJITHROSAN17/dsa-mastery-plan-2026)** · [live demo](https://ranjithrosan17.github.io/dsa-mastery-plan-2026/) | 150-day, pattern-first DSA roadmap - 466 verified free LeetCode problems, 33 pattern playbooks, browser-only progress tracker | vanilla JS - GitHub Pages | 3 | JavaScript | 2026-10-23 |
 <!-- DYNAMIC:PROJECTS:END -->
+
+<!-- DYNAMIC:MORE_REPOS:START -->
+<sub>**Also public on this profile, just not featured above:** [rock-paper-scissors](https://github.com/RANJITHROSAN17/rock-paper-scissors) (HTML · ★3) · [linear-regression-machine-learning](https://github.com/RANJITHROSAN17/linear-regression-machine-learning) (Jupyter Notebook · ★3) · [musicgenre](https://github.com/RANJITHROSAN17/musicgenre) (Jupyter Notebook · ★2) · [LiveBridge](https://github.com/RANJITHROSAN17/LiveBridge) (JavaScript) · [career-forge](https://github.com/RANJITHROSAN17/career-forge) (Python)</sub>
+<!-- DYNAMIC:MORE_REPOS:END -->
 
 ---
 
@@ -169,7 +178,11 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 |---|---|---|
 | **Analyst** | **Accenture** | Machine learning & computer vision |
 | **Computer Vision Intern** | **SeeWise.AI** | Industrial-safety detection — PPE, people and machinery detection for workplace safety |
-| **Open-Source Contributor** | Merged: CrossGL, Ultralytics, AWS Samples, Opencollab MCP · In review: Google Research, Microsoft, OpenAI, Nous Research, Kubeflow, NSA Ghidra (live counts above) | Bug fixes, metrics/observability, backend lowering, tests, CI hardening |
+| **Open-source contributor** | Independent — upstream PRs across many projects (receipts in [Open Source](#open-source) above) | Bug fixes, metrics/observability, shader backend lowering, tests, CI hardening |
+
+<!-- DYNAMIC:EXPERIENCE_OSS:START -->
+<sub>🟣 **Merged upstream:** [CrossGL](https://github.com/CrossGL/crosstl) · [Ultralytics](https://github.com/ultralytics/yolov3) · [Amazon Web Services](https://github.com/aws-samples/step-functions-workflows-collection) · [Opencollab MCP](https://github.com/prakhar1605/Opencollab-mcp) · [Golang Cafe](https://github.com/golang-cafe/job-board) · +6 earlier in smaller projects &nbsp;·&nbsp; 🟢 **In review:** [Kubeflow](https://github.com/kubeflow/mcp-server) &nbsp;→&nbsp; <a href="#open-source">full breakdown</a></sub>
+<!-- DYNAMIC:EXPERIENCE_OSS:END -->
 
 ---
 
@@ -186,6 +199,8 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 **Core:** Python (pandas, NumPy, scikit-learn, PyTorch, TensorFlow/Keras, OpenCV, FastAPI) · JavaScript/TypeScript (React, three.js, Vite) · C++ · SQL
 
 **MLOps & infra:** Docker · Git & GitHub Actions · MCP (Model Context Protocol) · Kubeflow · Jupyter / Google Colab · Linux
+
+**AI security & agents:** static analysis (AST-based scanners, SARIF, policy-as-code CI gates) · LLM agents on NVIDIA Nemotron via Nebius Token Factory · PayPal Orders API sandbox
 
 **Via open source** I also read and patch code in Go, Java, Rust and shader languages (GLSL / HLSL / Slang / WGSL) when the project calls for it.
 
@@ -228,8 +243,8 @@ I build small, well-documented ML systems end to end — data, model, API, UI, d
 
 **[LinkedIn](https://www.linkedin.com/in/ranjithrosan17)** · open an issue on any repository above — I reply. If you're a maintainer reviewing one of my PRs: thank you, and the fastest way to reach me is right there on the PR thread.
 
-<sub>Curious how this page maintains itself? <a href="./docs/AUTOMATION.md">docs/AUTOMATION.md</a> explains the daily updater, its honesty rules, and how to reuse it.</sub>
+<sub>Curious how this page maintains itself? <a href="./docs/AUTOMATION.md">docs/AUTOMATION.md</a> explains the 2-hourly updater, its honesty rules, and how to reuse it.</sub>
 
 <!-- DYNAMIC:UPDATED:START -->
-<sub>🤖 This profile is **auto-updated daily** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **29 Oct 2026**. On GitHub since 2021 · 14 public repos · 11 followers.</sub>
+<sub>🤖 This profile is **auto-updated every 2 hours** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **30 Oct 2026**. On GitHub since 2021 · 15 public repos · 11 followers.</sub>
 <!-- DYNAMIC:UPDATED:END -->

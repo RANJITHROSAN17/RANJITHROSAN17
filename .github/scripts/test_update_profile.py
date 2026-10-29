@@ -46,6 +46,23 @@ class TestHelpers(unittest.TestCase):
             self.assertIn("/", repo)
         projects = [fp["repo"].lower() for fp in up.FEATURED_PROJECTS]
         self.assertEqual(len(projects), len(set(projects)), "duplicate featured projects")
+        for fp in up.FEATURED_PROJECTS:
+            for key in ("repo", "name", "demo", "highlight", "stack"):
+                self.assertIn(key, fp, f"{fp.get('repo')} missing {key}")
+            self.assertTrue(fp["highlight"].strip(), "empty highlight")
+
+    def test_select_more_repos_excludes_forks_private_profile_and_featured(self):
+        repos = [
+            {"name": "kept", "fork": False, "pushed_at": "2026-01-01T00:00:00Z"},
+            {"name": "newer", "fork": False, "pushed_at": "2026-05-01T00:00:00Z"},
+            {"name": "forked", "fork": True, "pushed_at": "2026-06-01T00:00:00Z"},
+            {"name": "private-repo", "fork": False, "private": True,
+             "pushed_at": "2026-06-02T00:00:00Z"},
+            {"name": "RANJITHROSAN17", "fork": False, "pushed_at": "2026-07-01T00:00:00Z"},
+            {"name": "Featured", "fork": False, "pushed_at": "2026-08-01T00:00:00Z"},
+        ]
+        picked = up.select_more_repos(repos, ["featured"], "RANJITHROSAN17")
+        self.assertEqual([r["name"] for r in picked], ["newer", "kept"])
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # How this profile maintains itself
 
-This repository is my GitHub profile (`github.com/RANJITHROSAN17`). The README you see there is **regenerated from live GitHub API data every day** — nobody hand-edits the numbers.
+This repository is my GitHub profile (`github.com/RANJITHROSAN17`). The README you see there is **regenerated from live GitHub API data every 2 hours** — nobody hand-edits the numbers.
 
 ## Architecture
 
@@ -21,6 +21,8 @@ This repository is my GitHub profile (`github.com/RANJITHROSAN17`). The README y
 - `OSS_DETAILS` — expandable list of *every* featured PR, grouped by organisation
 - `RECENT_PRS` — latest 12 merged/in-review PRs, capped at 3 per repo so one project can't crowd out the rest
 - `PROJECT_CARDS` / `PROJECTS` — visual cards plus a detailed table (live stars, language, last-updated) for featured projects
+- `MORE_REPOS` — every public, non-fork repo **not** in the featured list, rendered with live stars and language. A new project can be momentarily unfeatured but never invisible.
+- `EXPERIENCE_OSS` — the Experience section's "merged upstream / in review" line. It used to be typed by hand, which is how it drifted into claiming organisations whose PRs had been closed unmerged; it is generated now, so it can only state what the API currently says.
 - `STATS_CARDS` — stats / top-languages / streak cards. The top-languages URL is generated with **all of my forks excluded** (`exclude_repo=...`), so forking `microsoft/vscode` to send it a PR can never make TypeScript look like my most-used language.
 - `UPDATED` — last-run stamp
 
@@ -29,8 +31,9 @@ This repository is my GitHub profile (`github.com/RANJITHROSAN17`). The README y
 1. A PR counts as **Merged** only if the API reports `pull_request.merged_at`. Closed-unmerged PRs are counted in totals, never featured.
 2. Open PRs are labelled **In review**. Organisations are never claimed as "contributed to" on the strength of an open PR.
 3. Open-source counters exclude my own repositories (`-user:me` in the linked search queries), so self-merges can't pad the numbers. Every headline number links to the live search that proves it.
-4. On any API failure the script exits non-zero **without touching the README** — a bad day at `api.github.com` degrades to yesterday's profile, never to an empty one.
-5. External widget endpoints are only embedded after being health-checked (a popular activity-graph service was dropped after it started returning HTTP 402).
+4. A curated organisation with no merged and no open PRs renders nothing — and is removed from `CURATED` at the next audit, because an unused entry is a claim waiting to become false.
+5. On any API failure the script exits non-zero **without touching the README** — a bad day at `api.github.com` degrades to the previous profile, never to an empty one.
+6. External widget endpoints are only embedded after being health-checked (a popular activity-graph service was dropped after it started returning HTTP 402).
 
 ## Extending it
 

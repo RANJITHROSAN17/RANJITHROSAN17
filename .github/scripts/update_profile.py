@@ -2,16 +2,25 @@
 """
 Auto-update the GitHub profile README (RANJITHROSAN17/RANJITHROSAN17).
 
-Runs daily via .github/workflows/update-profile.yml using only the Python
-standard library (no pip installs). It refreshes, from the live GitHub API:
+Runs every 2 hours via .github/workflows/update-profile.yml using only the
+Python standard library (no pip installs). It refreshes, from the live GitHub
+API:
 
-  * DYNAMIC:OSS_SUMMARY   - total / merged / in-review PR counters
-  * DYNAMIC:OSS_TABLE     - contributions grouped by company / organisation
-  * DYNAMIC:RECENT_PRS    - latest merged & in-review pull requests
-  * DYNAMIC:PROJECTS      - featured own projects with live stars/language
-  * DYNAMIC:STATS_CARDS   - stats cards with forked repos excluded from
-                            the "top languages" calculation (important once
-                            you start forking big upstreams like vscode!)
+  * DYNAMIC:IMPACT_BADGES  - hero counters (external PRs / merged / review)
+  * DYNAMIC:OSS_SUMMARY    - total / merged / in-review PR counters
+  * DYNAMIC:OSS_SNAPSHOT   - one-line "merged in / in review at" org lists
+  * DYNAMIC:OSS_TABLE      - contributions grouped by company / organisation
+  * DYNAMIC:OSS_DETAILS    - every featured PR, grouped by organisation
+  * DYNAMIC:RECENT_PRS     - latest merged & in-review pull requests
+  * DYNAMIC:PROJECTS       - featured own projects with live stars/language
+  * DYNAMIC:MORE_REPOS     - every public repo not featured above, so no
+                             project can fall off the profile unnoticed
+  * DYNAMIC:EXPERIENCE_OSS - the Experience section's merged/in-review line
+                             (generated, so a stale hand-typed claim cannot
+                             survive here again)
+  * DYNAMIC:STATS_CARDS    - stats cards with forked repos excluded from
+                             the "top languages" calculation (important once
+                             you start forking big upstreams like vscode!)
 
 Honesty rules baked in:
   * A PR is only counted as "Merged" if pull_request.merged_at is set.
@@ -53,30 +62,15 @@ IST = timezone(timedelta(hours=5, minutes=30))
 # --------------------------------------------------------------- curation
 # Featured organisations/projects (order = display order). "focus" is a
 # short, factual description of what the PRs touch - edit it as work evolves.
+#
+# NOTE (Oct 2026 audit): Google Research, Microsoft/vscode, OpenAI cookbook,
+# NSA Ghidra, Nous Research and Costura AI were removed from this list. Their
+# PRs are all closed-and-unmerged, so per the honesty rules below they must
+# never be presented as contributions - add_row() would skip them anyway, but
+# a curated entry that claims an org implies work that does not exist. Any of
+# them that lands >=2 merged PRs is picked up again automatically by the
+# auto-discovery pass further down, so nothing is lost by removing them.
 CURATED = [
-    {
-        "repo": "google-research/google-research",
-        "org": "Google Research",
-        "focus": "ML research maintenance - snerg Flax->Optax migration, uflow "
-                 "multi-dataset training, summae & distributed_shampoo fixes",
-    },
-    {
-        "repo": "microsoft/vscode",
-        "org": "Microsoft",
-        "focus": "VS Code Git extension safety - literal-pathspec discard, "
-                 "scp-like clone folder names",
-    },
-    {
-        "repo": "openai/openai-cookbook",
-        "org": "OpenAI",
-        "focus": "Data-analyst cookbook - schema-scoped table-context lookups",
-    },
-    {
-        "repo": "NationalSecurityAgency/ghidra",
-        "org": "NSA - Ghidra",
-        "focus": "Reverse-engineering framework - AVR8 12-bit PC variant, "
-                 "PackedDatabase unpack hardening, .eh_frame analysis",
-    },
     {
         "repo": "CrossGL/crosstl",
         "org": "CrossGL",
@@ -88,12 +82,6 @@ CURATED = [
         "org": "Kubeflow",
         "focus": "MCP server for Kubeflow Trainer - rate-limit/circuit-breaker & "
                  "RED metrics, schedulable-GPU counting, training lifecycle fixes",
-    },
-    {
-        "repo": "NousResearch/hermes-agent",
-        "org": "Nous Research",
-        "focus": "Hermes Agent - plugin Settings config_source, managed-worker "
-                 "job scoping, desktop typecheck heap",
     },
     {
         "repo": "ultralytics/yolov3",
@@ -112,11 +100,6 @@ CURATED = [
                  "closing-PR vs. plain-mention detection",
     },
     {
-        "repo": "CosturaAI/costura",
-        "org": "Costura AI",
-        "focus": "AI spend attribution - invalid snooze-input test coverage",
-    },
-    {
         "repo": "golang-cafe/job-board",
         "org": "Golang Cafe",
         "focus": "Go job board - golangci-lint workflow updates",
@@ -132,7 +115,9 @@ EXCLUDE_FROM_TABLE = {
 }
 
 # Featured own projects (order = display order). Stars/language/updated are
-# filled in live; "highlight" is yours to edit.
+# filled in live; "highlight" is yours to edit. Anything public that is NOT
+# listed here still shows up automatically in the MORE_REPOS line below the
+# cards, so an unlisted project is never an invisible one.
 FEATURED_PROJECTS = [
     {
         "repo": "cardiolens-3d-risk",
@@ -144,13 +129,48 @@ FEATURED_PROJECTS = [
         "stack": "React - three.js - FastAPI - scikit-learn",
     },
     {
-        "repo": "career-forge",
-        "name": "Career Forge",
+        "repo": "Vexar-MCP",
+        "name": "Vexar-MCP",
+        "demo": "https://ranjithrosan17.github.io/Vexar-MCP/",
+        "highlight": "Security, schema and token-cost scanner for MCP servers - static "
+                     "analysis that never runs your code, CI policy gates, SARIF output, "
+                     "and an explicit 'n/a' when a scan could not read a file",
+        "stack": "Python - MCP - SARIF - GitHub Actions",
+    },
+    {
+        "repo": "vexar-autofix",
+        "name": "vexar-autofix",
+        "demo": "https://ranjithrosan17.github.io/vexar-autofix/",
+        "highlight": "An MCP security agent that has to prove its own patches: the finding "
+                     "must drop, nothing else may break, the target's pytest suite must "
+                     "still pass (Nebius x NVIDIA hackathon build)",
+        "stack": "Python - NVIDIA Nemotron - Nebius Token Factory - MCP",
+    },
+    {
+        "repo": "warden",
+        "name": "Grace",
         "demo": "",
-        "highlight": "Local-first resume vs. job-description studio - transparent ATS "
-                     "score, keyword-gap radar, XYZ bullet rewrites, cover letters, "
-                     "STAR interview prep",
-        "stack": "Python - PyInstaller - GitHub Actions",
+        "highlight": "Agentic-payments judge - scores an agent's payment against the "
+                     "business's own PayPal payment history and cites the payments it "
+                     "reasoned from (PayPal AI Hackathon, sandbox only)",
+        "stack": "Python - PayPal Orders API - payment graph",
+    },
+    {
+        "repo": "Kannada-Digital",
+        "name": "Kannada Saathi",
+        "demo": "https://ranjithrosan17.github.io/Kannada-Digital/",
+        "highlight": "Offline-first, installable Kannada companion for everyday situations "
+                     "- 111 reviewed phrases with audio, strict TypeScript, 133 tests, "
+                     "0 audit vulnerabilities (Kannada Digital Innovation Hackathon 2026)",
+        "stack": "React - TypeScript - Vite - PWA",
+    },
+    {
+        "repo": "dsa-mastery-plan-2026",
+        "name": "DSA Mastery Plan 2026",
+        "demo": "https://ranjithrosan17.github.io/dsa-mastery-plan-2026/",
+        "highlight": "150-day, pattern-first DSA roadmap - 466 verified free LeetCode "
+                     "problems, 33 pattern playbooks, browser-only progress tracker",
+        "stack": "vanilla JS - GitHub Pages",
     },
     {
         "repo": "GroundingDino",
@@ -168,23 +188,30 @@ FEATURED_PROJECTS = [
                      "dataset with Darknet in Google Colab",
         "stack": "Darknet - YOLOv3 - Colab",
     },
-    {
-        "repo": "musicgenre",
-        "name": "Music Genre Classification",
-        "demo": "",
-        "highlight": "GTZAN genre classifier - librosa audio features + Keras MLP, "
-                     "88.7% test accuracy on 3-second clips",
-        "stack": "librosa - TensorFlow/Keras - scikit-learn",
-    },
-    {
-        "repo": "dsa-mastery-plan-2026",
-        "name": "DSA Mastery Plan 2026",
-        "demo": "https://ranjithrosan17.github.io/dsa-mastery-plan-2026/",
-        "highlight": "150-day, pattern-first DSA roadmap - 466 verified free LeetCode "
-                     "problems, 33 pattern playbooks, browser-only progress tracker",
-        "stack": "vanilla JS - GitHub Pages",
-    },
 ]
+
+
+def select_more_repos(own_repos: list[dict], featured: list[str], username: str) -> list[dict]:
+    """Public, non-fork, non-archived repos of mine that are not featured yet.
+
+    Newest push first. This is what keeps an unlisted project from becoming an
+    invisible one: everything I own shows up somewhere on the profile.
+    """
+    skip = {name.lower() for name in featured} | {username.lower()}
+    picked = [
+        repo for repo in own_repos
+        if not repo.get("fork")
+        and not repo.get("archived")
+        and not repo.get("private", False)
+        and repo.get("name", "").lower() not in skip
+    ]
+    # Most-starred first, then most recently pushed: the best work leads, but
+    # a brand-new repo still shows up immediately.
+    return sorted(
+        picked,
+        key=lambda repo: (repo.get("stargazers_count", 0), repo.get("pushed_at") or ""),
+        reverse=True,
+    )
 
 
 # ------------------------------------------------------------- GitHub API
@@ -396,6 +423,25 @@ def build_blocks() -> dict[str, str]:
         + "\n\n</details>"
     )
 
+    # --- Experience section line (generated, never hand-typed) ---
+    # A hand-written "Merged: X · In review: Y" cell drifted out of date
+    # silently in the past; generating it means the Experience table can only
+    # ever state what the API currently says.
+    exp_bits = []
+    if snapshot_merged:
+        merged_text = " · ".join(snapshot_merged)
+        if other_merged > 0:
+            merged_text += f" · +{other_merged} earlier in smaller projects"
+        exp_bits.append("🟣 **Merged upstream:** " + merged_text)
+    if snapshot_review:
+        exp_bits.append("🟢 **In review:** " + " · ".join(snapshot_review))
+    else:
+        exp_bits.append("🟢 **In review:** nothing open at the moment")
+    experience_oss = (
+        "<sub>" + " &nbsp;·&nbsp; ".join(exp_bits)
+        + ' &nbsp;→&nbsp; <a href="#open-source">full breakdown</a></sub>'
+    )
+
     # --- recent PRs ---
     recent_src = [
         p for p in external
@@ -460,6 +506,19 @@ def build_blocks() -> dict[str, str]:
         )
     project_cards = '<p align="center">\n' + "\n".join(cards) + "\n</p>"
 
+    # --- everything else I own (so no project is silently missing) ---
+    more = select_more_repos(own_repos, [fp["repo"] for fp in FEATURED_PROJECTS], USER)
+    more_bits = []
+    for repo in more:
+        stars = repo.get("stargazers_count", 0)
+        language = repo.get("language") or "no language"
+        meta = f"{language} · ★{stars}" if stars else language
+        more_bits.append(f"[{repo['name']}]({repo['html_url']}) ({meta})")
+    more_repos = (
+        "<sub>**Also public on this profile, just not featured above:** "
+        + " · ".join(more_bits) + "</sub>"
+    ) if more_bits else ""
+
     # --- stats cards (exclude forks so top-languages reflects *my* code) ---
     fork_names = [r["name"] for r in own_repos if r.get("fork")]
     exclude = urllib.parse.quote(",".join(fork_names))
@@ -482,7 +541,7 @@ def build_blocks() -> dict[str, str]:
 </p>"""
 
     updated = (
-        f"<sub>🤖 This profile is **auto-updated daily** by "
+        f"<sub>🤖 This profile is **auto-updated every 2 hours** by "
         f"[GitHub Actions](https://github.com/{USER}/{USER}/actions/workflows/update-profile.yml) - "
         f"last run **{datetime.now(IST).strftime('%d %b %Y')}**. "
         f"On GitHub since {user.get('created_at', '')[:4]} · "
@@ -498,6 +557,8 @@ def build_blocks() -> dict[str, str]:
         "OSS_TABLE": oss_table,
         "RECENT_PRS": recent,
         "PROJECTS": projects,
+        "MORE_REPOS": more_repos,
+        "EXPERIENCE_OSS": experience_oss,
         "STATS_CARDS": stats_cards,
         "UPDATED": updated,
     }
