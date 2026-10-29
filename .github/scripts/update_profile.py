@@ -129,6 +129,15 @@ FEATURED_PROJECTS = [
         "stack": "React - three.js - FastAPI - scikit-learn",
     },
     {
+        "repo": "pinch",
+        "name": "Pinch",
+        "demo": "",
+        "highlight": "A private, local-first personal AI assistant you message from Telegram, "
+                     "Discord, Slack, WhatsApp or the phone browser - 21 tools behind an approval "
+                     "gate, reminders that fire, token streaming, and a code-level honesty check",
+        "stack": "Node.js - Ollama - MCP - PWA - zero runtime deps",
+    },
+    {
         "repo": "Vexar-MCP",
         "name": "Vexar-MCP",
         "demo": "https://ranjithrosan17.github.io/Vexar-MCP/",
