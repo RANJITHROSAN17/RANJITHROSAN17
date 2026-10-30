@@ -42,7 +42,7 @@ I build small, well-documented systems end to end — data, model, API, UI, depl
 ## 🌍 Open-source contributions — by company / organisation
 
 <!-- DYNAMIC:OSS_SUMMARY:START -->
-> **95 pull requests to 53 external projects** · [**22 merged upstream**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests) · [**8 in review right now**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests) · auto-updated 30 Oct 2026 - every number below links to a live search you can verify.
+> **95 pull requests to 53 external projects** · [**22 merged upstream**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17&type=pullrequests) · [**8 in review right now**](https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17&type=pullrequests) · auto-updated 31 Oct 2026 - every number below links to a live search you can verify.
 >
 > Status key: 🟣 **Merged** = merged upstream &nbsp;·&nbsp; 🟢 **In review** = open PR, not yet merged - I don't claim orgs I haven't landed in (yet).
 <!-- DYNAMIC:OSS_SUMMARY:END -->
@@ -156,8 +156,8 @@ I build small, well-documented systems end to end — data, model, API, UI, depl
 | Project | What it is | Stack | ★ | Language | Updated |
 |---|---|---|---:|---|---|
 | **[CardioLens 3D](https://github.com/RANJITHROSAN17/cardiolens-3d-risk)** · [live demo](https://ranjithrosan17.github.io/cardiolens-3d-risk/) | Research-only coronary-artery visualisation - interactive three.js schematic + scikit-learn baseline served from FastAPI, with a model card and documented limits (not for clinical use) | React - three.js - FastAPI - scikit-learn | 1 | JavaScript | 2026-10-29 |
-| **[Pinch](https://github.com/RANJITHROSAN17/Pinch)** | A private, local-first personal AI assistant you message from Telegram, Discord, Slack, WhatsApp or the phone browser - 21 tools behind an approval gate, reminders that fire, token streaming, and a code-level honesty check | Node.js - Ollama - MCP - PWA - zero runtime deps | 1 | JavaScript | 2026-10-29 |
-| **[Vexar-MCP](https://github.com/RANJITHROSAN17/Vexar-MCP)** · [live demo](https://ranjithrosan17.github.io/Vexar-MCP/) | Security, schema and token-cost scanner for MCP servers - static analysis that never runs your code, CI policy gates, SARIF output, and an explicit 'n/a' when a scan could not read a file | Python - MCP - SARIF - GitHub Actions | 1 | Python | 2026-10-28 |
+| **[Pinch](https://github.com/RANJITHROSAN17/Pinch)** | A private, local-first personal AI assistant you message from Telegram, Discord, Slack, WhatsApp or the phone browser - 21 tools behind an approval gate, reminders that fire, token streaming, and a code-level honesty check | Node.js - Ollama - MCP - PWA - zero runtime deps | 1 | JavaScript | 2026-10-30 |
+| **[Vexar-MCP](https://github.com/RANJITHROSAN17/Vexar-MCP)** · [live demo](https://ranjithrosan17.github.io/Vexar-MCP/) | Security, schema and token-cost scanner for MCP servers - static analysis that never runs your code, CI policy gates, SARIF output, and an explicit 'n/a' when a scan could not read a file | Python - MCP - SARIF - GitHub Actions | 1 | Python | 2026-10-30 |
 | **[vexar-autofix](https://github.com/RANJITHROSAN17/vexar-autofix)** · [live demo](https://ranjithrosan17.github.io/vexar-autofix/) | An MCP security agent that has to prove its own patches: the finding must drop, nothing else may break, the target's pytest suite must still pass (Nebius x NVIDIA hackathon build) | Python - NVIDIA Nemotron - Nebius Token Factory - MCP | 1 | Python | 2026-10-28 |
 | **[Grace](https://github.com/RANJITHROSAN17/warden)** | Agentic-payments judge - scores an agent's payment against the business's own PayPal payment history and cites the payments it reasoned from (PayPal AI Hackathon, sandbox only) | Python - PayPal Orders API - payment graph | 1 | Python | 2026-10-28 |
 | **[Kannada Saathi](https://github.com/RANJITHROSAN17/Kannada-Digital)** · [live demo](https://ranjithrosan17.github.io/Kannada-Digital/) | Offline-first, installable Kannada companion for everyday situations - 111 reviewed phrases with audio, strict TypeScript, 133 tests, 0 audit vulnerabilities (Kannada Digital Innovation Hackathon 2026) | React - TypeScript - Vite - PWA | 2 | TypeScript | 2026-10-29 |
@@ -248,5 +248,5 @@ I build small, well-documented systems end to end — data, model, API, UI, depl
 <sub>Curious how this page maintains itself? <a href="./docs/AUTOMATION.md">docs/AUTOMATION.md</a> explains the 2-hourly updater, its honesty rules, and how to reuse it.</sub>
 
 <!-- DYNAMIC:UPDATED:START -->
-<sub>🤖 This profile is **auto-updated every 2 hours** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **30 Oct 2026**. On GitHub since 2021 · 17 public repos · 11 followers.</sub>
+<sub>🤖 This profile is **auto-updated every 2 hours** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **31 Oct 2026**. On GitHub since 2021 · 17 public repos · 11 followers.</sub>
 <!-- DYNAMIC:UPDATED:END -->
