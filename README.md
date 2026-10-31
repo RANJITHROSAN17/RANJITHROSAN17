@@ -248,5 +248,5 @@ I build small, well-documented systems end to end — data, model, API, UI, depl
 <sub>Curious how this page maintains itself? <a href="./docs/AUTOMATION.md">docs/AUTOMATION.md</a> explains the 2-hourly updater, its honesty rules, and how to reuse it.</sub>
 
 <!-- DYNAMIC:UPDATED:START -->
-<sub>🤖 This profile is **auto-updated every 2 hours** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **31 Oct 2026**. On GitHub since 2021 · 17 public repos · 11 followers.</sub>
+<sub>🤖 This profile is **auto-updated every 2 hours** by [GitHub Actions](https://github.com/RANJITHROSAN17/RANJITHROSAN17/actions/workflows/update-profile.yml) - last run **31 Oct 2026**. On GitHub since 2021 · 17 public repos · 10 followers.</sub>
 <!-- DYNAMIC:UPDATED:END -->
