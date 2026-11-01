@@ -286,6 +286,10 @@ For research and notebook projects, read their data and evaluation limitations b
 
 <a id="contact"></a>
 
+## About Ranjith Rosan
+
+**[Ranjith Rosan](https://github.com/RANJITHROSAN17)** maintains the original projects linked on this profile and contributes to other open-source projects. Each repository documents its purpose, setup and limitations; upstream contribution status is shown separately from project ownership.
+
 ## 📫 Contact
 
 **[LinkedIn](https://www.linkedin.com/in/ranjithrosan17)** · open an issue on any repository above — I reply. If you're a maintainer reviewing one of my PRs: thank you, and the fastest way to reach me is right there.
