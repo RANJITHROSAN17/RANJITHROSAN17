@@ -170,6 +170,19 @@ I build small, well-documented systems end to end — data, model, API, UI, depl
 
 <a id="projects"></a>
 
+## Find a project by what you want to do
+
+| Your goal | Start here | Evaluation boundary |
+|---|---|---|
+| Check an MCP server before shipping | [Vexar-MCP](https://github.com/RANJITHROSAN17/Vexar-MCP#quick-start) | Static findings and coverage, not a security certification |
+| Explore reviewable model-generated fixes | [vexar-autofix](https://github.com/RANJITHROSAN17/vexar-autofix#quickstart) | Start with mock mode and a disposable clone |
+| Run an assistant on your own device | [Pinch](https://github.com/pinchfoundry/Pinch) | Local model default; powerful tools need careful review |
+| Try a lightweight Windows editor | [Morrow](https://github.com/RANJITHROSAN17/morrow-editor#get-started) | Unsigned early preview; use non-critical files |
+| Learn everyday Kannada | [Kannada Saathi](https://ranjithrosan17.github.io/Kannada-Digital/) | Browser learning aid, not a professional interpreter |
+| Practice interview problem-solving | [DSA Mastery Plan](https://ranjithrosan17.github.io/dsa-mastery-plan-2026/) | Browser progress; export a backup |
+
+For research and notebook projects, read their data and evaluation limitations before interpreting metrics. Contribution status below distinguishes merged work from PRs still in review; an open PR is not an endorsement by its upstream organisation.
+
 ## 🚀 Featured projects
 
 <!-- DYNAMIC:PROJECT_CARDS:START -->
