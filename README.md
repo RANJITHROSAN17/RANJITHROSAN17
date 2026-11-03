@@ -118,7 +118,7 @@ I build small, well-documented systems end to end — data, model, API, UI, depl
 - 🟣 Merged · 2026-11-01 · [fix(voice): validate audio, bound Whisper requests and report doctor status](https://github.com/pinchfoundry/Pinch/pull/58)
 - 🟣 Merged · 2026-11-01 · [feat(documents): local document retrieval with file-line citations](https://github.com/pinchfoundry/Pinch/pull/57)
 - 🟣 Merged · 2026-11-01 · [feat(tools): add your own tools from a JSON manifest, no code required](https://github.com/pinchfoundry/Pinch/pull/56)
-- 🟣 Merged · 2026-11-01 · [feat: social card, architecture diagram, first-contributor welcome](https://github.com/pinchfoundry/Pinch/pull/55)
+- 🟣 Merged · 2026-11-01 · [feat(social card, architecture diagram, first-contributor welcome](https://github.com/pinchfoundry/Pinch/pull/55)
 - 🟣 Merged · 2026-11-01 · [fix: repoint every URL after the org rename](https://github.com/pinchfoundry/Pinch/pull/54)
 - 🟣 Merged · 2026-11-01 · [feat(brand): replace the lobster with the Pinch mark](https://github.com/pinchfoundry/Pinch/pull/53)
 - 🟣 Merged · 2026-11-01 · [fix: repoint every URL at the transferred org](https://github.com/pinchfoundry/Pinch/pull/52)
