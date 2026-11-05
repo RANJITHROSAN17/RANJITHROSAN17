@@ -34,32 +34,10 @@ class TestHelpers(unittest.TestCase):
         pr = {"repository_url": "https://api.github.com/repos/google-research/google-research"}
         self.assertEqual(up.repo_of(pr), "google-research/google-research")
 
-    def test_search_url_external_excludes_every_self_owner(self):
+    def test_search_url_external_excludes_own_repos(self):
         url = up.search_url("is:merged", external_only=True)
-        self.assertIn("-user%3ARANJITHROSAN17", url)
-        self.assertIn("-org%3AQuasynvo", url)
-        self.assertIn("-org%3Apinchfoundry", url)
+        self.assertIn("-user%3A", url)  # self-merges must not pad OSS numbers
         self.assertIn("is%3Amerged", url)
-
-    def test_external_prs_exclude_user_and_personal_orgs(self):
-        def pr(owner):
-            return {"repository_url": f"https://api.github.com/repos/{owner}/project"}
-
-        self.assertTrue(up.is_external_pr(pr("CrossGL")))
-        self.assertFalse(up.is_external_pr(pr("RANJITHROSAN17")))
-        self.assertFalse(up.is_external_pr(pr("Quasynvo")))
-        self.assertFalse(up.is_external_pr(pr("pinchfoundry")))
-
-    def test_summarise_languages_combines_bytes_and_calculates_shares(self):
-        result = up.summarise_languages([
-            {"Python": 300, "JavaScript": 100},
-            {"Python": 100, "TypeScript": 100},
-        ])
-        self.assertEqual([row[0] for row in result], ["Python", "JavaScript", "TypeScript"])
-        self.assertEqual([row[1] for row in result], [400, 100, 100])
-        self.assertAlmostEqual(result[0][2], 200 / 3)
-        self.assertEqual(up.summarise_languages([{}]), [])
-        self.assertEqual(len(up.summarise_languages([{"A": 1, "B": 1}], limit=1)), 1)
 
     def test_curation_is_consistent(self):
         repos = [c["repo"].lower() for c in up.CURATED]

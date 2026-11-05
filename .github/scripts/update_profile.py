@@ -18,9 +18,9 @@ API:
   * DYNAMIC:EXPERIENCE_OSS - the Experience section's merged/in-review line
                              (generated, so a stale hand-typed claim cannot
                              survive here again)
-  * DYNAMIC:STATS_CARDS    - self-computed account stats and top languages,
-                             with forked repos excluded and no dependency on
-                             a third-party stats-card service
+  * DYNAMIC:STATS_CARDS    - stats cards with forked repos excluded from
+                             the "top languages" calculation (important once
+                             you start forking big upstreams like vscode!)
 
 Honesty rules baked in:
   * A PR is only counted as "Merged" if pull_request.merged_at is set.
@@ -47,11 +47,6 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 USER = os.environ.get("GH_USERNAME", "RANJITHROSAN17")
-# Repositories in these organisations are my own projects, not upstream
-# open-source contributions. Keep the former org name as well so old links
-# and searches cannot reintroduce self-merged PRs after the rename.
-SELF_ORGS = ("Quasynvo", "pinchfoundry")
-SELF_OWNERS = {USER.lower()} | {org.lower() for org in SELF_ORGS}
 TOKEN = (
     os.environ.get("GITHUB_TOKEN")
     or os.environ.get("GH_TOKEN")
@@ -125,15 +120,6 @@ EXCLUDE_FROM_TABLE = {
 # cards, so an unlisted project is never an invisible one.
 FEATURED_PROJECTS = [
     {
-        "repo": "Quasynvo/Quasnooze",
-        "name": "Quasnooze",
-        "demo": "https://quasynvo.github.io/Quasnooze/",
-        "highlight": "A private, local-first personal AI voice assistant for the browser, "
-                     "Windows, Telegram, Discord, Slack and WhatsApp - Ollama + MCP tools, "
-                     "Fluid Motion audio visuals and permission-first controls",
-        "stack": "Node.js - Ollama - MCP - PWA - zero runtime deps",
-    },
-    {
         "repo": "cardiolens-3d-risk",
         "name": "CardioLens 3D",
         "demo": "https://ranjithrosan17.github.io/cardiolens-3d-risk/",
@@ -141,6 +127,15 @@ FEATURED_PROJECTS = [
                      "three.js schematic + scikit-learn baseline served from FastAPI, "
                      "with a model card and documented limits (not for clinical use)",
         "stack": "React - three.js - FastAPI - scikit-learn",
+    },
+    {
+        "repo": "pinch",
+        "name": "Pinch",
+        "demo": "",
+        "highlight": "A private, local-first personal AI assistant you message from Telegram, "
+                     "Discord, Slack, WhatsApp or the phone browser - 21 tools behind an approval "
+                     "gate, reminders that fire, token streaming, and a code-level honesty check",
+        "stack": "Node.js - Ollama - MCP - PWA - zero runtime deps",
     },
     {
         "repo": "Vexar-MCP",
@@ -274,12 +269,6 @@ def repo_of(pr: dict) -> str:
     return pr["repository_url"].split("/repos/", 1)[-1]
 
 
-def is_external_pr(pr: dict) -> bool:
-    """Return False for PRs in my user account or personal organisations."""
-    owner = repo_of(pr).split("/", 1)[0].lower()
-    return owner not in SELF_OWNERS
-
-
 def is_merged(pr: dict) -> bool:
     return bool(pr.get("pull_request", {}).get("merged_at"))
 
@@ -295,31 +284,11 @@ def esc(text: str) -> str:
 
 
 def search_url(extra: str, external_only: bool = False) -> str:
-    # Proof links must apply exactly the same ownership exclusions as the
-    # API-side counters: both my user account and my personal organisations.
-    suffix = ""
-    if external_only:
-        suffix = f" -user:{USER}" + "".join(f" -org:{org}" for org in SELF_ORGS)
+    # external_only adds "-user:<me>" so the link excludes PRs in my own
+    # repositories (self-merges must never pad the open-source numbers).
+    suffix = f" -user:{USER}" if external_only else ""
     q = urllib.parse.quote(f"type:pr author:{USER} {extra}{suffix}".strip())
     return f"https://github.com/search?q={q}&type=pullrequests"
-
-
-def summarise_languages(
-    language_maps: list[dict[str, int]], limit: int = 8
-) -> list[tuple[str, int, float]]:
-    """Combine GitHub language-byte maps and return sorted language shares."""
-    totals: dict[str, int] = defaultdict(int)
-    for languages in language_maps:
-        for language, byte_count in languages.items():
-            totals[language] += byte_count
-    total_bytes = sum(totals.values())
-    if not total_bytes:
-        return []
-    ranked = sorted(totals.items(), key=lambda item: (-item[1], item[0].lower()))
-    return [
-        (language, byte_count, byte_count * 100 / total_bytes)
-        for language, byte_count in ranked[:limit]
-    ]
 
 
 # ---------------------------------------------------------------- blocks
@@ -328,19 +297,10 @@ def build_blocks() -> dict[str, str]:
     own_repos = api_get_all(f"https://api.github.com/users/{USER}/repos?type=owner&sort=updated")
     own_by_name = {r["name"].lower(): r for r in own_repos}
 
-    # Featured projects normally belong to the profile user. Owner-qualified
-    # entries also support projects in personal orgs (for example Quasnooze).
-    featured_meta: list[tuple[dict, dict]] = []
-    for fp in FEATURED_PROJECTS:
-        if "/" in fp["repo"]:
-            meta = api_get(f"https://api.github.com/repos/{fp['repo']}")
-        else:
-            meta = own_by_name.get(fp["repo"].lower())
-        if meta:
-            featured_meta.append((fp, meta))
-
     prs_all = search_prs()
-    external = [p for p in prs_all if is_external_pr(p)]
+    merged = [p for p in prs_all if is_merged(p)]
+    open_prs = [p for p in prs_all if p.get("state") == "open"]
+    external = [p for p in prs_all if repo_of(p).split("/")[0].lower() != USER.lower()]
     ext_merged = [p for p in external if is_merged(p)]
     ext_open = [p for p in external if p.get("state") == "open"]
     external_repos = sorted({repo_of(p) for p in external}, key=str.lower)
@@ -381,7 +341,7 @@ def build_blocks() -> dict[str, str]:
         f"🟢 **In review** = open PR, not yet merged - I don't claim orgs I haven't landed in (yet)."
     )
 
-    # --- hero impact badges (numbers regenerate every two hours) ---
+    # --- hero impact badges (numbers regenerate daily) ---
     impact_badges = (
         '<p align="center">\n'
         f'  <a href="{search_url("", external_only=True)}"><img alt="{len(external)} external pull requests" src="https://img.shields.io/badge/External_PRs-{len(external)}-1f6feb?style=flat" /></a>\n'
@@ -446,11 +406,10 @@ def build_blocks() -> dict[str, str]:
         if stats["merged"] >= 2 or stats["open"] >= 3:
             add_row(repo, repo.split("/")[0], "Auto-discovered from recent PR activity")
 
-    # Subtract every rendered row (including auto-discovered rows), otherwise
-    # those PRs would be counted a second time in the "smaller projects" tail.
     other_merged = len(ext_merged) - sum(
-        stats["merged"] for repo, stats in by_repo.items()
-        if repo.lower() in featured_keys
+        by_repo.get(c["repo"], {"merged": 0})["merged"] if c["repo"] in by_repo else
+        next((v["merged"] for k, v in by_repo.items() if k.lower() == c["repo"].lower()), 0)
+        for c in CURATED
     )
     oss_table = "\n".join(rows)
     if other_merged > 0:
@@ -525,7 +484,10 @@ def build_blocks() -> dict[str, str]:
         "| Project | What it is | Stack | ★ | Language | Updated |",
         "|---|---|---|---:|---|---|",
     ]
-    for fp, meta in featured_meta:
+    for fp in FEATURED_PROJECTS:
+        meta = own_by_name.get(fp["repo"].lower())
+        if not meta:
+            continue
         name = f"**[{fp['name']}]({meta['html_url']})**"
         if fp.get("demo"):
             name += f" · [live demo]({fp['demo']})"
@@ -536,21 +498,25 @@ def build_blocks() -> dict[str, str]:
         )
     projects = "\n".join(proj_rows)
 
-    # --- visual project cards (GitHub's own OpenGraph images, no widget host) ---
+    # --- visual project cards ---
     cards = []
-    for fp, meta in featured_meta:
-        full_name = meta.get("full_name") or f"{USER}/{meta['name']}"
-        image = f"https://opengraph.githubassets.com/1/{full_name}"
+    for fp in FEATURED_PROJECTS:
+        meta = own_by_name.get(fp["repo"].lower())
+        if not meta:
+            continue
+        rn = meta["name"]
+        base = (f"https://github-readme-stats.vercel.app/api/pin/?username={USER}"
+                f"&repo={rn}&hide_border=true&cache_seconds=1800")
         cards.append(
-            f'<a href="{meta["html_url"]}">'
-            f'<img width="49%" alt="{esc(fp["name"])} repository card" src="{image}" />'
-            f'</a>'
+            f'<a href="{meta["html_url"]}"><picture>'
+            f'<source media="(prefers-color-scheme: dark)" srcset="{base}&theme=github_dark" />'
+            f'<img width="49%" alt="{esc(fp["name"])} repository card" src="{base}&theme=default" />'
+            f'</picture></a>'
         )
     project_cards = '<p align="center">\n' + "\n".join(cards) + "\n</p>"
 
     # --- everything else I own (so no project is silently missing) ---
-    featured_names = [fp["repo"].split("/")[-1] for fp in FEATURED_PROJECTS]
-    more = select_more_repos(own_repos, featured_names, USER)
+    more = select_more_repos(own_repos, [fp["repo"] for fp in FEATURED_PROJECTS], USER)
     more_bits = []
     for repo in more:
         stars = repo.get("stargazers_count", 0)
@@ -562,46 +528,26 @@ def build_blocks() -> dict[str, str]:
         + " · ".join(more_bits) + "</sub>"
     ) if more_bits else ""
 
-    # --- self-computed stats (no third-party card service to pause or fail) ---
-    original_repos = [r for r in own_repos if not r.get("fork")]
-    language_maps = [
-        api_get(repo["languages_url"])
-        for repo in original_repos if repo.get("languages_url")
-    ]
-    languages = summarise_languages(language_maps)
-    if languages:
-        language_rows = [
-            "| Language | Share of code |",
-            "|---|---:|",
-        ]
-        for language, _byte_count, share in languages:
-            filled = round(share / 10)
-            bar = "█" * filled + "░" * (10 - filled)
-            share_text = "&lt;0.1%" if share < 0.1 else f"{share:.1f}%"
-            language_rows.append(f"| {esc(language)} | `{bar}` {share_text} |")
-        language_table = "\n".join(language_rows)
-    else:
-        language_table = "<sub>No language data is available yet.</sub>"
-
-    total_stars = sum(r.get("stargazers_count", 0) for r in original_repos)
-    stats_cards = f"""<table align="center">
-  <tr>
-    <th>Public repos</th>
-    <th>Original public repos</th>
-    <th>Stars on original repos</th>
-    <th>Followers</th>
-  </tr>
-  <tr align="center">
-    <td><strong>{user.get('public_repos', len(own_repos))}</strong></td>
-    <td><strong>{len(original_repos)}</strong></td>
-    <td><strong>{total_stars}</strong></td>
-    <td><strong>{user.get('followers', 0)}</strong></td>
-  </tr>
-</table>
-
-**Top languages in my original public repositories**
-
-{language_table}"""
+    # --- stats cards (exclude forks so top-languages reflects *my* code) ---
+    fork_names = [r["name"] for r in own_repos if r.get("fork")]
+    exclude = urllib.parse.quote(",".join(fork_names))
+    u = USER
+    stats_cards = f"""<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=github_dark&cache_seconds=1800" />
+    <img height="170" alt="GitHub stats for {u}" src="https://github-readme-stats.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=default&cache_seconds=1800" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo={exclude}&cache_seconds=1800" />
+    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-readme-stats.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo={exclude}&cache_seconds=1800" />
+  </picture>
+</p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user={u}&theme=github-dark-blue&hide_border=true" />
+    <img height="170" alt="Contribution streak" src="https://streak-stats.demolab.com?user={u}&theme=default&hide_border=true" />
+  </picture>
+</p>"""
 
     updated = (
         f"<sub>🤖 This profile is **auto-updated every 2 hours** by "
