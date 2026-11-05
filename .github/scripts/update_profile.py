@@ -47,6 +47,8 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 USER = os.environ.get("GH_USERNAME", "RANJITHROSAN17")
+SELF_ORGS = ("Quasynvo", "pinchfoundry")
+SELF_OWNERS = {USER.lower()} | {org.lower() for org in SELF_ORGS}
 TOKEN = (
     os.environ.get("GITHUB_TOKEN")
     or os.environ.get("GH_TOKEN")
@@ -129,8 +131,8 @@ FEATURED_PROJECTS = [
         "stack": "React - three.js - FastAPI - scikit-learn",
     },
     {
-        "repo": "pinch",
-        "name": "Pinch",
+        "repo": "Quasynvo/Quasnooze",
+        "name": "Quasnooze",
         "demo": "",
         "highlight": "A private, local-first personal AI assistant you message from Telegram, "
                      "Discord, Slack, WhatsApp or the phone browser - 21 tools behind an approval "
@@ -269,6 +271,11 @@ def repo_of(pr: dict) -> str:
     return pr["repository_url"].split("/repos/", 1)[-1]
 
 
+def is_external_pr(pr: dict) -> bool:
+    owner = repo_of(pr).split("/", 1)[0].lower()
+    return owner not in SELF_OWNERS
+
+
 def is_merged(pr: dict) -> bool:
     return bool(pr.get("pull_request", {}).get("merged_at"))
 
@@ -284,9 +291,10 @@ def esc(text: str) -> str:
 
 
 def search_url(extra: str, external_only: bool = False) -> str:
-    # external_only adds "-user:<me>" so the link excludes PRs in my own
-    # repositories (self-merges must never pad the open-source numbers).
-    suffix = f" -user:{USER}" if external_only else ""
+    # Exclude both my user account and personal orgs from the proof links.
+    suffix = ""
+    if external_only:
+        suffix = f" -user:{USER}" + "".join(f" -org:{org}" for org in SELF_ORGS)
     q = urllib.parse.quote(f"type:pr author:{USER} {extra}{suffix}".strip())
     return f"https://github.com/search?q={q}&type=pullrequests"
 
@@ -296,11 +304,19 @@ def build_blocks() -> dict[str, str]:
     user = api_get(f"https://api.github.com/users/{USER}")
     own_repos = api_get_all(f"https://api.github.com/users/{USER}/repos?type=owner&sort=updated")
     own_by_name = {r["name"].lower(): r for r in own_repos}
+    featured_meta = []
+    for fp in FEATURED_PROJECTS:
+        if "/" in fp["repo"]:
+            meta = api_get(f"https://api.github.com/repos/{fp['repo']}")
+        else:
+            meta = own_by_name.get(fp["repo"].lower())
+        if meta:
+            featured_meta.append((fp, meta))
 
     prs_all = search_prs()
     merged = [p for p in prs_all if is_merged(p)]
     open_prs = [p for p in prs_all if p.get("state") == "open"]
-    external = [p for p in prs_all if repo_of(p).split("/")[0].lower() != USER.lower()]
+    external = [p for p in prs_all if is_external_pr(p)]
     ext_merged = [p for p in external if is_merged(p)]
     ext_open = [p for p in external if p.get("state") == "open"]
     external_repos = sorted({repo_of(p) for p in external}, key=str.lower)
@@ -484,10 +500,7 @@ def build_blocks() -> dict[str, str]:
         "| Project | What it is | Stack | ★ | Language | Updated |",
         "|---|---|---|---:|---|---|",
     ]
-    for fp in FEATURED_PROJECTS:
-        meta = own_by_name.get(fp["repo"].lower())
-        if not meta:
-            continue
+    for fp, meta in featured_meta:
         name = f"**[{fp['name']}]({meta['html_url']})**"
         if fp.get("demo"):
             name += f" · [live demo]({fp['demo']})"
@@ -500,12 +513,10 @@ def build_blocks() -> dict[str, str]:
 
     # --- visual project cards ---
     cards = []
-    for fp in FEATURED_PROJECTS:
-        meta = own_by_name.get(fp["repo"].lower())
-        if not meta:
-            continue
+    for fp, meta in featured_meta:
+        owner = meta.get("owner", {}).get("login", USER)
         rn = meta["name"]
-        base = (f"https://github-readme-stats.vercel.app/api/pin/?username={USER}"
+        base = (f"https://github-stats-extended.vercel.app/api/pin/?username={owner}"
                 f"&repo={rn}&hide_border=true&cache_seconds=1800")
         cards.append(
             f'<a href="{meta["html_url"]}"><picture>'
@@ -516,7 +527,8 @@ def build_blocks() -> dict[str, str]:
     project_cards = '<p align="center">\n' + "\n".join(cards) + "\n</p>"
 
     # --- everything else I own (so no project is silently missing) ---
-    more = select_more_repos(own_repos, [fp["repo"] for fp in FEATURED_PROJECTS], USER)
+    featured_names = [fp["repo"].split("/")[-1] for fp in FEATURED_PROJECTS]
+    more = select_more_repos(own_repos, featured_names, USER)
     more_bits = []
     for repo in more:
         stars = repo.get("stargazers_count", 0)
@@ -534,12 +546,12 @@ def build_blocks() -> dict[str, str]:
     u = USER
     stats_cards = f"""<p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=github_dark&cache_seconds=1800" />
-    <img height="170" alt="GitHub stats for {u}" src="https://github-readme-stats.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=default&cache_seconds=1800" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=github_dark&cache_seconds=1800" />
+    <img height="170" alt="GitHub stats for {u}" src="https://github-stats-extended.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=default&cache_seconds=1800" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo={exclude}&cache_seconds=1800" />
-    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-readme-stats.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo={exclude}&cache_seconds=1800" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo={exclude}&cache_seconds=1800" />
+    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-stats-extended.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo={exclude}&cache_seconds=1800" />
   </picture>
 </p>
 <p align="center">

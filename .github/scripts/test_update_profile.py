@@ -37,7 +37,18 @@ class TestHelpers(unittest.TestCase):
     def test_search_url_external_excludes_own_repos(self):
         url = up.search_url("is:merged", external_only=True)
         self.assertIn("-user%3A", url)  # self-merges must not pad OSS numbers
+        self.assertIn("-org%3AQuasynvo", url)
+        self.assertIn("-org%3Apinchfoundry", url)
         self.assertIn("is%3Amerged", url)
+
+    def test_external_prs_exclude_personal_orgs(self):
+        def pr(owner):
+            return {"repository_url": f"https://api.github.com/repos/{owner}/project"}
+
+        self.assertTrue(up.is_external_pr(pr("CrossGL")))
+        self.assertFalse(up.is_external_pr(pr("RANJITHROSAN17")))
+        self.assertFalse(up.is_external_pr(pr("Quasynvo")))
+        self.assertFalse(up.is_external_pr(pr("pinchfoundry")))
 
     def test_curation_is_consistent(self):
         repos = [c["repo"].lower() for c in up.CURATED]
