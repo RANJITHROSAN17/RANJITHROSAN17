@@ -1,46 +1,80 @@
 # How this profile maintains itself
 
-This repository is my GitHub profile (`github.com/RANJITHROSAN17`). The README you see there is **regenerated from live GitHub API data every 2 hours** — nobody hand-edits the numbers.
+This repository powers [my GitHub profile](https://github.com/RANJITHROSAN17). The dashboard is generated from the live GitHub REST and GraphQL APIs **once a day at 00:17 UTC (05:47 IST)**. GitHub can delay scheduled workflows; the timestamp in the README is the last successful data refresh, not a promised execution time.
+
+## What changed in the visual audit
+
+The previous README had useful contribution receipts, but its charts depended on separate third-party renderers, its footer claimed a two-hour refresh while the displayed date was stale, and the workflow committed only `README.md`. That setup could not reliably publish self-hosted chart files or keep their caches fresh.
+
+The dashboard now uses one coordinated visual system, generated in this repository:
+
+| Visualization | Real data source | What it shows |
+|---|---|---|
+| **Live profile signal** | REST profile, repositories and complete PR search | Merged upstream PRs, open PRs, distinct landed projects, stars on original repositories, followers, and actual merge counts for the last 12 calendar months. |
+| **Contribution calendar** | GraphQL `contributionsCollection.contributionCalendar` | 365 daily public contribution counts, GitHub's own intensity quartiles, active days, and current/longest streaks within that window. |
+| **Upstream outcomes** | Complete external PR search | Merged, open and closed-unmerged outcomes, plus the five most active upstream repositories. Closed-unmerged work is not hidden from the outcome total. |
+| **Repository language mix** | REST `/repos/{owner}/{repo}/languages` for every original public repository | GitHub Linguist byte shares, top five languages plus Other. Forks, archived repositories and the profile repository are excluded. |
+| **Six selected project cards** | REST repository metadata | Live stars, forks, primary language and last push; each card links to its repository. The full featured table and unfeatured-repository list remain below the cards. |
+
+All charts have separate light/dark SVGs, descriptive alternative text, visible metric definitions, and no JavaScript, remote fonts or embedded remote images. SVGs are self-hosted under `assets/generated/`. README image URLs include a content hash, so GitHub's image proxy fetches new artwork when the data changes.
 
 ## Architecture
 
 | Piece | Role |
 |---|---|
-| `README.md` | Profile content. Anything between `<!-- DYNAMIC:name:START/END -->` markers is machine-generated; everything else is hand-written. |
-| `.github/scripts/update_profile.py` | Standard-library-only Python updater (no `pip install`, so nothing can break from a dependency release). |
-| `.github/scripts/test_update_profile.py` | Unit tests for the updater's helpers. CI runs them *before* regenerating, so a broken change can't publish a broken profile. |
-| `.github/workflows/update-profile.yml` | Every 2 hours (`17 */2 * * *`) + manual dispatch. Uses only the built-in `GITHUB_TOKEN` — no personal access token exists anywhere in this repo. Commits only when the data actually changed. |
-| `assets/banner.svg` | Self-hosted hero banner (hand-authored SVG — a computer-vision bounding box over a neural network). No external image service involved. |
-| `.github/dependabot.yml` | Keeps the GitHub Actions themselves patched. |
+| `README.md` | Hand-written introduction plus machine-generated content between `<!-- DYNAMIC:name:START/END -->` markers. |
+| `.github/scripts/update_profile.py` | Fetches and validates GitHub data, generates README sections, and publishes all files together. Standard library only. |
+| `.github/scripts/profile_visuals.py` | Pure aggregation helpers and deterministic light/dark SVG rendering. No network calls or runtime dependencies. |
+| `.github/scripts/test_*.py` | Offline tests for metric definitions, complete pagination, calendar integrity, XML safety, cache inputs, history and publication rollback. |
+| `.github/workflows/update-profile.yml` | Daily schedule, manual dispatch, and regeneration when updater code lands on `main`. Tests run before any API refresh. |
+| `data/profile-snapshot.json` | The dated public data behind the current dashboard, source URLs and metric definitions. |
+| `data/profile-history.json` | One real aggregate observation per UTC day, capped at 366 observations. A same-day rerun replaces that day's observation. It never invents historical values. |
+| `assets/banner.svg` | Static identity artwork. Decorative only; it contains no invented performance score. |
 
-## Generated sections
+## Generated README sections
 
-- `IMPACT_BADGES` — hero counters (external PRs, merged upstream, in review, external projects)
-- `OSS_SUMMARY` / `OSS_SNAPSHOT` — one-line totals and "merged in / in review at" organisation lists
-- `OSS_TABLE` — contributions by company/organisation, with upstream stars, per-org merged/in-review counts and latest PR
-- `OSS_DETAILS` — expandable list of *every* featured PR, grouped by organisation
-- `RECENT_PRS` — latest 12 merged/in-review PRs, capped at 3 per repo so one project can't crowd out the rest
-- `PROJECT_CARDS` / `PROJECTS` — visual cards plus a detailed table (live stars, language, last-updated) for featured projects
-- `MORE_REPOS` — every public, non-fork repo **not** in the featured list, rendered with live stars and language. A new project can be momentarily unfeatured but never invisible.
-- `EXPERIENCE_OSS` — the Experience section's "merged upstream / in review" line. It used to be typed by hand, which is how it drifted into claiming organisations whose PRs had been closed unmerged; it is generated now, so it can only state what the API currently says.
-- `STATS_CARDS` — stats / top-languages / streak cards. The top-languages URL is generated with **all of my forks excluded** (`exclude_repo=...`), so forking `microsoft/vscode` to send it a PR can never make TypeScript look like my most-used language.
-- `UPDATED` — last-run stamp
+- `VISUAL_PULSE`, `CONTRIBUTION_GRAPH`, `INSIGHT_CHARTS` — the self-hosted dashboard.
+- `PROJECT_CARDS` — six linked, live repository cards.
+- `OSS_SUMMARY`, `OSS_SNAPSHOT`, `OSS_TABLE`, `OSS_DETAILS`, `RECENT_PRS` — verifiable upstream contribution receipts.
+- `PROJECTS`, `MORE_REPOS` — the complete featured comparison and other original public repositories.
+- `EXPERIENCE_OSS` — generated merged/in-review organisation line.
+- `UPDATED` — the actual successful refresh timestamp and data scope.
 
-## Honesty rules (enforced in code, not intentions)
+Every expected marker must occur exactly once. A missing or duplicated marker fails the refresh instead of silently skipping a chart.
 
-1. A PR counts as **Merged** only if the API reports `pull_request.merged_at`. Closed-unmerged PRs are counted in totals, never featured.
-2. Open PRs are labelled **In review**. Organisations are never claimed as "contributed to" on the strength of an open PR.
-3. Open-source counters exclude my own repositories (`-user:me` in the linked search queries), so self-merges can't pad the numbers. Every headline number links to the live search that proves it.
-4. A curated organisation with no merged and no open PRs renders nothing — and is removed from `CURATED` at the next audit, because an unused entry is a claim waiting to become false.
-5. On any API failure the script exits non-zero **without touching the README** — a bad day at `api.github.com` degrades to the previous profile, never to an empty one.
-6. External widget endpoints are only embedded after being health-checked (a popular activity-graph service was dropped after it started returning HTTP 402).
+## Metric definitions and honesty rules
 
-## Extending it
+1. **Merged** requires `pull_request.merged_at`. An open PR is **in review**, never evidence of upstream acceptance. Monthly merge bars use the merge timestamp, not `updated_at`.
+2. External PR metrics exclude the profile account and the configured personal organisations (`Quasynvo`, `pinchfoundry`). Proof links use the same exclusions.
+3. Search pagination must complete, reconcile with `total_count`, and report `incomplete_results: false`. GitHub Search exposes at most 1,000 results; exceeding that window fails the refresh rather than publishing a partial count.
+4. **Original repositories** means public, non-fork, non-archived repositories owned by the user, excluding the profile repository. Organisation projects can be featured separately but do not inflate personal repository stars or language bytes.
+5. Language percentages are **repository bytes**, not authored lines, time spent or proficiency. Notebooks are included and explicitly labelled.
+6. The contribution calendar is the public activity visible to the built-in Actions token. Private activity is not included. Streaks are limited to the displayed 365-day window; an empty today can leave a current streak ending yesterday.
+7. The daily history starts with the first successful new-system refresh. It does not backfill follower/star history or manufacture a trend line from missing observations.
+8. A required API, validation or rendering failure exits non-zero before publication. The previous README, charts and data remain intact. Filesystem publication stages all changes and rolls back replacements if a write fails.
+9. A renamed, private or missing featured repository fails closed so a broken curated claim is noticed. Update the curation rather than silently presenting an empty card.
 
-- **New organisation:** add one entry to `CURATED` in the updater (repo, display name, one factual line on what the PRs touch). Counts, avatar, stars and the detail list fill in automatically. Any repo reaching ≥2 merged or ≥3 open PRs is also auto-discovered.
-- **New featured project:** add one entry to `FEATURED_PROJECTS`.
-- **Run locally:** `GITHUB_TOKEN=<any valid token> python .github/scripts/update_profile.py` — then `git diff README.md`. Re-running on the same day with unchanged data is a no-op by design.
+## Running and maintaining it
 
-## Security
+The scheduled workflow must be on the default branch (`main`). After merging a change, open **Actions → Update profile README → Run workflow** to refresh immediately.
 
-The workflow runs with the default, short-lived `GITHUB_TOKEN` and the minimum permission it needs (`contents: write`, to commit the README). There are no stored secrets, no third-party write actions, and no personal tokens. If you copy this setup: **never** commit a token, and never paste one into chat, issues, or code.
+Local refresh using the GitHub CLI's existing authentication (no token is printed or saved):
+
+```bash
+GITHUB_TOKEN="$(gh auth token)" python .github/scripts/update_profile.py
+python -m unittest discover -s .github/scripts -p 'test_*.py' -v
+git diff -- README.md assets/generated data
+```
+
+In Actions, the automatically supplied, short-lived `GITHUB_TOKEN` is sufficient for these public-data reads and repository writes. No personal access token or additional secret is required.
+
+- **Change the visual project shortlist:** edit `VISUAL_PROJECTS`; every key must also exist in `FEATURED_PROJECTS`.
+- **Add a featured project or upstream focus:** edit `FEATURED_PROJECTS` or `CURATED`. Keep descriptions factual; live numbers are filled by the updater.
+- **Change the schedule:** edit the cron expression and the README's generated schedule wording together.
+- **Inspect a suspicious number:** open `data/profile-snapshot.json`, follow its source links, then compare the relevant GitHub search or repository endpoint.
+
+The workflow has `contents: write` only, a per-ref concurrency group, a timeout, and no third-party write action. Generated data commits do not match its push-path trigger, so the bot cannot trigger an update loop. It publishes only from `main`; branch runs test and render without pushing.
+
+### Personal-repository branch rules
+
+This is a personal repository. GitHub does not allow the GitHub Actions app itself as a ruleset bypass actor here. For fully automatic daily publishing, the `merge` ruleset must exclude `refs/heads/main` from its pull-request requirement (or otherwise allow direct bot commits to `main`). Keep the rule for feature branches. If `main` remains PR-only, use a daily refresh PR and merge it manually instead. Never commit or paste authentication tokens.

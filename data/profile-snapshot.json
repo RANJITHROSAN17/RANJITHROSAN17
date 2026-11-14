@@ -1,0 +1,2108 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-14T08:30:36+00:00",
+  "as_of": "2026-11-14",
+  "username": "RANJITHROSAN17",
+  "metrics": {
+    "external_prs": 94,
+    "external_projects": 52,
+    "merged_prs": 23,
+    "open_prs": 7,
+    "closed_unmerged_prs": 64,
+    "merged_projects": 12,
+    "original_repos": 13,
+    "original_stars": 49,
+    "followers": 11,
+    "contributions": 902,
+    "active_days": 28,
+    "current_streak": 2,
+    "longest_streak": 16
+  },
+  "contributions": {
+    "from": "2025-11-15",
+    "to": "2026-11-14",
+    "total": 902,
+    "days": [
+      {
+        "date": "2025-11-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-31",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-31",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-31",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-31",
+        "count": 10,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-06-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-09",
+        "count": 12,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-06-10",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-06-11",
+        "count": 14,
+        "level": "SECOND_QUARTILE"
+      },
+      {
+        "date": "2026-06-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-31",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-31",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-20",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-09-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-04",
+        "count": 9,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-05",
+        "count": 18,
+        "level": "SECOND_QUARTILE"
+      },
+      {
+        "date": "2026-10-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-18",
+        "count": 9,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-21",
+        "count": 9,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-23",
+        "count": 8,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-24",
+        "count": 32,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-10-25",
+        "count": 26,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-10-26",
+        "count": 34,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-10-27",
+        "count": 36,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-10-28",
+        "count": 66,
+        "level": "FOURTH_QUARTILE"
+      },
+      {
+        "date": "2026-10-29",
+        "count": 30,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-10-30",
+        "count": 38,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-10-31",
+        "count": 25,
+        "level": "SECOND_QUARTILE"
+      },
+      {
+        "date": "2026-11-01",
+        "count": 173,
+        "level": "FOURTH_QUARTILE"
+      },
+      {
+        "date": "2026-11-02",
+        "count": 84,
+        "level": "FOURTH_QUARTILE"
+      },
+      {
+        "date": "2026-11-03",
+        "count": 44,
+        "level": "FOURTH_QUARTILE"
+      },
+      {
+        "date": "2026-11-04",
+        "count": 33,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-11-05",
+        "count": 36,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-11-06",
+        "count": 51,
+        "level": "FOURTH_QUARTILE"
+      },
+      {
+        "date": "2026-11-07",
+        "count": 34,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-11-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-10",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-13",
+        "count": 20,
+        "level": "SECOND_QUARTILE"
+      },
+      {
+        "date": "2026-11-14",
+        "count": 46,
+        "level": "FOURTH_QUARTILE"
+      }
+    ]
+  },
+  "languages": {
+    "repositories": 13,
+    "total_bytes": 6775285,
+    "items": [
+      {
+        "name": "Jupyter Notebook",
+        "bytes": 3724110
+      },
+      {
+        "name": "Python",
+        "bytes": 1083484
+      },
+      {
+        "name": "TypeScript",
+        "bytes": 1077944
+      },
+      {
+        "name": "JavaScript",
+        "bytes": 594195
+      },
+      {
+        "name": "CSS",
+        "bytes": 139764
+      },
+      {
+        "name": "HTML",
+        "bytes": 119928
+      },
+      {
+        "name": "Rust",
+        "bytes": 31719
+      },
+      {
+        "name": "Shell",
+        "bytes": 2109
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 1488
+      },
+      {
+        "name": "Dockerfile",
+        "bytes": 544
+      }
+    ]
+  },
+  "merge_months": [
+    {
+      "month": "2025-12",
+      "count": 0
+    },
+    {
+      "month": "2026-01",
+      "count": 0
+    },
+    {
+      "month": "2026-02",
+      "count": 0
+    },
+    {
+      "month": "2026-03",
+      "count": 0
+    },
+    {
+      "month": "2026-04",
+      "count": 0
+    },
+    {
+      "month": "2026-05",
+      "count": 0
+    },
+    {
+      "month": "2026-06",
+      "count": 0
+    },
+    {
+      "month": "2026-07",
+      "count": 0
+    },
+    {
+      "month": "2026-08",
+      "count": 0
+    },
+    {
+      "month": "2026-09",
+      "count": 0
+    },
+    {
+      "month": "2026-10",
+      "count": 12
+    },
+    {
+      "month": "2026-11",
+      "count": 1
+    }
+  ],
+  "upstream_repos": [
+    {
+      "repo": "CrossGL/crosstl",
+      "merged": 10,
+      "open": 0
+    },
+    {
+      "repo": "kubeflow/mcp-server",
+      "merged": 1,
+      "open": 7
+    },
+    {
+      "repo": "golang-cafe/job-board",
+      "merged": 2,
+      "open": 0
+    },
+    {
+      "repo": "prakhar1605/Opencollab-mcp",
+      "merged": 2,
+      "open": 0
+    },
+    {
+      "repo": "alyoshenka/neopolitan",
+      "merged": 1,
+      "open": 0
+    },
+    {
+      "repo": "aws-samples/step-functions-workflows-collection",
+      "merged": 1,
+      "open": 0
+    },
+    {
+      "repo": "EricCrosson/git-disjoint",
+      "merged": 1,
+      "open": 0
+    },
+    {
+      "repo": "firstcontributions/first-contributions",
+      "merged": 1,
+      "open": 0
+    },
+    {
+      "repo": "icppWorld/icpp-pro",
+      "merged": 1,
+      "open": 0
+    },
+    {
+      "repo": "mariosknl/Music_Opinions-Ruby-on-Rails",
+      "merged": 1,
+      "open": 0
+    },
+    {
+      "repo": "muke1908/chat-e2ee",
+      "merged": 1,
+      "open": 0
+    },
+    {
+      "repo": "ultralytics/yolov3",
+      "merged": 1,
+      "open": 0
+    }
+  ],
+  "projects": [
+    {
+      "slug": "ranjithrosan17-vexar-mcp",
+      "name": "Vexar-MCP",
+      "repo": "RANJITHROSAN17/Vexar-MCP",
+      "url": "https://github.com/RANJITHROSAN17/Vexar-MCP",
+      "demo": "https://ranjithrosan17.github.io/Vexar-MCP/",
+      "tagline": "Static MCP security checks, CI policy gates and SARIF — without running your code.",
+      "accent": "teal",
+      "stars": 3,
+      "forks": 2,
+      "language": "Python",
+      "pushed_at": "2026-11-03T16:09:37Z"
+    },
+    {
+      "slug": "ranjithrosan17-vexar-autofix",
+      "name": "vexar-autofix",
+      "repo": "RANJITHROSAN17/vexar-autofix",
+      "url": "https://github.com/RANJITHROSAN17/vexar-autofix",
+      "demo": "https://ranjithrosan17.github.io/vexar-autofix/",
+      "tagline": "Reviewable security patches, checked against findings and the target's tests.",
+      "accent": "violet",
+      "stars": 3,
+      "forks": 0,
+      "language": "Python",
+      "pushed_at": "2026-11-02T20:17:27Z"
+    },
+    {
+      "slug": "quasynvo-quasnooze",
+      "name": "Quasnooze",
+      "repo": "Quasynvo/Quasnooze",
+      "url": "https://github.com/Quasynvo/Quasnooze",
+      "demo": "",
+      "tagline": "A local-first AI assistant across web, desktop and the chat apps you already use.",
+      "accent": "blue",
+      "stars": 14,
+      "forks": 5,
+      "language": "JavaScript",
+      "pushed_at": "2026-11-13T13:03:50Z"
+    },
+    {
+      "slug": "ranjithrosan17-wrytrove",
+      "name": "Wrytrove",
+      "repo": "RANJITHROSAN17/Wrytrove",
+      "url": "https://github.com/RANJITHROSAN17/Wrytrove",
+      "demo": "https://ranjithrosan17.github.io/Wrytrove/",
+      "tagline": "A calm Windows code editor with optional local AI. Early preview, limits documented.",
+      "accent": "amber",
+      "stars": 3,
+      "forks": 2,
+      "language": "TypeScript",
+      "pushed_at": "2026-11-14T08:22:53Z"
+    },
+    {
+      "slug": "ranjithrosan17-kannada-digital",
+      "name": "Kannada Saathi",
+      "repo": "RANJITHROSAN17/Kannada-Digital",
+      "url": "https://github.com/RANJITHROSAN17/Kannada-Digital",
+      "demo": "https://ranjithrosan17.github.io/Kannada-Digital/",
+      "tagline": "An offline-first Kannada companion with reviewed phrases and bundled audio.",
+      "accent": "rose",
+      "stars": 4,
+      "forks": 0,
+      "language": "TypeScript",
+      "pushed_at": "2026-11-10T21:06:50Z"
+    },
+    {
+      "slug": "ranjithrosan17-cardiolens-3d-risk",
+      "name": "CardioLens 3D",
+      "repo": "RANJITHROSAN17/cardiolens-3d-risk",
+      "url": "https://github.com/RANJITHROSAN17/cardiolens-3d-risk",
+      "demo": "https://ranjithrosan17.github.io/cardiolens-3d-risk/",
+      "tagline": "Interactive coronary visualisation and a research-only baseline. Not clinical advice.",
+      "accent": "teal",
+      "stars": 3,
+      "forks": 0,
+      "language": "JavaScript",
+      "pushed_at": "2026-11-14T08:09:02Z"
+    }
+  ],
+  "sources": {
+    "profile": "https://api.github.com/users/RANJITHROSAN17",
+    "repositories": "https://api.github.com/users/RANJITHROSAN17/repos?type=owner",
+    "contributions": "https://api.github.com/graphql",
+    "external_prs": "https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20%20-user%3ARANJITHROSAN17%20-org%3AQuasynvo%20-org%3Apinchfoundry&type=pullrequests",
+    "merged_prs": "https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Amerged%20-user%3ARANJITHROSAN17%20-org%3AQuasynvo%20-org%3Apinchfoundry&type=pullrequests",
+    "open_prs": "https://github.com/search?q=type%3Apr%20author%3ARANJITHROSAN17%20is%3Aopen%20-user%3ARANJITHROSAN17%20-org%3AQuasynvo%20-org%3Apinchfoundry&type=pullrequests"
+  },
+  "definitions": {
+    "merged_prs": "External PRs with pull_request.merged_at set; personal account and organisations excluded.",
+    "open_prs": "External PRs currently open; not a claim of upstream acceptance.",
+    "original_repos": "Public, non-fork, non-archived repositories owned by the user, excluding the profile repository.",
+    "original_stars": "Current stars on the original repositories defined above; organisation repositories excluded.",
+    "languages": "Sum of GitHub Linguist language bytes on default branches; not authored lines or skill proficiency.",
+    "contributions": "Public GitHub calendar visible to the built-in Actions token; not a private-activity total.",
+    "streaks": "Consecutive active days within the displayed 365-day window; a zero-count today may end the current streak yesterday."
+  }
+}
