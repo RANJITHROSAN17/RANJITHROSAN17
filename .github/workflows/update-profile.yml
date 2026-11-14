@@ -45,6 +45,9 @@ jobs:
         run: python .github/scripts/update_profile.py
 
       - name: Commit README, charts and real metric history together
+        # Publish only from main. Branch runs still test and render, but do not
+        # fight branch protection or update a non-profile branch automatically.
+        if: github.ref == 'refs/heads/main'
         run: |
           git add README.md assets/generated data/profile-snapshot.json data/profile-history.json
           if git diff --cached --quiet; then

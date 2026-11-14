@@ -73,4 +73,8 @@ In Actions, the automatically supplied, short-lived `GITHUB_TOKEN` is sufficient
 - **Change the schedule:** edit the cron expression and the README's generated schedule wording together.
 - **Inspect a suspicious number:** open `data/profile-snapshot.json`, follow its source links, then compare the relevant GitHub search or repository endpoint.
 
-The workflow has `contents: write` only, a per-ref concurrency group, a timeout, and no third-party write action. Generated data commits do not match its push-path trigger, so the bot cannot trigger an update loop. Never commit or paste authentication tokens.
+The workflow has `contents: write` only, a per-ref concurrency group, a timeout, and no third-party write action. Generated data commits do not match its push-path trigger, so the bot cannot trigger an update loop. It publishes only from `main`; branch runs test and render without pushing.
+
+### Personal-repository branch rules
+
+This is a personal repository. GitHub does not allow the GitHub Actions app itself as a ruleset bypass actor here. For fully automatic daily publishing, the `merge` ruleset must exclude `refs/heads/main` from its pull-request requirement (or otherwise allow direct bot commits to `main`). Keep the rule for feature branches. If `main` remains PR-only, use a daily refresh PR and merge it manually instead. Never commit or paste authentication tokens.
