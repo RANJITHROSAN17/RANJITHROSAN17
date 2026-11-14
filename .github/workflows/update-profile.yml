@@ -1,33 +1,33 @@
 name: Update profile README
 
-# Refreshes the auto-generated sections of README.md (open-source stats by
-# organisation, latest PRs, featured projects, language card) from the live
-# GitHub API. Uses the built-in GITHUB_TOKEN only - no personal token needed.
-
+# Public GitHub data -> validated SVGs + README + audit snapshot.
+# Scheduled workflows run from the default branch; no personal token is needed.
 on:
   schedule:
-    # Every 2 hours at :17 past the hour so new/merged PRs appear promptly
-    # (no-op when nothing changed). Odd minute avoids top-of-hour runner queues.
-    - cron: "17 */2 * * *"
-  workflow_dispatch: {}   # run manually any time from the Actions tab
+    # Daily at 00:17 UTC (05:47 IST). GitHub may delay scheduled starts.
+    - cron: "17 0 * * *"
+  workflow_dispatch: {}
   push:
     branches: [main]
     paths:
       - ".github/scripts/update_profile.py"
+      - ".github/scripts/profile_visuals.py"
+      - ".github/scripts/test_*.py"
       - ".github/workflows/update-profile.yml"
 
 permissions:
   contents: write
 
 concurrency:
-  group: update-profile
+  group: update-profile-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
-      - name: Checkout profile repo
+      - name: Checkout profile repository
         uses: actions/checkout@v7
 
       - name: Set up Python
@@ -35,23 +35,23 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Unit tests (fail fast - a broken updater must not publish)
+      - name: Test data integrity and SVG rendering
         run: python -m unittest discover -s .github/scripts -p "test_*.py" -v
 
-      - name: Regenerate dynamic sections
+      - name: Fetch GitHub data and render the complete snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USERNAME: ${{ github.repository_owner }}
         run: python .github/scripts/update_profile.py
 
-      - name: Commit if anything changed
+      - name: Commit README, charts and real metric history together
         run: |
-          if git diff --quiet; then
+          git add README.md assets/generated data/profile-snapshot.json data/profile-history.json
+          if git diff --cached --quiet; then
             echo "Profile already up to date - nothing to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "chore(profile): auto-update open-source stats [skip ci]"
-          git push
+          git commit -m "chore(profile): refresh live GitHub visuals [skip ci]"
+          git push origin HEAD

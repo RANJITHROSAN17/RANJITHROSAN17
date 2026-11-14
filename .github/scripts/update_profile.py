@@ -2,11 +2,14 @@
 """
 Auto-update the GitHub profile README (RANJITHROSAN17/RANJITHROSAN17).
 
-Runs every 2 hours via .github/workflows/update-profile.yml using only the
-Python standard library (no pip installs). It refreshes, from the live GitHub
-API:
+Runs daily via .github/workflows/update-profile.yml using only the Python
+standard library (no pip installs). It refreshes self-hosted SVG visualizations,
+a machine-readable snapshot, daily metric history and these README sections
+from the live GitHub REST + GraphQL APIs:
 
-  * DYNAMIC:IMPACT_BADGES  - hero counters (external PRs / merged / review)
+  * DYNAMIC:VISUAL_PULSE   - verified impact counters and monthly merge rhythm
+  * DYNAMIC:CONTRIBUTION_GRAPH - real public contribution calendar and streaks
+  * DYNAMIC:INSIGHT_CHARTS - upstream outcomes and repository language bytes
   * DYNAMIC:OSS_SUMMARY    - total / merged / in-review PR counters
   * DYNAMIC:OSS_SNAPSHOT   - one-line "merged in / in review at" org lists
   * DYNAMIC:OSS_TABLE      - contributions grouped by company / organisation
@@ -18,9 +21,9 @@ API:
   * DYNAMIC:EXPERIENCE_OSS - the Experience section's merged/in-review line
                              (generated, so a stale hand-typed claim cannot
                              survive here again)
-  * DYNAMIC:STATS_CARDS    - stats cards with forked repos excluded from
-                             the "top languages" calculation (important once
-                             you start forking big upstreams like vscode!)
+  * assets/generated/*.svg - coordinated light/dark charts, no widget host
+  * data/profile-snapshot.json - the exact public data behind the charts
+  * data/profile-history.json - one real aggregate observation per UTC day
 
 Honesty rules baked in:
   * A PR is only counted as "Merged" if pull_request.merged_at is set.
@@ -35,16 +38,21 @@ GH_TOKEN / PROFILE_TOKEN from the environment. Never commit a token.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
 import sys
+import tempfile
+import time
 import urllib.parse
 import urllib.request
 import urllib.error
 from collections import defaultdict
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone, timedelta, date
 from pathlib import Path
+
+import profile_visuals as visuals
 
 USER = os.environ.get("GH_USERNAME", "RANJITHROSAN17")
 SELF_ORGS = ("Quasynvo", "pinchfoundry")
@@ -55,9 +63,11 @@ TOKEN = (
     or os.environ.get("PROFILE_TOKEN")
     or ""
 )
-README_PATH = Path(__file__).resolve().parents[2] / "README.md"
+ROOT = Path(__file__).resolve().parents[2]
+README_PATH = ROOT / "README.md"
 if len(sys.argv) > 1:  # allow: update_profile.py /path/to/README.md
     README_PATH = Path(sys.argv[1])
+    ROOT = README_PATH.resolve().parent
 
 IST = timezone(timedelta(hours=5, minutes=30))
 
@@ -134,9 +144,9 @@ FEATURED_PROJECTS = [
         "repo": "Quasynvo/Quasnooze",
         "name": "Quasnooze",
         "demo": "",
-        "highlight": "A private, local-first personal AI assistant you message from Telegram, "
-                     "Discord, Slack, WhatsApp or the phone browser - 21 tools behind an approval "
-                     "gate, reminders that fire, token streaming, and a code-level honesty check",
+        "highlight": "A private, local-first personal AI assistant for Telegram, "
+                     "Discord, Slack, WhatsApp and the phone browser - permission-gated "
+                     "tools, reminders and token streaming",
         "stack": "Node.js - Ollama - MCP - PWA - zero runtime deps",
     },
     {
@@ -158,29 +168,28 @@ FEATURED_PROJECTS = [
         "stack": "Python - NVIDIA Nemotron - Nebius Token Factory - MCP",
     },
     {
-        "repo": "warden",
-        "name": "Grace",
-        "demo": "",
-        "highlight": "Agentic-payments judge - scores an agent's payment against the "
-                     "business's own PayPal payment history and cites the payments it "
-                     "reasoned from (PayPal AI Hackathon, sandbox only)",
-        "stack": "Python - PayPal Orders API - payment graph",
+        "repo": "Wrytrove",
+        "name": "Wrytrove",
+        "demo": "https://ranjithrosan17.github.io/Wrytrove/",
+        "highlight": "A calm, open-source Windows text and code editor with "
+                     "optional local AI suggestions; unsigned early preview",
+        "stack": "TypeScript - Rust - local AI",
     },
     {
         "repo": "Kannada-Digital",
         "name": "Kannada Saathi",
         "demo": "https://ranjithrosan17.github.io/Kannada-Digital/",
         "highlight": "Offline-first, installable Kannada companion for everyday situations "
-                     "- 111 reviewed phrases with audio, strict TypeScript, 133 tests, "
-                     "0 audit vulnerabilities (Kannada Digital Innovation Hackathon 2026)",
+                     "- reviewed phrases with bundled audio and strict TypeScript "
+                     "(Kannada Digital Innovation Hackathon 2026)",
         "stack": "React - TypeScript - Vite - PWA",
     },
     {
         "repo": "dsa-mastery-plan-2026",
         "name": "DSA Mastery Plan 2026",
         "demo": "https://ranjithrosan17.github.io/dsa-mastery-plan-2026/",
-        "highlight": "150-day, pattern-first DSA roadmap - 466 verified free LeetCode "
-                     "problems, 33 pattern playbooks, browser-only progress tracker",
+        "highlight": "Pattern-first DSA roadmap - verified free LeetCode problems, "
+                     "pattern playbooks and a browser-only progress tracker",
         "stack": "vanilla JS - GitHub Pages",
     },
     {
@@ -200,6 +209,16 @@ FEATURED_PROJECTS = [
         "stack": "Darknet - YOLOv3 - Colab",
     },
 ]
+
+# A compact visual shortlist; the complete featured table remains below it.
+VISUAL_PROJECTS = {
+    "vexar-mcp": ("Static MCP security checks, CI policy gates and SARIF — without running your code.", "teal"),
+    "vexar-autofix": ("Reviewable security patches, checked against findings and the target's tests.", "violet"),
+    "quasynvo/quasnooze": ("A local-first AI assistant across web, desktop and the chat apps you already use.", "blue"),
+    "wrytrove": ("A calm Windows code editor with optional local AI. Early preview, limits documented.", "amber"),
+    "kannada-digital": ("An offline-first Kannada companion with reviewed phrases and bundled audio.", "rose"),
+    "cardiolens-3d-risk": ("Interactive coronary visualisation and a research-only baseline. Not clinical advice.", "teal"),
+}
 
 
 def select_more_repos(own_repos: list[dict], featured: list[str], username: str) -> list[dict]:
@@ -226,44 +245,117 @@ def select_more_repos(own_repos: list[dict], featured: list[str], username: str)
 
 
 # ------------------------------------------------------------- GitHub API
-def api_get(url: str):
+def api_request(url: str, payload: dict | None = None):
+    """Request complete JSON, retrying transient failures without logging auth."""
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": f"{USER}-profile-updater",
+        "X-GitHub-Api-Version": "2022-11-28",
     }
     if TOKEN:
         headers["Authorization"] = f"Bearer {TOKEN}"
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    body = None
+    if payload is not None:
+        body = json.dumps(payload).encode("utf-8")
+        headers["Content-Type"] = "application/json"
+    for attempt in range(3):
+        req = urllib.request.Request(url, headers=headers, data=body)
+        try:
+            with urllib.request.urlopen(req, timeout=45) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            if payload is not None and (data.get("errors") or not data.get("data")):
+                raise RuntimeError("GitHub GraphQL returned errors or no data")
+            return data
+        except urllib.error.HTTPError as exc:
+            retryable = exc.code == 429 or exc.code >= 500 or (
+                exc.code == 403 and exc.headers.get("x-ratelimit-remaining") == "0"
+            )
+            if not retryable or attempt == 2:
+                raise
+            delay = min(60, max(2 ** attempt, int(exc.headers.get("retry-after", "1") or 1)))
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == 2:
+                raise
+            delay = 2 ** attempt
+        time.sleep(delay)
+    raise RuntimeError("GitHub API retries exhausted")
 
 
-def api_get_all(url: str, max_pages: int = 10):
-    """Follow pagination for both list endpoints and search endpoints."""
+def api_get(url: str):
+    return api_request(url)
+
+
+def api_get_all(url: str, max_pages: int = 20):
+    """Paginate completely; a truncated result must never become a real metric."""
     out = []
+    total = None
     for page in range(1, max_pages + 1):
         sep = "&" if "?" in url else "?"
         data = api_get(f"{url}{sep}per_page=100&page={page}")
         if isinstance(data, dict) and "items" in data:
+            if data.get("incomplete_results"):
+                raise RuntimeError("GitHub search results are incomplete; preserving the previous snapshot")
+            if total is None:
+                total = data.get("total_count")
+                if not isinstance(total, int) or total > 1000:
+                    raise RuntimeError("GitHub search exceeds the complete 1,000-result API window")
+            if data["total_count"] != total:
+                raise RuntimeError("GitHub search changed during pagination; retry the workflow")
             out.extend(data["items"])
-            if len(out) >= data.get("total_count", len(out)):
-                break
+            if len(out) >= total:
+                if len({p["id"] for p in out}) != total:
+                    raise RuntimeError("GitHub search pagination contained duplicates or missing items")
+                return out
             if not data["items"]:
                 break
         elif isinstance(data, list):
             out.extend(data)
             if len(data) < 100:
-                break
+                return out
         else:
-            return data
-    return out
+            raise RuntimeError("Unexpected GitHub API pagination response")
+    raise RuntimeError("GitHub pagination did not reach a complete result")
 
 
 def search_prs(extra: str = "") -> list[dict]:
     q = urllib.parse.quote(f"type:pr author:{USER} {extra}".strip())
-    items = api_get_all(f"https://api.github.com/search/issues?q={q}&sort=updated&order=desc")
-    # Deduplicate across page boundaries if a PR updates mid-pagination.
-    return list({p["id"]: p for p in items}.values())
+    # Creation order is stable while PRs are being updated during a refresh.
+    return api_get_all(f"https://api.github.com/search/issues?q={q}&sort=created&order=asc")
+
+
+def fetch_contributions(first: date, last: date) -> dict:
+    """Use GitHub's actual contribution calendar, not the limited events feed."""
+    if not TOKEN:
+        raise RuntimeError("GITHUB_TOKEN is required for the GraphQL contribution calendar")
+    query = """
+    query($login: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $login) {
+        contributionsCollection(from: $from, to: $to) {
+          contributionCalendar {
+            totalContributions
+            weeks { contributionDays { date contributionCount contributionLevel } }
+          }
+        }
+      }
+    }
+    """
+    payload = api_request("https://api.github.com/graphql", {
+        "query": query,
+        "variables": {"login": USER, "from": f"{first.isoformat()}T00:00:00Z",
+                      "to": f"{last.isoformat()}T23:59:59Z"},
+    })
+    user = payload["data"].get("user")
+    if not user:
+        raise RuntimeError("GitHub returned no contribution calendar for this user")
+    calendar = user["contributionsCollection"]["contributionCalendar"]
+    days = sorted((day for week in calendar["weeks"] for day in week["contributionDays"]),
+                  key=lambda day: day["date"])
+    result = {"from": first.isoformat(), "to": last.isoformat(),
+              "total": calendar["totalContributions"],
+              "days": [{"date": d["date"], "count": d["contributionCount"], "level": d["contributionLevel"]}
+                       for d in days]}
+    visuals.validate_calendar(result, first, last)
+    return result
 
 
 def repo_of(pr: dict) -> str:
@@ -277,7 +369,12 @@ def is_external_pr(pr: dict) -> bool:
 
 
 def is_merged(pr: dict) -> bool:
-    return bool(pr.get("pull_request", {}).get("merged_at"))
+    return bool((pr.get("pull_request") or {}).get("merged_at"))
+
+
+def pr_date(pr: dict) -> str:
+    """Merge date for landed work; last-update date for work still in review."""
+    return (pr.get("pull_request") or {}).get("merged_at") or pr.get("updated_at", "")
 
 
 def fmt_stars(n: int) -> str:
@@ -290,6 +387,10 @@ def esc(text: str) -> str:
     return (text or "").replace("|", "\\|").replace("\n", " ").strip()
 
 
+def xml_attr(text: str) -> str:
+    return visuals.xml(text)
+
+
 def search_url(extra: str, external_only: bool = False) -> str:
     # Exclude both my user account and personal orgs from the proof links.
     suffix = ""
@@ -300,9 +401,11 @@ def search_url(extra: str, external_only: bool = False) -> str:
 
 
 # ---------------------------------------------------------------- blocks
-def build_blocks() -> dict[str, str]:
+def build_profile() -> tuple[dict[str, str], dict[str, bytes], dict]:
+    now = datetime.now(timezone.utc)
+    today = now.date()
     user = api_get(f"https://api.github.com/users/{USER}")
-    own_repos = api_get_all(f"https://api.github.com/users/{USER}/repos?type=owner&sort=updated")
+    own_repos = api_get_all(f"https://api.github.com/users/{USER}/repos?type=owner&sort=full_name")
     own_by_name = {r["name"].lower(): r for r in own_repos}
     featured_meta = []
     for fp in FEATURED_PROJECTS:
@@ -310,8 +413,9 @@ def build_blocks() -> dict[str, str]:
             meta = api_get(f"https://api.github.com/repos/{fp['repo']}")
         else:
             meta = own_by_name.get(fp["repo"].lower())
-        if meta:
-            featured_meta.append((fp, meta))
+        if not meta or meta.get("private") or meta.get("fork"):
+            raise RuntimeError(f'Featured project is unavailable, private or forked: {fp["repo"]}')
+        featured_meta.append((fp, meta))
 
     prs_all = search_prs()
     merged = [p for p in prs_all if is_merged(p)]
@@ -320,6 +424,57 @@ def build_blocks() -> dict[str, str]:
     ext_merged = [p for p in external if is_merged(p)]
     ext_open = [p for p in external if p.get("state") == "open"]
     external_repos = sorted({repo_of(p) for p in external}, key=str.lower)
+    ext_closed = [p for p in external if not is_merged(p) and p.get("state") != "open"]
+    if len(external) != len(ext_merged) + len(ext_open) + len(ext_closed):
+        raise RuntimeError("External PR states do not reconcile; refusing to publish")
+
+    original_repos = [r for r in own_repos if not r.get("fork") and not r.get("archived")
+                      and not r.get("private", False) and r["name"].lower() != USER.lower()]
+    language_bytes: dict[str, int] = defaultdict(int)
+    for repo in original_repos:
+        detected = api_get(f'https://api.github.com/repos/{repo["full_name"]}/languages')
+        if not isinstance(detected, dict) or any(type(v) is not int or v < 0 for v in detected.values()):
+            raise RuntimeError(f'Invalid language response for {repo["full_name"]}')
+        for language, count in detected.items():
+            language_bytes[language] += count
+    contributions = fetch_contributions(today - timedelta(days=364), today)
+    streaks = visuals.streak_metrics(contributions["days"], today)
+    metrics = {
+        "external_prs": len(external), "external_projects": len(external_repos),
+        "merged_prs": len(ext_merged), "open_prs": len(ext_open),
+        "closed_unmerged_prs": len(ext_closed),
+        "merged_projects": len({repo_of(p).lower() for p in ext_merged}),
+        "original_repos": len(original_repos),
+        "original_stars": sum(r.get("stargazers_count", 0) for r in original_repos),
+        "followers": user["followers"], "contributions": contributions["total"], **streaks,
+    }
+    snapshot = {
+        "schema_version": 1, "generated_at": now.isoformat(timespec="seconds"),
+        "as_of": today.isoformat(), "username": USER, "metrics": metrics,
+        "contributions": contributions,
+        "languages": {"repositories": len(original_repos), "total_bytes": sum(language_bytes.values()),
+                      "items": [{"name": name, "bytes": count} for name, count in
+                                sorted(language_bytes.items(), key=lambda item: (-item[1], item[0]))]},
+        "merge_months": visuals.merge_month_buckets(ext_merged, today),
+        "upstream_repos": [], "projects": [],
+        "sources": {
+            "profile": f"https://api.github.com/users/{USER}",
+            "repositories": f"https://api.github.com/users/{USER}/repos?type=owner",
+            "contributions": "https://api.github.com/graphql",
+            "external_prs": search_url("", external_only=True),
+            "merged_prs": search_url("is:merged", external_only=True),
+            "open_prs": search_url("is:open", external_only=True),
+        },
+        "definitions": {
+            "merged_prs": "External PRs with pull_request.merged_at set; personal account and organisations excluded.",
+            "open_prs": "External PRs currently open; not a claim of upstream acceptance.",
+            "original_repos": "Public, non-fork, non-archived repositories owned by the user, excluding the profile repository.",
+            "original_stars": "Current stars on the original repositories defined above; organisation repositories excluded.",
+            "languages": "Sum of GitHub Linguist language bytes on default branches; not authored lines or skill proficiency.",
+            "contributions": "Public GitHub calendar visible to the built-in Actions token; not a private-activity total.",
+            "streaks": "Consecutive active days within the displayed 365-day window; a zero-count today may end the current streak yesterday.",
+        },
+    }
 
     # --- group external PRs by repo ---
     by_repo: dict[str, dict] = defaultdict(
@@ -338,13 +493,18 @@ def build_blocks() -> dict[str, str]:
     # upstream star counts (for credibility context) - curated only
     stars: dict[str, int] = {}
     for c in CURATED:
-        try:
-            meta = api_get(f"https://api.github.com/repos/{c['repo']}")
-            stars[c["repo"].lower()] = meta.get("stargazers_count", 0)
-        except Exception as e:  # keep going if one lookup fails
-            print(f"warn: star lookup failed for {c['repo']}: {e}", file=sys.stderr)
+        meta = api_get(f"https://api.github.com/repos/{c['repo']}")
+        stars[c["repo"].lower()] = meta["stargazers_count"]
 
-    now_ist = datetime.now(IST).strftime("%d %b %Y")
+    now_ist = now.astimezone(IST).strftime("%d %b %Y")
+    snapshot["upstream_repos"] = [
+        {"repo": repo, **stats} for repo, stats in sorted(
+            by_repo.items(), key=lambda item: (-(item[1]["merged"] + item[1]["open"]),
+                                               -item[1]["merged"], item[0].lower()))
+    ]
+    # Keep the audit snapshot compact: PR details are already linked in README.
+    for entry in snapshot["upstream_repos"]:
+        entry.pop("prs", None)
 
     # --- OSS summary ---
     summary = (
@@ -357,15 +517,7 @@ def build_blocks() -> dict[str, str]:
         f"🟢 **In review** = open PR, not yet merged - I don't claim orgs I haven't landed in (yet)."
     )
 
-    # --- hero impact badges (numbers regenerate daily) ---
-    impact_badges = (
-        '<p align="center">\n'
-        f'  <a href="{search_url("", external_only=True)}"><img alt="{len(external)} external pull requests" src="https://img.shields.io/badge/External_PRs-{len(external)}-1f6feb?style=flat" /></a>\n'
-        f'  <a href="{search_url("is:merged", external_only=True)}"><img alt="{len(ext_merged)} PRs merged upstream" src="https://img.shields.io/badge/Merged_upstream-{len(ext_merged)}-8250df?style=flat" /></a>\n'
-        f'  <a href="{search_url("is:open", external_only=True)}"><img alt="{len(ext_open)} PRs in review" src="https://img.shields.io/badge/In_review-{len(ext_open)}-1f883d?style=flat" /></a>\n'
-        f'  <img alt="{len(external_repos)} external projects" src="https://img.shields.io/badge/External_projects-{len(external_repos)}-555555?style=flat" />\n'
-        '</p>'
-    )
+    # Charts are rendered only after every required API response is complete.
 
     # --- OSS table ---
     rows = [
@@ -384,7 +536,7 @@ def build_blocks() -> dict[str, str]:
             return
         featured_keys.add(repo.lower())
         star_txt = f" (★{fmt_stars(stars[repo.lower()])})" if repo.lower() in stars else ""
-        latest = sorted(stats["prs"], key=lambda p: p["updated_at"], reverse=True)[0]
+        latest = sorted(stats["prs"], key=pr_date, reverse=True)[0]
         latest_no = latest["html_url"].rstrip("/").split("/")[-1]
         state_icon = "🟣" if is_merged(latest) else "🟢"
         owner = repo.split("/")[0]
@@ -394,10 +546,10 @@ def build_blocks() -> dict[str, str]:
             snapshot_merged.append(f"[{esc(org)}](https://github.com/{repo})")
         if stats["open"]:
             snapshot_review.append(f"[{esc(org)}](https://github.com/{repo})")
-        prs_sorted = sorted(stats["prs"], key=lambda p: p["updated_at"], reverse=True)
+        prs_sorted = sorted(stats["prs"], key=pr_date, reverse=True)
         prs_sorted = sorted(prs_sorted, key=is_merged, reverse=True)  # merged first
         bullets = [
-            f"- {'🟣 Merged' if is_merged(pr) else '🟢 In review'} · {pr['updated_at'][:10]} · "
+            f"- {'🟣 Merged' if is_merged(pr) else '🟢 In review'} · {pr_date(pr)[:10]} · "
             f"[{esc(pr['title'])}]({pr['html_url']})"
             for pr in prs_sorted
         ]
@@ -423,9 +575,7 @@ def build_blocks() -> dict[str, str]:
             add_row(repo, repo.split("/")[0], "Auto-discovered from recent PR activity")
 
     other_merged = len(ext_merged) - sum(
-        by_repo.get(c["repo"], {"merged": 0})["merged"] if c["repo"] in by_repo else
-        next((v["merged"] for k, v in by_repo.items() if k.lower() == c["repo"].lower()), 0)
-        for c in CURATED
+        stats["merged"] for repo, stats in by_repo.items() if repo.lower() in featured_keys
     )
     oss_table = "\n".join(rows)
     if other_merged > 0:
@@ -434,12 +584,12 @@ def build_blocks() -> dict[str, str]:
             f"[see every upstream-merged PR]({search_url('is:merged', external_only=True)}).</sub>"
         )
 
-    merged_line = " · ".join(snapshot_merged)
+    merged_line = " · ".join(snapshot_merged) or "No featured merged PRs right now"
     if other_merged > 0:
-        merged_line += f" · +{other_merged} earlier in smaller projects"
+        merged_line += f" · +{other_merged} merged PRs in other projects"
     oss_snapshot = (
         f"**🟣 Merged upstream in:** {merged_line}\n\n"
-        f"**🟢 Currently in review at:** {' · '.join(snapshot_review)}"
+        f"**🟢 Currently in review at:** {' · '.join(snapshot_review) or 'No featured open PRs right now'}"
     )
     oss_details = (
         "<details>\n<summary><strong>📂 Expand — every featured PR, "
@@ -472,7 +622,7 @@ def build_blocks() -> dict[str, str]:
         p for p in external
         if is_merged(p) or p.get("state") == "open"
     ]
-    recent_src.sort(key=lambda p: p["updated_at"], reverse=True)
+    recent_src.sort(key=pr_date, reverse=True)
     # Diversity cap: max 3 per repo, so a same-day burst in one project
     # (e.g. 6 CrossGL PRs) doesn't crowd out the breadth across orgs.
     per_repo: dict[str, int] = defaultdict(int)
@@ -488,7 +638,7 @@ def build_blocks() -> dict[str, str]:
     recent_lines = []
     for pr in recent_picked:
         icon = "🟣 Merged" if is_merged(pr) else "🟢 In review"
-        date = pr["updated_at"][:10]
+        date = pr_date(pr)[:10]
         recent_lines.append(
             f"- {icon} · {date} · [{esc(pr['title'])}]({pr['html_url']}) "
             f"in [{repo_of(pr)}](https://github.com/{repo_of(pr)})"
@@ -497,7 +647,7 @@ def build_blocks() -> dict[str, str]:
 
     # --- featured projects ---
     proj_rows = [
-        "| Project | What it is | Stack | ★ | Language | Updated |",
+        "| Project | What it is | Stack | ★ | Language | Last push |",
         "|---|---|---|---:|---|---|",
     ]
     for fp, meta in featured_meta:
@@ -507,23 +657,58 @@ def build_blocks() -> dict[str, str]:
         proj_rows.append(
             f"| {name} | {esc(fp['highlight'])} | {esc(fp['stack'])} "
             f"| {meta.get('stargazers_count', 0)} | {esc(meta.get('language') or '·')} "
-            f"| {meta.get('updated_at', '')[:10]} |"
+            f"| {(meta.get('pushed_at') or '')[:10]} |"
         )
     projects = "\n".join(proj_rows)
 
-    # --- visual project cards ---
-    cards = []
+    # --- self-hosted visual project cards ---
     for fp, meta in featured_meta:
-        owner = meta.get("owner", {}).get("login", USER)
-        rn = meta["name"]
-        base = (f"https://github-stats-extended.vercel.app/api/pin/?username={owner}"
-                f"&repo={rn}&hide_border=true&cache_seconds=1800")
-        cards.append(
-            f'<a href="{meta["html_url"]}"><picture>'
-            f'<source media="(prefers-color-scheme: dark)" srcset="{base}&theme=github_dark" />'
-            f'<img width="49%" alt="{esc(fp["name"])} repository card" src="{base}&theme=default" />'
-            f'</picture></a>'
-        )
+        key = fp["repo"].lower()
+        if key not in VISUAL_PROJECTS:
+            continue
+        tagline, accent = VISUAL_PROJECTS[key]
+        snapshot["projects"].append({
+            "slug": re.sub(r"[^a-z0-9-]+", "-", meta["full_name"].lower()),
+            "name": fp["name"], "repo": meta["full_name"], "url": meta["html_url"],
+            "demo": fp.get("demo", ""), "tagline": tagline, "accent": accent,
+            "stars": meta["stargazers_count"], "forks": meta["forks_count"],
+            "language": meta.get("language"), "pushed_at": meta.get("pushed_at"),
+        })
+    visual_order = {key: index for index, key in enumerate(VISUAL_PROJECTS)}
+    snapshot["projects"].sort(key=lambda p: visual_order.get(
+        next((fp["repo"].lower() for fp, meta in featured_meta if meta["full_name"] == p["repo"]), ""), 999))
+    assets = visuals.render_all(snapshot)
+
+    def asset_url(name: str, theme: str) -> str:
+        path = f"assets/generated/{name}.{theme}.svg"
+        # Content-hashed URLs defeat GitHub's image proxy cache only when art changes.
+        digest = hashlib.sha256(assets[path]).hexdigest()[:12]
+        return f"./{path}?v={digest}"
+
+    def picture(name: str, alt: str, width: str = "100%") -> str:
+        return (f'<picture><source media="(prefers-color-scheme: dark)" '
+                f'srcset="{asset_url(name, "dark")}" />'
+                f'<img width="{width}" alt="{xml_attr(alt)}" src="{asset_url(name, "light")}" /></picture>')
+
+    m = snapshot["metrics"]
+    visual_pulse = picture("pulse", (
+        f'{m["merged_prs"]} external PRs merged; {m["open_prs"]} in review; '
+        f'{m["merged_projects"]} upstream projects landed; {m["original_stars"]} stars '
+        f'on {m["original_repos"]} original repositories; {m["followers"]} followers. '
+        f'Snapshot {snapshot["as_of"]}.'))
+    contribution_graph = picture("contributions", (
+        f'{m["contributions"]} public contributions in the last 365 days; '
+        f'{m["active_days"]} active days; current streak {m["current_streak"]} days; '
+        f'longest streak in this window {m["longest_streak"]} days.'))
+    insight_charts = '<p align="center">\n' + "\n".join([
+        picture("upstream", f'Upstream PR outcomes: {m["merged_prs"]} merged, {m["open_prs"]} open, {m["closed_unmerged_prs"]} closed unmerged.', "49%"),
+        picture("languages", "GitHub language bytes across original public repositories; forks and archived repositories excluded. Byte share is not skill proficiency.", "49%"),
+    ]) + "\n</p>"
+    cards = []
+    for project in snapshot["projects"]:
+        name = f'project-{project["slug"]}'
+        alt = f'{project["name"]}: {project["stars"]} stars, {project["forks"]} forks, {project["language"] or "mixed language"}, pushed {(project["pushed_at"] or "")[:10]}.'
+        cards.append(f'<a href="{project["url"]}">{picture(name, alt, "49%")}</a>')
     project_cards = '<p align="center">\n' + "\n".join(cards) + "\n</p>"
 
     # --- everything else I own (so no project is silently missing) ---
@@ -540,37 +725,19 @@ def build_blocks() -> dict[str, str]:
         + " · ".join(more_bits) + "</sub>"
     ) if more_bits else ""
 
-    # --- stats cards (exclude forks so top-languages reflects *my* code) ---
-    fork_names = [r["name"] for r in own_repos if r.get("fork")]
-    exclude = urllib.parse.quote(",".join(fork_names))
-    u = USER
-    stats_cards = f"""<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=github_dark&cache_seconds=1800" />
-    <img height="170" alt="GitHub stats for {u}" src="https://github-stats-extended.vercel.app/api?username={u}&show_icons=true&include_all_commits=true&hide_border=true&theme=default&cache_seconds=1800" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=github_dark&exclude_repo={exclude}&cache_seconds=1800" />
-    <img height="170" alt="Most used languages (my repos only, forks excluded)" src="https://github-stats-extended.vercel.app/api/top-langs/?username={u}&layout=compact&langs_count=8&hide_border=true&theme=default&exclude_repo={exclude}&cache_seconds=1800" />
-  </picture>
-</p>
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user={u}&theme=github-dark-blue&hide_border=true" />
-    <img height="170" alt="Contribution streak" src="https://streak-stats.demolab.com?user={u}&theme=default&hide_border=true" />
-  </picture>
-</p>"""
-
     updated = (
-        f"<sub>🤖 This profile is **auto-updated every 2 hours** by "
-        f"[GitHub Actions](https://github.com/{USER}/{USER}/actions/workflows/update-profile.yml) - "
-        f"last run **{datetime.now(IST).strftime('%d %b %Y')}**. "
+        f"<sub>Refreshed **daily at 00:17 UTC** by "
+        f"[GitHub Actions](https://github.com/{USER}/{USER}/actions/workflows/update-profile.yml). "
+        f"Last successful data snapshot: **{now.strftime('%d %b %Y, %H:%M UTC')}**. "
         f"On GitHub since {user.get('created_at', '')[:4]} · "
-        f"{user.get('public_repos')} public repos · {user.get('followers')} followers.</sub>"
+        f"{user['public_repos']} public repositories (including forks and this profile). "
+        f"Charts use GitHub REST + GraphQL; no third-party chart service.</sub>"
     )
 
-    return {
-        "IMPACT_BADGES": impact_badges,
+    blocks = {
+        "VISUAL_PULSE": visual_pulse,
+        "CONTRIBUTION_GRAPH": contribution_graph,
+        "INSIGHT_CHARTS": insight_charts,
         "OSS_SNAPSHOT": oss_snapshot,
         "OSS_DETAILS": oss_details,
         "PROJECT_CARDS": project_cards,
@@ -580,36 +747,96 @@ def build_blocks() -> dict[str, str]:
         "PROJECTS": projects,
         "MORE_REPOS": more_repos,
         "EXPERIENCE_OSS": experience_oss,
-        "STATS_CARDS": stats_cards,
         "UPDATED": updated,
     }
+    return blocks, assets, snapshot
+
+
+def replace_blocks(readme: str, blocks: dict[str, str]) -> str:
+    """Require every marker exactly once; never silently skip a broken chart."""
+    new = readme
+    for name, content in blocks.items():
+        pattern = re.compile(
+            rf"(<!-- DYNAMIC:{re.escape(name)}:START -->)\n?.*?\n?(<!-- DYNAMIC:{re.escape(name)}:END -->)",
+            re.DOTALL,
+        )
+        if len(pattern.findall(new)) != 1:
+            raise ValueError(f"Expected exactly one pair of markers for {name}")
+        new = pattern.sub(lambda m: f"{m.group(1)}\n{content}\n{m.group(2)}", new)
+    return new
+
+
+def atomic_write(path: Path, content: bytes) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp_name = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=path.parent, prefix=f".{path.name}.", delete=False) as temp:
+            temp_name = Path(temp.name)
+            temp.write(content)
+            temp.flush()
+            os.fsync(temp.fileno())
+        os.replace(temp_name, path)
+    finally:
+        if temp_name and temp_name.exists():
+            temp_name.unlink()
+
+
+def publish_transaction(files: dict[Path, bytes]) -> list[Path]:
+    """Stage every file before replacing any; roll back replacements on failure."""
+    changed = {path: content for path, content in files.items()
+               if not path.exists() or path.read_bytes() != content}
+    if not changed:
+        return []
+    previous = {path: path.read_bytes() if path.exists() else None for path in changed}
+    staged = {}
+    replaced = []
+    try:
+        for path, content in changed.items():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            with tempfile.NamedTemporaryFile(dir=path.parent, prefix=f".{path.name}.", delete=False) as temp:
+                staged[path] = Path(temp.name)
+                temp.write(content)
+                temp.flush()
+                os.fsync(temp.fileno())
+        for path, temp in staged.items():
+            os.replace(temp, path)
+            replaced.append(path)
+    except Exception:
+        for path in reversed(replaced):
+            if previous[path] is None:
+                path.unlink(missing_ok=True)
+            else:
+                atomic_write(path, previous[path])
+        raise
+    finally:
+        for temp in staged.values():
+            if temp.exists():
+                temp.unlink()
+    return list(changed)
 
 
 def main() -> int:
     if not README_PATH.exists():
         print(f"README not found at {README_PATH}", file=sys.stderr)
         return 1
-    readme = README_PATH.read_text(encoding="utf-8")
     try:
-        blocks = build_blocks()
-    except urllib.error.URLError as e:
-        print(f"GitHub API error - leaving README untouched: {e}", file=sys.stderr)
+        readme = README_PATH.read_text(encoding="utf-8")
+        history_path = ROOT / "data/profile-history.json"
+        history = json.loads(history_path.read_text(encoding="utf-8")) if history_path.exists() else None
+        blocks, assets, snapshot = build_profile()
+        new = replace_blocks(readme, blocks)
+        history = visuals.update_history(history, snapshot)
+        files = {ROOT / path: content for path, content in assets.items()}
+        files[README_PATH] = new.encode("utf-8")
+        files[ROOT / "data/profile-snapshot.json"] = (json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
+        files[history_path] = (json.dumps(history, indent=2) + "\n").encode("utf-8")
+        changed = publish_transaction(files)
+    except Exception as exc:
+        # Authentication values are never included in exception messages or logs.
+        print(f"Refresh failed ({type(exc).__name__}: {exc}); previous profile preserved.", file=sys.stderr)
         return 1
-
-    new = readme
-    for name, content in blocks.items():
-        pattern = re.compile(
-            rf"(<!-- DYNAMIC:{name}:START -->)\n?.*?\n?(<!-- DYNAMIC:{name}:END -->)",
-            re.DOTALL,
-        )
-        if not pattern.search(new):
-            print(f"warn: markers for {name} not found, skipping", file=sys.stderr)
-            continue
-        new = pattern.sub(lambda m: f"{m.group(1)}\n{content}\n{m.group(2)}", new)
-
-    if new != readme:
-        README_PATH.write_text(new, encoding="utf-8")
-        print("README updated ✅")
+    if changed:
+        print(f"Profile refreshed: {len(changed)} files changed; {len(snapshot['contributions']['days'])} real calendar days.")
     else:
         print("No changes - profile already up to date.")
     return 0
