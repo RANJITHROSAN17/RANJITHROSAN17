@@ -54,4 +54,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore(profile): refresh live GitHub visuals [skip ci]"
-          git push origin HEAD
+          git push origin "HEAD:${GITHUB_REF_NAME}"
