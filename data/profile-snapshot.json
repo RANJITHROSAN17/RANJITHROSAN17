@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-14T08:30:36+00:00",
-  "as_of": "2026-11-14",
+  "generated_at": "2026-11-22T05:59:30+00:00",
+  "as_of": "2026-11-22",
   "username": "RANJITHROSAN17",
   "metrics": {
     "external_prs": 94,
@@ -10,59 +10,19 @@
     "open_prs": 7,
     "closed_unmerged_prs": 64,
     "merged_projects": 12,
-    "original_repos": 13,
-    "original_stars": 49,
-    "followers": 11,
-    "contributions": 902,
-    "active_days": 28,
-    "current_streak": 2,
+    "original_repos": 12,
+    "original_stars": 45,
+    "followers": 10,
+    "contributions": 967,
+    "active_days": 32,
+    "current_streak": 3,
     "longest_streak": 16
   },
   "contributions": {
-    "from": "2025-11-15",
-    "to": "2026-11-14",
-    "total": 902,
+    "from": "2025-11-23",
+    "to": "2026-11-22",
+    "total": 967,
     "days": [
-      {
-        "date": "2025-11-15",
-        "count": 0,
-        "level": "NONE"
-      },
-      {
-        "date": "2025-11-16",
-        "count": 0,
-        "level": "NONE"
-      },
-      {
-        "date": "2025-11-17",
-        "count": 0,
-        "level": "NONE"
-      },
-      {
-        "date": "2025-11-18",
-        "count": 0,
-        "level": "NONE"
-      },
-      {
-        "date": "2025-11-19",
-        "count": 0,
-        "level": "NONE"
-      },
-      {
-        "date": "2025-11-20",
-        "count": 0,
-        "level": "NONE"
-      },
-      {
-        "date": "2025-11-21",
-        "count": 0,
-        "level": "NONE"
-      },
-      {
-        "date": "2025-11-22",
-        "count": 0,
-        "level": "NONE"
-      },
       {
         "date": "2025-11-23",
         "count": 0,
@@ -1066,7 +1026,7 @@
       {
         "date": "2026-06-11",
         "count": 14,
-        "level": "SECOND_QUARTILE"
+        "level": "FIRST_QUARTILE"
       },
       {
         "date": "2026-06-12",
@@ -1646,7 +1606,7 @@
       {
         "date": "2026-10-05",
         "count": 18,
-        "level": "SECOND_QUARTILE"
+        "level": "FIRST_QUARTILE"
       },
       {
         "date": "2026-10-06",
@@ -1741,22 +1701,22 @@
       {
         "date": "2026-10-24",
         "count": 32,
-        "level": "THIRD_QUARTILE"
+        "level": "SECOND_QUARTILE"
       },
       {
         "date": "2026-10-25",
         "count": 26,
-        "level": "THIRD_QUARTILE"
+        "level": "SECOND_QUARTILE"
       },
       {
         "date": "2026-10-26",
         "count": 34,
-        "level": "THIRD_QUARTILE"
+        "level": "SECOND_QUARTILE"
       },
       {
         "date": "2026-10-27",
-        "count": 36,
-        "level": "THIRD_QUARTILE"
+        "count": 22,
+        "level": "SECOND_QUARTILE"
       },
       {
         "date": "2026-10-28",
@@ -1765,13 +1725,13 @@
       },
       {
         "date": "2026-10-29",
-        "count": 30,
-        "level": "THIRD_QUARTILE"
+        "count": 19,
+        "level": "SECOND_QUARTILE"
       },
       {
         "date": "2026-10-30",
-        "count": 38,
-        "level": "THIRD_QUARTILE"
+        "count": 31,
+        "level": "SECOND_QUARTILE"
       },
       {
         "date": "2026-10-31",
@@ -1785,33 +1745,33 @@
       },
       {
         "date": "2026-11-02",
-        "count": 84,
+        "count": 83,
         "level": "FOURTH_QUARTILE"
       },
       {
         "date": "2026-11-03",
         "count": 44,
-        "level": "FOURTH_QUARTILE"
+        "level": "THIRD_QUARTILE"
       },
       {
         "date": "2026-11-04",
         "count": 33,
-        "level": "THIRD_QUARTILE"
+        "level": "SECOND_QUARTILE"
       },
       {
         "date": "2026-11-05",
         "count": 36,
-        "level": "THIRD_QUARTILE"
+        "level": "SECOND_QUARTILE"
       },
       {
         "date": "2026-11-06",
         "count": 51,
-        "level": "FOURTH_QUARTILE"
+        "level": "THIRD_QUARTILE"
       },
       {
         "date": "2026-11-07",
         "count": 34,
-        "level": "THIRD_QUARTILE"
+        "level": "SECOND_QUARTILE"
       },
       {
         "date": "2026-11-08",
@@ -1845,14 +1805,54 @@
       },
       {
         "date": "2026-11-14",
-        "count": 46,
+        "count": 75,
         "level": "FOURTH_QUARTILE"
+      },
+      {
+        "date": "2026-11-15",
+        "count": 40,
+        "level": "THIRD_QUARTILE"
+      },
+      {
+        "date": "2026-11-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-19",
+        "count": 5,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-20",
+        "count": 11,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-21",
+        "count": 13,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-22",
+        "count": 0,
+        "level": "NONE"
       }
     ]
   },
   "languages": {
-    "repositories": 13,
-    "total_bytes": 6775285,
+    "repositories": 12,
+    "total_bytes": 6638500,
     "items": [
       {
         "name": "Jupyter Notebook",
@@ -1860,35 +1860,35 @@
       },
       {
         "name": "Python",
-        "bytes": 1083484
+        "bytes": 1147481
       },
       {
         "name": "TypeScript",
-        "bytes": 1077944
+        "bytes": 758438
       },
       {
         "name": "JavaScript",
-        "bytes": 594195
+        "bytes": 682639
       },
       {
         "name": "CSS",
-        "bytes": 139764
+        "bytes": 139934
       },
       {
         "name": "HTML",
-        "bytes": 119928
+        "bytes": 120863
       },
       {
         "name": "Rust",
-        "bytes": 31719
+        "bytes": 58326
+      },
+      {
+        "name": "PowerShell",
+        "bytes": 4056
       },
       {
         "name": "Shell",
         "bytes": 2109
-      },
-      {
-        "name": "PowerShell",
-        "bytes": 1488
       },
       {
         "name": "Dockerfile",
@@ -2018,9 +2018,9 @@
       "tagline": "Static MCP security checks, CI policy gates and SARIF — without running your code.",
       "accent": "teal",
       "stars": 3,
-      "forks": 2,
+      "forks": 1,
       "language": "Python",
-      "pushed_at": "2026-11-03T16:09:37Z"
+      "pushed_at": "2026-11-14T09:35:29Z"
     },
     {
       "slug": "ranjithrosan17-vexar-autofix",
@@ -2046,7 +2046,7 @@
       "stars": 14,
       "forks": 5,
       "language": "JavaScript",
-      "pushed_at": "2026-11-13T13:03:50Z"
+      "pushed_at": "2026-11-21T13:26:22Z"
     },
     {
       "slug": "ranjithrosan17-wrytrove",
@@ -2059,20 +2059,20 @@
       "stars": 3,
       "forks": 2,
       "language": "TypeScript",
-      "pushed_at": "2026-11-14T08:22:53Z"
+      "pushed_at": "2026-11-19T21:55:03Z"
     },
     {
-      "slug": "ranjithrosan17-kannada-digital",
-      "name": "Kannada Saathi",
-      "repo": "RANJITHROSAN17/Kannada-Digital",
-      "url": "https://github.com/RANJITHROSAN17/Kannada-Digital",
-      "demo": "https://ranjithrosan17.github.io/Kannada-Digital/",
-      "tagline": "An offline-first Kannada companion with reviewed phrases and bundled audio.",
+      "slug": "ranjithrosan17-dsa-mastery-plan-2026",
+      "name": "DSA Mastery Plan 2026",
+      "repo": "RANJITHROSAN17/dsa-mastery-plan-2026",
+      "url": "https://github.com/RANJITHROSAN17/dsa-mastery-plan-2026",
+      "demo": "https://ranjithrosan17.github.io/dsa-mastery-plan-2026/",
+      "tagline": "A pattern-first roadmap for practicing data structures and algorithms.",
       "accent": "rose",
       "stars": 4,
       "forks": 0,
-      "language": "TypeScript",
-      "pushed_at": "2026-11-10T21:06:50Z"
+      "language": "JavaScript",
+      "pushed_at": "2026-11-13T20:44:16Z"
     },
     {
       "slug": "ranjithrosan17-cardiolens-3d-risk",
@@ -2085,7 +2085,7 @@
       "stars": 3,
       "forks": 0,
       "language": "JavaScript",
-      "pushed_at": "2026-11-14T08:09:02Z"
+      "pushed_at": "2026-11-19T20:40:14Z"
     }
   ],
   "sources": {
