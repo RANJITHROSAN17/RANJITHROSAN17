@@ -176,15 +176,6 @@ FEATURED_PROJECTS = [
         "stack": "TypeScript - Rust - local AI",
     },
     {
-        "repo": "Kannada-Digital",
-        "name": "Kannada Saathi",
-        "demo": "https://ranjithrosan17.github.io/Kannada-Digital/",
-        "highlight": "Offline-first, installable Kannada companion for everyday situations "
-                     "- reviewed phrases with bundled audio and strict TypeScript "
-                     "(Kannada Digital Innovation Hackathon 2026)",
-        "stack": "React - TypeScript - Vite - PWA",
-    },
-    {
         "repo": "dsa-mastery-plan-2026",
         "name": "DSA Mastery Plan 2026",
         "demo": "https://ranjithrosan17.github.io/dsa-mastery-plan-2026/",
@@ -216,7 +207,7 @@ VISUAL_PROJECTS = {
     "vexar-autofix": ("Reviewable security patches, checked against findings and the target's tests.", "violet"),
     "quasynvo/quasnooze": ("A local-first AI assistant across web, desktop and the chat apps you already use.", "blue"),
     "wrytrove": ("A calm Windows code editor with optional local AI. Early preview, limits documented.", "amber"),
-    "kannada-digital": ("An offline-first Kannada companion with reviewed phrases and bundled audio.", "rose"),
+    "dsa-mastery-plan-2026": ("A pattern-first roadmap for practicing data structures and algorithms.", "rose"),
     "cardiolens-3d-risk": ("Interactive coronary visualisation and a research-only baseline. Not clinical advice.", "teal"),
 }
 
@@ -726,7 +717,7 @@ def build_profile() -> tuple[dict[str, str], dict[str, bytes], dict]:
     ) if more_bits else ""
 
     updated = (
-        f"<sub>Refreshed **daily at 00:17 UTC** by "
+        f"<sub>Scheduled to refresh **daily at 00:17 UTC** by "
         f"[GitHub Actions](https://github.com/{USER}/{USER}/actions/workflows/update-profile.yml). "
         f"Last successful data snapshot: **{now.strftime('%d %b %Y, %H:%M UTC')}**. "
         f"On GitHub since {user.get('created_at', '')[:4]} · "
