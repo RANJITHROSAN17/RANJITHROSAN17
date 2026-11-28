@@ -1,0 +1,426 @@
+{
+  "version": 1,
+  "generatedBy": "tools/generate_puzzles.py",
+  "puzzles": [
+    {
+      "id": "bank-000",
+      "day": 0,
+      "label": "LENS #1",
+      "pack": "space",
+      "imageRef": "/puzzles/puzzle-000.svg",
+      "anomaly": {
+        "x": 0.5,
+        "y": 0.35714285714285715
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-001",
+      "day": 1,
+      "label": "LENS #2",
+      "pack": "lab",
+      "imageRef": "/puzzles/puzzle-001.svg",
+      "anomaly": {
+        "x": 0.1875,
+        "y": 0.8125
+      },
+      "radius": 0.03,
+      "difficulty": 3,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-002",
+      "day": 2,
+      "label": "LENS #3",
+      "pack": "terrain",
+      "imageRef": "/puzzles/puzzle-002.svg",
+      "anomaly": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "radius": 0.03,
+      "difficulty": 4,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-003",
+      "day": 3,
+      "label": "LENS #4",
+      "pack": "safety",
+      "imageRef": "/puzzles/puzzle-003.svg",
+      "anomaly": {
+        "x": 0.6428571428571429,
+        "y": 0.7857142857142858
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-004",
+      "day": 4,
+      "label": "LENS #5",
+      "pack": "space",
+      "imageRef": "/puzzles/puzzle-004.svg",
+      "anomaly": {
+        "x": 0.6875,
+        "y": 0.6875
+      },
+      "radius": 0.03,
+      "difficulty": 3,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-005",
+      "day": 5,
+      "label": "LENS #6",
+      "pack": "lab",
+      "imageRef": "/puzzles/puzzle-005.svg",
+      "anomaly": {
+        "x": 0.8333333333333334,
+        "y": 0.7222222222222222
+      },
+      "radius": 0.03,
+      "difficulty": 4,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-006",
+      "day": 6,
+      "label": "LENS #7",
+      "pack": "terrain",
+      "imageRef": "/puzzles/puzzle-006.svg",
+      "anomaly": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-007",
+      "day": 7,
+      "label": "LENS #8",
+      "pack": "safety",
+      "imageRef": "/puzzles/puzzle-007.svg",
+      "anomaly": {
+        "x": 0.5625,
+        "y": 0.5625
+      },
+      "radius": 0.03,
+      "difficulty": 3,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-008",
+      "day": 8,
+      "label": "LENS #9",
+      "pack": "space",
+      "imageRef": "/puzzles/puzzle-008.svg",
+      "anomaly": {
+        "x": 0.8333333333333334,
+        "y": 0.6111111111111112
+      },
+      "radius": 0.03,
+      "difficulty": 4,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-009",
+      "day": 9,
+      "label": "LENS #10",
+      "pack": "lab",
+      "imageRef": "/puzzles/puzzle-009.svg",
+      "anomaly": {
+        "x": 0.7857142857142858,
+        "y": 0.21428571428571427
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-010",
+      "day": 10,
+      "label": "LENS #11",
+      "pack": "terrain",
+      "imageRef": "/puzzles/puzzle-010.svg",
+      "anomaly": {
+        "x": 0.4375,
+        "y": 0.5625
+      },
+      "radius": 0.03,
+      "difficulty": 3,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-011",
+      "day": 11,
+      "label": "LENS #12",
+      "pack": "safety",
+      "imageRef": "/puzzles/puzzle-011.svg",
+      "anomaly": {
+        "x": 0.38888888888888895,
+        "y": 0.7222222222222222
+      },
+      "radius": 0.03,
+      "difficulty": 4,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-012",
+      "day": 12,
+      "label": "LENS #13",
+      "pack": "space",
+      "imageRef": "/puzzles/puzzle-012.svg",
+      "anomaly": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-013",
+      "day": 13,
+      "label": "LENS #14",
+      "pack": "lab",
+      "imageRef": "/puzzles/puzzle-013.svg",
+      "anomaly": {
+        "x": 0.3125,
+        "y": 0.8125
+      },
+      "radius": 0.03,
+      "difficulty": 3,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-014",
+      "day": 14,
+      "label": "LENS #15",
+      "pack": "terrain",
+      "imageRef": "/puzzles/puzzle-014.svg",
+      "anomaly": {
+        "x": 0.8333333333333334,
+        "y": 0.6111111111111112
+      },
+      "radius": 0.03,
+      "difficulty": 4,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-015",
+      "day": 15,
+      "label": "LENS #16",
+      "pack": "safety",
+      "imageRef": "/puzzles/puzzle-015.svg",
+      "anomaly": {
+        "x": 0.21428571428571427,
+        "y": 0.21428571428571427
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-016",
+      "day": 16,
+      "label": "LENS #17",
+      "pack": "space",
+      "imageRef": "/puzzles/puzzle-016.svg",
+      "anomaly": {
+        "x": 0.6875,
+        "y": 0.5625
+      },
+      "radius": 0.03,
+      "difficulty": 3,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-017",
+      "day": 17,
+      "label": "LENS #18",
+      "pack": "lab",
+      "imageRef": "/puzzles/puzzle-017.svg",
+      "anomaly": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "radius": 0.03,
+      "difficulty": 4,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-018",
+      "day": 18,
+      "label": "LENS #19",
+      "pack": "terrain",
+      "imageRef": "/puzzles/puzzle-018.svg",
+      "anomaly": {
+        "x": 0.35714285714285715,
+        "y": 0.5
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-019",
+      "day": 19,
+      "label": "LENS #20",
+      "pack": "safety",
+      "imageRef": "/puzzles/puzzle-019.svg",
+      "anomaly": {
+        "x": 0.8125,
+        "y": 0.6875
+      },
+      "radius": 0.03,
+      "difficulty": 3,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-020",
+      "day": 20,
+      "label": "LENS #21",
+      "pack": "space",
+      "imageRef": "/puzzles/puzzle-020.svg",
+      "anomaly": {
+        "x": 0.38888888888888895,
+        "y": 0.8333333333333334
+      },
+      "radius": 0.03,
+      "difficulty": 4,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-021",
+      "day": 21,
+      "label": "LENS #22",
+      "pack": "lab",
+      "imageRef": "/puzzles/puzzle-021.svg",
+      "anomaly": {
+        "x": 0.6428571428571429,
+        "y": 0.21428571428571427
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-022",
+      "day": 22,
+      "label": "LENS #23",
+      "pack": "terrain",
+      "imageRef": "/puzzles/puzzle-022.svg",
+      "anomaly": {
+        "x": 0.5625,
+        "y": 0.6875
+      },
+      "radius": 0.03,
+      "difficulty": 3,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-023",
+      "day": 23,
+      "label": "LENS #24",
+      "pack": "safety",
+      "imageRef": "/puzzles/puzzle-023.svg",
+      "anomaly": {
+        "x": 0.7222222222222222,
+        "y": 0.2777777777777778
+      },
+      "radius": 0.03,
+      "difficulty": 4,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-024",
+      "day": 24,
+      "label": "LENS #25",
+      "pack": "space",
+      "imageRef": "/puzzles/puzzle-024.svg",
+      "anomaly": {
+        "x": 0.35714285714285715,
+        "y": 0.6428571428571429
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-025",
+      "day": 25,
+      "label": "LENS #26",
+      "pack": "lab",
+      "imageRef": "/puzzles/puzzle-025.svg",
+      "anomaly": {
+        "x": 0.6875,
+        "y": 0.6875
+      },
+      "radius": 0.03,
+      "difficulty": 3,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-026",
+      "day": 26,
+      "label": "LENS #27",
+      "pack": "terrain",
+      "imageRef": "/puzzles/puzzle-026.svg",
+      "anomaly": {
+        "x": 0.16666666666666669,
+        "y": 0.6111111111111112
+      },
+      "radius": 0.03,
+      "difficulty": 4,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    },
+    {
+      "id": "bank-027",
+      "day": 27,
+      "label": "LENS #28",
+      "pack": "safety",
+      "imageRef": "/puzzles/puzzle-027.svg",
+      "anomaly": {
+        "x": 0.5,
+        "y": 0.6428571428571429
+      },
+      "radius": 0.03,
+      "difficulty": 2,
+      "reveal": "One instrument\u2019s needle points sideways instead of up.",
+      "method": "rotation"
+    }
+  ]
+}

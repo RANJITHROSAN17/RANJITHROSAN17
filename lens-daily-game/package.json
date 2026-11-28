@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "name": "lens-daily-game",
+  "version": "0.1.0",
+  "description": "LENS \u2014 The Daily Anomaly Hunt. One image. One anomaly. 60 seconds.",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "deploy": "npm run test:types && npm run lint && devvit upload",
+    "dev": "devvit playtest",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "login": "devvit login",
+    "prettier": "prettier --write .",
+    "test:types": "tsc --build",
+    "test:unit": "node --experimental-strip-types --no-warnings=ExperimentalWarning --test src/shared/game.test.ts",
+    "generate": "python3 tools/generate_puzzles.py --count 365 --out src/shared/puzzle-bank.json"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@devvit/start": "0.15.4",
+    "@devvit/web": "0.15.4",
+    "@hono/node-server": "2.1.6",
+    "devvit": "0.15.4",
+    "hono": "4.13.17",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@tailwindcss/vite": "4.3.5",
+    "@types/node": "^24.13.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "eslint": "10.14.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.7",
+    "globals": "17.14.0",
+    "prettier": "3.9.10",
+    "tailwindcss": "4.3.5",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.2",
+    "vite": "8.3.7"
+  }
+}

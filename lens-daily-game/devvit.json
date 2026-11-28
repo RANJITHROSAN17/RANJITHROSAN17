@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "lens-daily-game",
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": {
+        "inline": true,
+        "entry": "splash.html"
+      },
+      "game": {
+        "entry": "game.html"
+      }
+    }
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "Post today's Lens",
+        "description": "Create today's LENS daily anomaly post",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/post-create"
+      }
+    ]
+  },
+  "triggers": {
+    "onAppInstall": "/internal/triggers/on-app-install"
+  },
+  "scheduler": {
+    "tasks": {
+      "daily-post": {
+        "endpoint": "/internal/scheduler/daily-post",
+        "cron": "5 0 * * *"
+      }
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  }
+}

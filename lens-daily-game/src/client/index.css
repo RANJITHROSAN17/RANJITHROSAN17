@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-lens-bg: #0a0e14;
+  --color-lens-panel: #111827;
+  --color-lens-cyan: #22d3ee;
+  --color-lens-amber: #f59e0b;
+  --color-lens-paper: #f8fafc;
+}
+
+html,
+body {
+  background: #0a0e14;
+  color: #f8fafc;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-mono-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes lens-pulse {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes lens-bloom {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.tap-ring {
+  animation: lens-pulse 0.7s ease-out forwards;
+}
+
+.result-bloom {
+  animation: lens-bloom 0.5s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tap-ring,
+  .result-bloom {
+    animation: none;
+  }
+}

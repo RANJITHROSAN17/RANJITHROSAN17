@@ -1,0 +1,27 @@
+name: LENS checks
+on:
+  push:
+    paths: ['lens-daily-game/**', '.github/workflows/lens-ci.yml']
+  pull_request:
+    paths: ['lens-daily-game/**', '.github/workflows/lens-ci.yml']
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lens-daily-game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: lens-daily-game/package-lock.json
+      - run: npm ci
+      - run: npm run test:types
+      - run: npm run test:unit
+      - run: npm run lint
+      - run: npm run build
+      - run: python3 tools/generate_puzzles.py --count 28 && git diff --exit-code -- src/shared/puzzle-bank.json public/puzzles
